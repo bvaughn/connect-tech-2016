@@ -13,25 +13,25 @@ export default class App extends Component {
   render() {
     return (
       <HashRouter>
-        <div className='App'>
-          {slides.map((Component, index) => (
+        <SlideshowController slides={slides}>
+          <div className='App'>
+            {slides.map((Component, index) => (
+              <Match
+                component={Component}
+                key={index}
+                pattern={`/${index}`}
+              />
+            ))}
+
             <Match
-              component={Component}
-              key={index}
-              pattern={`/${index}`}
+              exactly
+              pattern='/'
+              render={() => (
+                <Redirect to='0' />
+              )}
             />
-          ))}
-
-          <Match
-            exactly
-            pattern='/'
-            render={() => (
-              <Redirect to='0' />
-            )}
-          />
-
-          <SlideshowController slides={slides} />
-        </div>
+          </div>
+        </SlideshowController>
       </HashRouter>
     );
   }

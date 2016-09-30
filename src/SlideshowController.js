@@ -1,58 +1,108 @@
 import { Component, PropTypes } from 'react';
 
 export default class SlideshowController extends Component {
+  static childContextTypes = {
+    previousSlideIndex: PropTypes.number,
+    registerKeyDownHandler: PropTypes.func,
+    slideIndex: PropTypes.number,
+    unregisterKeyDownHandler: PropTypes.func
+  };
+
   static contextTypes = {
     location: PropTypes.any.isRequired,
     router: PropTypes.any.isRequired
   };
 
   static propTypes = {
+    children: PropTypes.node.isRequired,
     slides: PropTypes.array.isRequired
-  }
+  };
 
   constructor (props, context) {
-    super(props, context)
+    super(props, context);
 
-    this._onKeyDown = this._onKeyDown.bind(this)
+    this.state = {
+      previousSlideIndex: 0,
+      slideIndex: 0
+    };
+
+    this._keyDownEventQueue = [];
+
+    this._onKeyDown = this._onKeyDown.bind(this);
+    this._registerKeyDownHandler = this._registerKeyDownHandler.bind(this);
+    this._uregisterKeyDownHandler = this._uregisterKeyDownHandler.bind(this);
   }
 
   componentDidMount () {
-    document.body.addEventListener('keydown', this._onKeyDown)
+    document.body.addEventListener('keydown', this._onKeyDown);
   }
 
   componentWillUnmount () {
-    document.body.removeEventListener('keydown', this._onKeyDown)
+    document.body.removeEventListener('keydown', this._onKeyDown);
+  }
+
+  getChildContext () {
+    const { previousSlideIndex, slideIndex } = this.state;
+
+    return {
+      previousSlideIndex,
+      registerKeyDownHandler: this._registerKeyDownHandler,
+      slideIndex,
+      unregisterKeyDownHandler: this._uregisterKeyDownHandler
+    };
   }
 
   render() {
-    return null;
+    const { children } = this.props;
+
+    return children;
+  }
+
+  _registerKeyDownHandler (handler) {
+    this._keyDownEventQueue.push(handler)
+  }
+
+  _uregisterKeyDownHandler (handler) {
+    this._keyDownEventQueue.splice(
+      this._keyDownEventQueue.indexOf(handler),
+      1
+    );
   }
 
   _onKeyDown (event) {
+    const prevented = this._keyDownEventQueue
+      .find((handler) => handler(event))
+
+    if (prevented) {
+      return;
+    }
+
     const { location, router } = this.context;
     const { slides } = this.props;
 
-    const index = parseInt(location.pathname.substr(1), 10);
+    const previousSlideIndex = parseInt(location.pathname.substr(1), 10);
 
-    let pathname;
+    let slideIndex = previousSlideIndex;
 
     switch (event.keyCode) {
       case 37: // Left
-        pathname = `/${Math.max(index - 1, 0)}`
+        slideIndex = Math.max(previousSlideIndex - 1, 0)
         break;
       case 39: // Right
-        pathname = `/${Math.min(index + 1, slides.length - 1)}`
+        slideIndex = Math.min(previousSlideIndex + 1, slides.length - 1)
         break;
       default:
         // Linting requires this :)
         break;
     }
 
-    if (
-      pathname &&
-      pathname !== location.pathname
-    ) {
-      router.transitionTo(pathname);
+    if (slideIndex !== previousSlideIndex) {
+      this.setState({
+        previousSlideIndex,
+        slideIndex
+      });
+
+      router.transitionTo(`/${slideIndex}`);
     }
   }
 }
