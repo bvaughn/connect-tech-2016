@@ -33,8 +33,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 0.25rem;
-  background-color: #272822;
-  color: #f3f3f3;
+  border: 1px dashed #272822;
 }
 
 .Slides__BuildingBlocks__Grid__Tile {
@@ -67,7 +66,7 @@
   bottom: 40%;
   left: 55%;
   width: 2.5rem;
-  height: 4rem;
+  height: 2.5rem;
 }
 
 .Slides__BuildingBlocks__Table__Row {
@@ -75,9 +74,6 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-}
-.Slides__BuildingBlocks__Table__Row:first-of-type {
-  font-weight: bold;
 }
 
 .Slides__BuildingBlocks__Table__Column {
@@ -87,18 +83,16 @@
   align-items: center;
   border-radius: 0.25rem;
   margin-left: 0.5rem;
+  flex: 1 1 auto;
 }
 .Slides__BuildingBlocks__Table__Column:first-of-type {
-  flex: 0 0 3rem;
   margin-left: 0;
 }
 .Slides__BuildingBlocks__Table__Column:last-of-type {
-  flex: 1 1 auto;
 }
 
 .Slides__BuildingBlocks__Table__Row:first-of-type .Slides__BuildingBlocks__Table__Column {
-  background-color: #272822;
-  color: #f3f3f3;
+  background-color: #CFD8DC;
 }
 
 .Slides__BuildingBlocks__Table__Row:not(:first-of-type) .Slides__BuildingBlocks__Table__Column {

@@ -19,7 +19,7 @@ export default () => (
               <div className='Slides__BuildingBlocks__Frame'>
                 {times(9).map((index) => (
                   <div className='Slides__BuildingBlocks__Grid__Tile'>
-                    {index + 1}
+                    cell {index + 1}
                   </div>
                 ))}
               </div>
@@ -32,23 +32,31 @@ export default () => (
               <div className='Slides__BuildingBlocks__Frame'>
                 {times(4).map((index) => (
                   <div className='Slides__BuildingBlocks__List__Tile'>
-                    {index + 1}
+                    row {index + 1}
                   </div>
                 ))}
               </div>
             </div>
           )}
+        </div>
 
+        <div className='Slides__BuildingBlocks'>
           {index >= 3 && (
             <div className='Slides__BuildingBlocks__Block'>
               <h3>Table</h3>
               <div className='Slides__BuildingBlocks__Frame'>
+                <div className='Slides__BuildingBlocks__Table__Row'>
+                  {times(2).map((colIndex) => (
+                    <div className='Slides__BuildingBlocks__Table__Column'>
+                      header {colIndex === 0 ? 'a' : 'b'}
+                    </div>
+                  ))}
+                </div>
                 {times(4).map((rowIndex) => (
                   <div className='Slides__BuildingBlocks__Table__Row'>
                     {times(2).map((colIndex) => (
                       <div className='Slides__BuildingBlocks__Table__Column'>
-                        {rowIndex + 1}
-                        {colIndex === 0 ? 'a' : 'b'}
+                        column {colIndex === 0 ? 'a' : 'b'}
                       </div>
                     ))}
                   </div>
