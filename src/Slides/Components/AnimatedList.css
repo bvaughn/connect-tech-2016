@@ -18,7 +18,7 @@
   height: 100px;
   left: -8px;
   right: -8px;
-  border: 3px dotted rgb(249, 38, 114);
+  border: 3px dotted #f92672;
 }
 
 .OuterFrame {
