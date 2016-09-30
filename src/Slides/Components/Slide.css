@@ -1,0 +1,5 @@
+.Slides__Slide {
+  display: table-cell;
+  font-size: 20px;
+  padding: 1em 4em 1em 4em;
+}

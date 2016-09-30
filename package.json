@@ -6,8 +6,12 @@
     "react-scripts": "0.6.1"
   },
   "dependencies": {
+    "lodash.times": "^4.3.2",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-codemirror": "^0.2.6",
+    "react-dom": "^15.3.2",
+    "react-router": "^4.0.0-2",
+    "spectacle": "^1.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

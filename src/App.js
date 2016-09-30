@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { HashRouter, Match, Redirect } from 'react-router';
+import SlideshowController from './SlideshowController';
 import './App.css';
 
-class App extends Component {
+// Load all slides in the Slides folder
+const slides = require.context('./Slides/', false, /\.js$/)
+  .keys()
+  .map((filename) => filename.replace('./', ''))
+  .map((filename) => require(`./Slides/${filename}`).default);
+
+export default class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <HashRouter>
+        <div className='App'>
+          {slides.map((Component, index) => (
+            <Match
+              component={Component}
+              key={index}
+              pattern={`/${index}`}
+            />
+          ))}
+
+          <Match
+            exactly
+            pattern='/'
+            render={() => (
+              <Redirect to='0' />
+            )}
+          />
+
+          <SlideshowController slides={slides} />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      </HashRouter>
     );
   }
 }
-
-export default App;

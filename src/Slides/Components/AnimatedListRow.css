@@ -1,0 +1,32 @@
+.AnimatedListRow {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #272822;
+  color: #f3f3f3;
+  width: 100%;
+  height: 26px;
+  margin: 2px 0;
+  transition: 0 all;
+}
+.AnimatedListRow:last-of-type {
+  margin: 0;
+}
+
+.AnimatedList--Overscan {
+  background-color: #777872;
+  color: #f3f3f3;
+}
+
+.AnimatedList--Invisible {
+  background-color: #fff;
+  border: 1px dashed #CFD8DC;
+  color: #CFD8DC;
+}
+
+.AnimatedList--Overscan,
+.AnimatedList--Invisible {
+  transition: 500ms all;
+}
+
