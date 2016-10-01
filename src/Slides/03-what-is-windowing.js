@@ -10,7 +10,7 @@ export default () => (
         <h1>What is windowing?</h1>
         {index >= 1 && (
           <div>
-            <h3>Only rendering enough elements to fill the viewport.</h3>
+            <p>Only rendering enough elements to fill the viewport.</p>
             <List
               direction={0}
               overscanCount={0}

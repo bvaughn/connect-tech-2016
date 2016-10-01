@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { HashRouter, Match, Redirect } from 'react-router';
+import Footer from './Footer';
 import NavigateToSlide from './NavigateToSlide';
 import SlideshowController from './SlideshowController';
 import generateRandomList from './Utils/generateRandomList';
@@ -46,6 +47,7 @@ export default class App extends Component {
               )}
             />
 
+            <Footer slides={slides} />
             <NavigateToSlide slides={slides} />
           </div>
         </SlideshowController>
