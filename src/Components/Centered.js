@@ -5,7 +5,7 @@ export default function Centered ({
   children
 }) {
   return (
-    <div className='Slides__Centered'>
+    <div className='Slide CenteredSlide'>
       {children}
     </div>
   );

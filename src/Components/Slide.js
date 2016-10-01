@@ -5,7 +5,7 @@ export default function Slide ({
   children
 }) {
   return (
-    <div className='Slides__Slide'>
+    <div className='Slide'>
       {children}
     </div>
   );
