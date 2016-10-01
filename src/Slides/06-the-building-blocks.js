@@ -18,7 +18,10 @@ export default () => (
               <h3>Grid</h3>
               <div className='Slides__BuildingBlocks__Frame'>
                 {times(9).map((index) => (
-                  <div className='Slides__BuildingBlocks__Grid__Tile'>
+                  <div
+                    className='Slides__BuildingBlocks__Grid__Tile'
+                    key={index}
+                  >
                     cell {index + 1}
                   </div>
                 ))}
@@ -31,7 +34,10 @@ export default () => (
               <h3>List</h3>
               <div className='Slides__BuildingBlocks__Frame'>
                 {times(4).map((index) => (
-                  <div className='Slides__BuildingBlocks__List__Tile'>
+                  <div
+                    className='Slides__BuildingBlocks__List__Tile'
+                    key={index}
+                  >
                     row {index + 1}
                   </div>
                 ))}
@@ -47,15 +53,24 @@ export default () => (
               <div className='Slides__BuildingBlocks__Frame'>
                 <div className='Slides__BuildingBlocks__Table__Row'>
                   {times(2).map((colIndex) => (
-                    <div className='Slides__BuildingBlocks__Table__Column'>
+                    <div
+                      className='Slides__BuildingBlocks__Table__Column'
+                      key={colIndex}
+                    >
                       header {colIndex === 0 ? 'a' : 'b'}
                     </div>
                   ))}
                 </div>
                 {times(4).map((rowIndex) => (
-                  <div className='Slides__BuildingBlocks__Table__Row'>
+                  <div
+                    className='Slides__BuildingBlocks__Table__Row'
+                    key={rowIndex}
+                  >
                     {times(2).map((colIndex) => (
-                      <div className='Slides__BuildingBlocks__Table__Column'>
+                      <div
+                        className='Slides__BuildingBlocks__Table__Column'
+                        key={colIndex}
+                      >
                         column {colIndex === 0 ? 'a' : 'b'}
                       </div>
                     ))}
