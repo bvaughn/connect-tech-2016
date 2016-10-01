@@ -61,6 +61,10 @@ button {
   font-size: 20px;
   cursor: pointer;
 }
+button:disabled {
+  background-color: #CFD8DC;
+  cursor: default;
+}
 
 .fa {
   color: #777872;

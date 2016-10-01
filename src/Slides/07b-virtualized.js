@@ -23,8 +23,10 @@ export default class Stepper extends Component {
     const { initialized } = this.state;
 
     if (initialized && !prevState.initialized) {
-      this.setState({
-        initializationTime: now() - this._initializationStartedAt
+      window.requestIdleCallback(() => {
+        this.setState({
+          initializationTime: now() - this._initializationStartedAt
+        });
       });
     }
   }
@@ -52,7 +54,13 @@ export default class Stepper extends Component {
         )}
         {initialized && (
           <div>
-            <p>{Math.round(initializationTime) / 1e3} seconds to create list</p>
+            <button disabled>
+              Created List
+            </button>
+
+            {initializationTime > 0 && (
+              ` in ${Math.round(initializationTime) / 1e3} seconds`
+            )}
 
             <List
               className='List'
