@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { HashRouter, Match, Redirect } from 'react-router';
+import NavigateToSlide from './NavigateToSlide';
 import SlideshowController from './SlideshowController';
 import generateRandomList from './Utils/generateRandomList';
 import './App.css';
@@ -44,6 +45,8 @@ export default class App extends Component {
                 <Redirect to='0' />
               )}
             />
+
+            <NavigateToSlide slides={slides} />
           </div>
         </SlideshowController>
       </HashRouter>

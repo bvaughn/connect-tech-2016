@@ -1,0 +1,33 @@
+.NavigateToSlideOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.NavigateToSlide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, .1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  z-index: 2;
+}
+
+.NavigateToSlide .fa {
+  color: #fff;
+}
+
+.NavigateToSlideInput {
+  width: 5rem;
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 100;
+}
