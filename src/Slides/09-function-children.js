@@ -4,7 +4,7 @@ import Slide from '../Components/Slide'
 export default () => (
   <Slide>
     <h1>
-      Supporting dynamic widths and heights
+      Function children
     </h1>
   </Slide>
 );
