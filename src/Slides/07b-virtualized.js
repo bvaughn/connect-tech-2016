@@ -45,8 +45,8 @@ export default class Stepper extends Component {
 
     return (
       <Slide>
-        <h1>Performance comparison</h1>
-        <h3>react-virtualized <code>List</code></h3>
+        <h1>How does windowing impact performance?</h1>
+        <h3>With react-virtualized (<code>List</code> component)</h3>
         {initialized || (
           <button onClick={() => this.setState({ initialized: true })}>
             Create List

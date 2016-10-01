@@ -4,7 +4,7 @@ import Centered from './Components/Centered'
 export default () => (
   <Centered>
     <h1>
-      Performance comparison
+      How does windowing impact performance?
     </h1>
   </Centered>
 );

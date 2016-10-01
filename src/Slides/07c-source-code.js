@@ -10,7 +10,7 @@ export default () => (
   <Stepper numSteps={2}>
     {(index) => (
       <Slide>
-        <h1>Performance comparison</h1>
+        <h1>How does windowing impact performance?</h1>
         {index === 0 && (
           <div>
             <h3>Vanilla React (no windowing)</h3>
