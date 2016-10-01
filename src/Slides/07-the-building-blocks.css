@@ -5,10 +5,22 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  .Slides__BuildingBlocks {
+    justify-content: center;
+  }
 }
 
 .Slides__BuildingBlocks__Block {
   margin: 1rem  1rem 1rem 0;
+}
+
+.Slides__BuildingBlocks__Block h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 .Slides__BuildingBlocks__Frame {
@@ -21,7 +33,6 @@
   align-items: center;
   border-radius: 0.25rem;
   border: 2px dashed #f92672;
-  margin: 1rem 0;
   padding: 0.5rem;
   font-size: 12px;
 }
