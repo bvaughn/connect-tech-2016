@@ -38,7 +38,7 @@ export default class NavigateToSlide extends Component {
   }
 
   render () {
-    const { active, slideIndex } = this.state;
+    const { active, inputValue } = this.state;
 
     if (!active) {
       return null;
@@ -53,7 +53,7 @@ export default class NavigateToSlide extends Component {
             onChange={this._onInputChange}
             onKeyDown={this._onInputKeyDown}
             ref={(ref) => this._input = ref}
-            value={slideIndex}
+            value={inputValue}
           />
           <i className='fa fa-arrow-circle-right' />
         </div>
@@ -62,8 +62,25 @@ export default class NavigateToSlide extends Component {
   }
 
   _onInputChange (event) {
+    let inputValue = this._input.value.replace(/[^\d]/g, '');
+    let slideIndex = null;
+
+    if (inputValue) {
+      const { slides } = this.props;
+
+      slideIndex = Math.max(
+        0,
+        Math.min(
+          slides.length - 1,
+          parseInt(inputValue, 10)
+        )
+      );
+
+      inputValue = slideIndex;
+    }
+
     this.setState({
-      inputValue: this._input.value
+      inputValue
     });
   }
 
@@ -71,16 +88,9 @@ export default class NavigateToSlide extends Component {
     switch (event.keyCode) {
       case 13: // Enter
         const { router } = this.context;
-        const { slides } = this.props;
+        const { inputValue } = this.state;
 
-        const input = this._input.value || 0;
-        const slideIndex = Math.max(
-            0,
-            Math.min(
-              slides.length - 1,
-              parseInt(input, 10)
-            )
-          );
+        const slideIndex = parseInt(inputValue, 10) || 0;
 
         this.setState({
           active: false,
@@ -96,19 +106,24 @@ export default class NavigateToSlide extends Component {
   }
 
   _onKeyDown (event) {
-    if (
-      event.ctrlKey &&
-      event.key === 't'
-    ) {
-      this.setState({
-        active: true
-      });
-    } else if (
-      event.key === 'Escape'
-    ) {
-      this.setState({
-        active: false
-      });
+    switch (event.key) {
+      case 't':
+        this.setState({
+          active: true
+        });
+
+        event.preventDefault();
+
+        return true;
+      case 'Escape':
+        this.setState({
+          active: false
+        });
+
+        return true;
+      default:
+        // Linting requires this :)
+        break;
     }
   }
 }

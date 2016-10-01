@@ -88,6 +88,8 @@ export default class SlideshowController extends Component {
       case 37: // Left
         slideIndex = Math.max(previousSlideIndex - 1, 0)
         break;
+      case 13: // Enter
+      case 32: // Space
       case 39: // Right
         slideIndex = Math.min(previousSlideIndex + 1, slides.length - 1)
         break;
