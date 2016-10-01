@@ -1,7 +1,7 @@
 import React from 'react';
-import List from './Components/AnimatedList';
-import Slide from './Components/Slide';
-import Stepper from './Components/Stepper';
+import List from '../Components/AnimatedList';
+import Slide from '../Components/Slide';
+import Stepper from '../Components/Stepper';
 
 export default () => (
   <Stepper numSteps={2}>

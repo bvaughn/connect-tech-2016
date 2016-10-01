@@ -1,7 +1,7 @@
 import now from 'performance-now';
 import React, { Component, PropTypes } from 'react';
-import Note from './Components/Note';
-import Slide from './Components/Slide';
+import Note from '../Components/Note';
+import Slide from '../Components/Slide';
 import { List } from 'react-virtualized';
 import './05-shared.css';
 

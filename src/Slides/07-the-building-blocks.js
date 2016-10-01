@@ -1,7 +1,7 @@
 import React from 'react';
 import times from 'lodash.times';
-import Slide from './Components/Slide';
-import Stepper from './Components/Stepper';
+import Slide from '../Components/Slide';
+import Stepper from '../Components/Stepper';
 import './07-the-building-blocks.css';
 
 export default () => (

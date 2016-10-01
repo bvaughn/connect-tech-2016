@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { HashRouter, Match, Redirect } from 'react-router';
-import Footer from './Footer';
-import NavigateToSlide from './NavigateToSlide';
-import SlideshowController from './SlideshowController';
+import Footer from './Components/Footer';
+import NavigateToSlide from './Components/NavigateToSlide';
+import SlideshowController from './Components/SlideshowController';
 import generateRandomList from './Utils/generateRandomList';
 import './App.css';
 

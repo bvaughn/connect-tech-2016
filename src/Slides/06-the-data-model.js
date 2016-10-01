@@ -1,7 +1,7 @@
 import React from 'react';
-import CodeMirror from './Components/CodeMirror';
-import Slide from './Components/Slide';
-import Stepper from './Components/Stepper';
+import CodeMirror from '../Components/CodeMirror';
+import Slide from '../Components/Slide';
+import Stepper from '../Components/Stepper';
 import source from './Examples/row-renderer.js';
 
 export default () => (

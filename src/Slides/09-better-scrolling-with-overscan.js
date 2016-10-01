@@ -1,5 +1,5 @@
 import React from 'react';
-import Slide from './Components/Slide'
+import Slide from '../Components/Slide'
 
 export default () => (
   <Slide>
