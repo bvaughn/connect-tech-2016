@@ -1,0 +1,13 @@
+.Note {
+  background: #bd93f9;
+  color: #fff;
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.Note .fa {
+  margin-right: 0.25rem;
+  color: #fff;
+}

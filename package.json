@@ -7,10 +7,13 @@
   },
   "dependencies": {
     "lodash.times": "^4.3.2",
+    "performance-now": "^0.2.0",
     "react": "^15.3.2",
+    "react-addons-shallow-compare": "^15.3.2",
     "react-codemirror": "^0.2.6",
     "react-dom": "^15.3.2",
     "react-router": "^4.0.0-2",
+    "react-virtualized": "^8.0.11",
     "spectacle": "^1.2.3"
   },
   "scripts": {
