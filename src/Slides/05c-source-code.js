@@ -4,7 +4,7 @@ import Slide from './Components/Slide';
 import Stepper from './Components/Stepper';
 import sourceNonVirtualized from './Examples/perf-comparison-non-virtualized.js';
 import sourceVirtualized from './Examples/perf-comparison-virtualized.js';
-import './07-shared.css';
+import './05-shared.css';
 
 export default () => (
   <Stepper numSteps={2}>

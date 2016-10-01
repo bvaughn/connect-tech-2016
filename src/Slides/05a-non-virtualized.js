@@ -2,7 +2,7 @@ import now from 'performance-now';
 import React, { Component, PropTypes } from 'react';
 import Note from './Components/Note';
 import Slide from './Components/Slide';
-import './07-shared.css';
+import './05-shared.css';
 
 export default class Stepper extends Component {
   static contextTypes = {
