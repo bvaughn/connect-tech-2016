@@ -15,12 +15,8 @@ export default class Stepper extends Component {
   constructor (props, context) {
     super(props, context);
 
-    const childIndex = context.previousSlideIndex > context.slideIndex
-      ? props.numSteps - 1
-      : 0
-
     this.state = {
-      childIndex
+      childIndex: this._getChildIndexFromContext(props, context)
     };
 
     this._onKeyDown = this._onKeyDown.bind(this);
@@ -38,11 +34,31 @@ export default class Stepper extends Component {
     unregisterKeyDownHandler(this._onKeyDown);
   }
 
+  componentWillUpdate (nextProps, nextState, nextContext) {
+    const { slideIndex } = this.context;
+
+    if (slideIndex !== nextContext.slideIndex) {
+      const childIndex = this._getChildIndexFromContext(nextProps, nextContext);
+
+      if (nextState.childIndex !== childIndex) {
+        this.setState({
+          childIndex
+        });
+      }
+    }
+  }
+
   render() {
     const { childIndex } = this.state;
     const { children } = this.props;
 
     return children(childIndex);
+  }
+
+  _getChildIndexFromContext (props, context) {
+    return context.previousSlideIndex > context.slideIndex
+      ? props.numSteps - 1
+      : 0;
   }
 
   _onKeyDown (event) {
