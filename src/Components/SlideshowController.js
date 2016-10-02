@@ -28,6 +28,7 @@ export default class SlideshowController extends Component {
 
     this._keyDownEventQueue = [];
 
+    this._onHashChange = this._onHashChange.bind(this);
     this._onKeyDown = this._onKeyDown.bind(this);
     this._registerKeyDownHandler = this._registerKeyDownHandler.bind(this);
     this._uregisterKeyDownHandler = this._uregisterKeyDownHandler.bind(this);
@@ -35,10 +36,14 @@ export default class SlideshowController extends Component {
 
   componentDidMount () {
     document.body.addEventListener('keydown', this._onKeyDown);
+    window.addEventListener('hashchange', this._onHashChange);
+
+    this._processCurrentLocation();
   }
 
   componentWillUnmount () {
     document.body.removeEventListener('keydown', this._onKeyDown);
+    window.removeEventListener('hashchange', this._onHashChange);
   }
 
   getChildContext () {
@@ -58,6 +63,18 @@ export default class SlideshowController extends Component {
     return children;
   }
 
+  _processCurrentLocation () {
+    const { location } = this.context;
+    const { slideIndex } = this.state;
+
+    const newSlideIndex = parseInt(location.pathname.substr(1), 10);
+
+    this.setState({
+      previousSlideIndex: slideIndex || 0,
+      slideIndex: newSlideIndex
+    });
+  }
+
   _registerKeyDownHandler (handler) {
     this._keyDownEventQueue.push(handler)
   }
@@ -67,6 +84,10 @@ export default class SlideshowController extends Component {
       this._keyDownEventQueue.indexOf(handler),
       1
     );
+  }
+
+  _onHashChange (event) {
+    this._processCurrentLocation();
   }
 
   _onKeyDown (event) {
@@ -99,11 +120,6 @@ export default class SlideshowController extends Component {
     }
 
     if (slideIndex !== previousSlideIndex) {
-      this.setState({
-        previousSlideIndex,
-        slideIndex
-      });
-
       router.transitionTo(`/${slideIndex}`);
     }
   }
