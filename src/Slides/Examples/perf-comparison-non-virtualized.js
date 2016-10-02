@@ -1,18 +1,20 @@
-const markup = `<div
-  className='List'
-  style={{
-    height: 240,
-    width: 240
-  }}
->
-  {list.map((item, index) => (
+const markup = `const items = [...] // This is our data
+
+function render () {
+  return (
     <div
-      className='ListRow'
-      key={index}
+      style={{
+        height: 240,
+        width: 240
+      }}
     >
-      {item.name}
+      {items.map((item, index) => (
+        <div key={index}>
+          {item.name}
+        </div>
+      ))}
     </div>
-  ))}
-</div>`;
+  )
+}`;
 
 export default markup;
