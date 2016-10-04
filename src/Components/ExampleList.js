@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import React, { Component, PropTypes } from 'react';
 import { List } from 'react-virtualized';
 import '../shared-list-styles.css';
@@ -19,7 +20,9 @@ export default class ExampleList extends Component {
         rowHeight={40}
         rowRenderer={({ index, key, style }) => (
           <div
-            className='ListRow'
+            className={classnames('ListRow', {
+              ListRowEven: index % 2 === 0
+            })}
             key={index}
             style={style}
           >

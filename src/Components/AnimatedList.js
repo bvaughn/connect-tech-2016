@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import times from 'lodash.times';
 import React from 'react';
 import Row from './AnimatedListRow';
@@ -46,7 +47,7 @@ export default function AnimatedListList ({
   }
 
   return (
-    <div className={`AnimatedList ${className}`}>
+    <div className={classnames('AnimatedList', className)}>
       <div
         className='Positioned'
         style={{

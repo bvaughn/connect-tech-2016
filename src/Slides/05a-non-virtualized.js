@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import now from 'performance-now';
 import React, { Component, PropTypes } from 'react';
 import Note from '../Components/Note';
@@ -63,7 +64,9 @@ export default class Stepper extends Component {
 
             <div className='List'>
               {list.map((item, index) => (
-                <div className='ListRow'>
+                <div className={classnames('ListRow', {
+                  ListRowEven: index % 2 === 0
+                })}>
                   <div
                     className='RowNumber'
                     style={{
