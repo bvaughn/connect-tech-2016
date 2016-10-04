@@ -12,7 +12,7 @@ export default () => (
         <p>At its core react-virtualized only requires 2 things:</p>
         {index >= 1 && (
           <ul>
-            <li>Row count / column count (eg <code>array.length</code>, <code>list.size</code>)</li>
+            <li>Row count / column count (eg <code>array.length</code>, Immutable <code>collection.size</code>)</li>
             {index >= 2 && (
               <li>An item renderer</li>
             )}

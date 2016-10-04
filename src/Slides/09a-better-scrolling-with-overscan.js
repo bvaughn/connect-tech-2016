@@ -2,7 +2,7 @@ import React from 'react';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import movie from '../../public/overscan-example.mp4';
-import './10-better-scrolling-with-overscan.css';
+import './09-better-scrolling-with-overscan.css';
 
 export default () => (
   <Stepper numSteps={5}>
