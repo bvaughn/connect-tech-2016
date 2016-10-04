@@ -8,7 +8,7 @@ export default () => (
   <Stepper numSteps={5}>
     {(index) => (
       <Slide>
-        <h1>Better scrolling with overscan</h1>
+        <h1>Scrolling challenges for windowed elements</h1>
         <ul>
           {index >= 1 && (
             <li>Scrolling animation runs in a separate thread</li>

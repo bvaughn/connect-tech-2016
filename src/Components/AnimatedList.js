@@ -6,6 +6,7 @@ import './AnimatedList.css';
 // Assumes 10 total rows; renders 11 to allow for partial visibility of first and last row
 // Assumes 30px row height, 1 overscan, 2 hidden rows, 4 visible rows (10 total rows)
 export default function AnimatedListList ({
+  className = '',
   direction = 0,
   iteration = 0,
   offset = 0,
@@ -45,7 +46,7 @@ export default function AnimatedListList ({
   }
 
   return (
-    <div className='AnimatedList'>
+    <div className={`AnimatedList ${className}`}>
       <div
         className='Positioned'
         style={{
