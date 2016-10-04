@@ -63,11 +63,19 @@ export default class Stepper extends Component {
 
             <div className='List'>
               {list.map((item, index) => (
-                <div
-                  className='ListRow'
-                  key={index}
-                >
-                  {item.name}
+                <div className='ListRow'>
+                  <div
+                    className='RowNumber'
+                    style={{
+                      backgroundColor: item.color
+                    }}
+                  >
+                    {item.name.substr(0, 1)}
+                  </div>
+                  <div className='RowStack'>
+                    <div className='RowName'>{item.name}</div>
+                    <div className='RowRowNumber'>This is row {index}</div>
+                  </div>
                 </div>
               ))}
             </div>
