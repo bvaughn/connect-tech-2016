@@ -1,9 +1,9 @@
 import now from 'performance-now';
 import React, { Component, PropTypes } from 'react';
+import ExampleList from '../Components/ExampleList';
 import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 import { List } from 'react-virtualized';
-import './05-shared.css';
 
 export default class Stepper extends Component {
   static contextTypes = {
@@ -62,34 +62,7 @@ export default class Stepper extends Component {
               ` in ${Math.round(initializationTime) / 1e3} seconds`
             )}
 
-            <List
-              className='List'
-              height={240}
-              overscanRowCount={2}
-              rowCount={list.length}
-              rowHeight={40}
-              rowRenderer={({ index, key, style }) => (
-                <div
-                  className='ListRow'
-                  key={index}
-                  style={style}
-                >
-                  <div
-                    className='RowNumber'
-                    style={{
-                      backgroundColor: list[index].color
-                    }}
-                  >
-                    {list[index].name.substr(0, 1)}
-                  </div>
-                  <div className='RowStack'>
-                    <div className='RowName'>{list[index].name}</div>
-                    <div className='RowRowNumber'>This is row {index}</div>
-                  </div>
-                </div>
-              )}
-              width={240}
-            />
+            <ExampleList />
 
             <Note>
               Open the browser Timeline view and scroll

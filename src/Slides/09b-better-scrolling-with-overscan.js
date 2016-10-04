@@ -1,5 +1,7 @@
 import React from 'react';
 import List from '../Components/AnimatedList';
+import ExampleList from '../Components/ExampleList';
+import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 
@@ -30,7 +32,10 @@ export default () => (
           {index === 3 && (
             <div>
               <p>Limits the overall number of rows and reduces scrolling "flicker"</p>
-              <List direction={0} />
+              <ExampleList />
+              <Note>
+                View source to see "overscanned" rows
+              </Note>
             </div>
           )}
         </div>
