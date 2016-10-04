@@ -1,10 +1,10 @@
-const source = `function WithUser ({ children }) {
-  // It is not important where user comes from for this example
+const source = `// It is not important where user and locale info comes from for this example.
+
+function WithUser ({ children }) {
   return children({ user })
 }
 
 function WithLocalization ({ children }) {
-  // It is not important where locale info comes from for this example
   return children({ localization })
 }
 

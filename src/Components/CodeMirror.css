@@ -5,12 +5,12 @@
 }
 
 .cm-s-brian.CodeMirror, .cm-s-brian .CodeMirror-gutters {
-  background-color: #272822 !important;
+  background-color: #222 !important;
   color: #f8f8f2 !important;
   font-size: 12px;
   border: none;
 }
-.cm-s-brian .CodeMirror-gutters { color: #272822; }
+.cm-s-brian .CodeMirror-gutters { color: #222; }
 .cm-s-brian .CodeMirror-cursor { border-left: solid thin #ddd; }
 .cm-s-brian .CodeMirror-linenumber { color: #75715e; }
 .cm-s-brian.CodeMirror-focused div.CodeMirror-selected { background: rgba(255, 255, 255, 0.10); }
@@ -37,4 +37,8 @@
 .cm-s-brian .CodeMirror-activeline-background { background: rgba(255,255,255,0.1); }
 .cm-s-brian .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
 
-.cm-s-brian span.cm-bracket { opacity: 0.6; }
+.cm-s-brian span.cm-bracket { color: #900; }
+
+.cm-s-brian span.highlight {
+  background-color: rgba(189,147,249, .2);
+}
