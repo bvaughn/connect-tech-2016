@@ -1,6 +1,11 @@
 import { Component, PropTypes } from 'react';
 
 export default class Stepper extends Component {
+  static childContextTypes = {
+    getDefaultStepIndex: PropTypes.func,
+    stepIndex: PropTypes.number
+  };
+
   static contextTypes = {
     previousSlideIndex: PropTypes.number.isRequired,
     registerKeyDownHandler: PropTypes.func,
@@ -9,6 +14,7 @@ export default class Stepper extends Component {
   };
 
   static propTypes = {
+    children: PropTypes.any.isRequired,
     numSteps: PropTypes.number.isRequired
   }
 
@@ -19,6 +25,9 @@ export default class Stepper extends Component {
       childIndex: this._getChildIndexFromContext(props, context)
     };
 
+    this._stepIndex = 0;
+
+    this._getDefaultStepIndex = this._getDefaultStepIndex.bind(this);
     this._onKeyDown = this._onKeyDown.bind(this);
   }
 
@@ -48,17 +57,32 @@ export default class Stepper extends Component {
     }
   }
 
+  getChildContext () {
+    const { childIndex } = this.state;
+
+    return {
+      getDefaultStepIndex: this._getDefaultStepIndex,
+      stepIndex: childIndex
+    };
+  }
+
   render() {
     const { childIndex } = this.state;
     const { children } = this.props;
 
-    return children(childIndex);
+    return typeof children === 'function'
+      ? children(childIndex)
+      : children
   }
 
   _getChildIndexFromContext (props, context) {
     return context.previousSlideIndex > context.slideIndex
       ? props.numSteps - 1
       : 0;
+  }
+
+  _getDefaultStepIndex () {
+    return ++this._stepIndex;
   }
 
   _onKeyDown (event) {

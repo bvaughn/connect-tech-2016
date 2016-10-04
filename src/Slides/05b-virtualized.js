@@ -1,15 +1,10 @@
 import now from 'performance-now';
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import ExampleList from '../Components/ExampleList';
 import Note from '../Components/Note';
 import Slide from '../Components/Slide';
-import { List } from 'react-virtualized';
 
 export default class Stepper extends Component {
-  static contextTypes = {
-    list: PropTypes.array
-  };
-
   constructor (props, context) {
     super(props, context);
 
@@ -40,7 +35,6 @@ export default class Stepper extends Component {
   }
 
   render () {
-    const { list } = this.context;
     const { initializationTime, initialized } = this.state;
 
     return (
