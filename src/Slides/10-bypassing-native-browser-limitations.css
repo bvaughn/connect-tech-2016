@@ -1,0 +1,51 @@
+.ScaledLists {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.scaledList,
+.unscaledList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scaledListItemActive,
+.scaledListItem,
+.unscaledListItemActive,
+.unscaledListItem {
+  display: block;
+  width: 48px;
+  height: 14px;
+  margin: 2px 0;
+}
+.scaledListItem {
+  height: 6px;
+  width: 48px;
+}
+.scaledListItem,
+.unscaledListItem {
+  fill: #CFD8DC;
+}
+.scaledListItemActive,
+.unscaledListItemActive {
+  fill: #222;
+}
+
+.listLine,
+.listLineActive {
+  stroke-width: 1px;
+  stroke-dasharray: 2,4;
+}
+.listLine {
+  stroke: #aaa;
+}
+.listLineActive {
+  stroke: #222;
+}
+
+.listLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+}
