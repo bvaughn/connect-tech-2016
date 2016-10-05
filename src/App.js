@@ -7,10 +7,10 @@ import generateRandomList from './Utils/generateRandomList';
 import './App.css';
 
 // Load all slides in the Slides folder
-const slides = require.context('./Slides/', false, /\.js$/)
+const filenames = require.context('./Slides/', false, /\.js$/)
   .keys()
-  .map((filename) => filename.replace('./', ''))
-  .map((filename) => require(`./Slides/${filename}`).default);
+  .map((filename) => filename.replace('./', ''));
+const slides = filenames.map((filename) => require(`./Slides/${filename}`).default);
 
 // Test data for use in performance examples
 const list = generateRandomList();
@@ -48,7 +48,7 @@ export default class App extends Component {
             />
 
             <Footer slides={slides} />
-            <NavigateToSlide slides={slides} />
+            <NavigateToSlide filenames={filenames} />
           </div>
         </SlideshowController>
       </HashRouter>

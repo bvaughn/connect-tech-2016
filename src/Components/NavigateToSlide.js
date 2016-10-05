@@ -5,23 +5,22 @@ export default class NavigateToSlide extends Component {
   static contextTypes = {
     registerKeyDownHandler: PropTypes.func,
     router: PropTypes.any.isRequired,
-    unregisterKeyDownHandler: PropTypes.func
+    unregisterKeyDownHandler: PropTypes.func,
+    slideIndex: PropTypes.number
   };
 
   static propTypes = {
-    slides: PropTypes.array.isRequired
+    filenames: PropTypes.array.isRequired
   };
 
   constructor (props, context) {
     super(props, context);
 
     this.state = {
-      active: false,
-      inputValue: ''
+      active: false
     };
 
-    this._onInputChange = this._onInputChange.bind(this);
-    this._onInputKeyDown = this._onInputKeyDown.bind(this)
+    this._onChange = this._onChange.bind(this);
     this._onKeyDown = this._onKeyDown.bind(this);;
   }
 
@@ -38,7 +37,9 @@ export default class NavigateToSlide extends Component {
   }
 
   render () {
-    const { active, inputValue } = this.state;
+    const { slideIndex } = this.context;
+    const { filenames } = this.props;
+    const { active } = this.state;
 
     if (!active) {
       return null;
@@ -47,62 +48,38 @@ export default class NavigateToSlide extends Component {
     return (
       <div className='NavigateToSlideOverlay'>
         <div className='NavigateToSlide'>
-          <input
-            autoFocus
-            className='NavigateToSlideInput'
-            onChange={this._onInputChange}
-            onKeyDown={this._onInputKeyDown}
-            ref={(ref) => this._input = ref}
-            value={inputValue}
-          />
-          <i className='fa fa-arrow-circle-right' />
+          <select
+            onChange={this._onChange}
+            ref={(ref) => this._select = ref}
+            value={slideIndex}
+          >
+            {filenames.map((filename, index) => (
+              <option
+                key={index}
+                value={index}
+              >
+                {filename
+                    .replace(/^[^-]+-/g, '')
+                    .replace(/-/g, ' ')
+                    .replace(/\.js$/g, '')}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
     );
   }
 
-  _onInputChange (event) {
-    let inputValue = this._input.value.replace(/[^\d]/g, '');
-    let slideIndex = null;
+  _onChange (event) {
+    const { router } = this.context;
 
-    if (inputValue) {
-      const { slides } = this.props;
-
-      slideIndex = Math.max(
-        0,
-        Math.min(
-          slides.length - 1,
-          parseInt(inputValue, 10)
-        )
-      );
-
-      inputValue = slideIndex;
-    }
+    let slideIndex = this._select.value;
 
     this.setState({
-      inputValue
+      active: false
     });
-  }
 
-  _onInputKeyDown (event) {
-    switch (event.keyCode) {
-      case 13: // Enter
-        const { router } = this.context;
-        const { inputValue } = this.state;
-
-        const slideIndex = parseInt(inputValue, 10) || 0;
-
-        this.setState({
-          active: false,
-          inputValue: ''
-        });
-
-        router.transitionTo(`/${slideIndex}`);
-        break;
-      default:
-        // Linting requires this :)
-        break;
-    }
+    router.transitionTo(`/${slideIndex}`);
   }
 
   _onKeyDown (event) {
