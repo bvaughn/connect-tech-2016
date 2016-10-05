@@ -105,18 +105,20 @@ export default class SlideshowController extends Component {
 
     let slideIndex = previousSlideIndex;
 
-    switch (event.keyCode) {
-      case 37: // Left
-        slideIndex = Math.max(previousSlideIndex - 1, 0)
-        break;
-      case 13: // Enter
-      case 32: // Space
-      case 39: // Right
-        slideIndex = Math.min(previousSlideIndex + 1, slides.length - 1)
-        break;
-      default:
-        // Linting requires this :)
-        break;
+    if (event.target.tagName !== 'INPUT') {
+      switch (event.keyCode) {
+        case 37: // Left
+          slideIndex = Math.max(previousSlideIndex - 1, 0)
+          break;
+        case 13: // Enter
+        case 32: // Space
+        case 39: // Right
+          slideIndex = Math.min(previousSlideIndex + 1, slides.length - 1)
+          break;
+        default:
+          // Linting requires this :)
+          break;
+      }
     }
 
     if (slideIndex !== previousSlideIndex) {

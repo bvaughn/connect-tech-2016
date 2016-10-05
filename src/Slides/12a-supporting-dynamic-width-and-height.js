@@ -7,7 +7,8 @@ export default () => (
   <Slide>
     <h1>Supporting dynamic widths and heights</h1>
     <div>
-      <p>Use a callback if the size is based on the type of data:</p>
+      <p><strong>Q</strong>: Is the size is based on the type of data?</p>
+      <p><strong>A</strong>: Use a callback!</p>
       <CodeMirror source={sourceRowHeightGetter} />
     </div>
   </Slide>

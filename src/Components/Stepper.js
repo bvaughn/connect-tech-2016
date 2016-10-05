@@ -91,18 +91,20 @@ export default class Stepper extends Component {
 
     let newChildIndex = childIndex;
 
-    switch (event.keyCode) {
-      case 37: // Left
-        newChildIndex = Math.max(childIndex - 1, 0);
-        break;
-      case 13: // Enter
-      case 32: // Space
-      case 39: // Right
-        newChildIndex = Math.min(childIndex + 1, numSteps - 1);
-        break;
-      default:
-        // Linting requires this :)
-        break;
+    if (event.target.tagName !== 'INPUT') {
+      switch (event.keyCode) {
+        case 37: // Left
+          newChildIndex = Math.max(childIndex - 1, 0);
+          break;
+        case 13: // Enter
+        case 32: // Space
+        case 39: // Right
+          newChildIndex = Math.min(childIndex + 1, numSteps - 1);
+          break;
+        default:
+          // Linting requires this :)
+          break;
+      }
     }
 
     if (childIndex !== newChildIndex) {

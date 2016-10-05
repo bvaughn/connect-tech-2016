@@ -40,7 +40,7 @@
 }
 
 .RowStack {
-  flex: 0 0 5.25rem;
+  flex: 1 0 5.25rem;
   margin: 0 0.5rem;
 }
 
@@ -54,4 +54,10 @@
   font-size: 0.6rem;
   line-height: 0.6rem;
   margin-top: 0.25rem;
+}
+
+.RowStar {
+  flex: 0 0 auto;
+  color: #FFD600;
+  font-size: 1.25rem;
 }

@@ -8,7 +8,8 @@ export default () => (
   <Slide>
     <h1>Supporting dynamic widths and heights</h1>
     <div>
-      <p>Use <code>CellMeasurer</code> if you don't know ahead of time:</p>
+      <p><strong>Q</strong>: Is the size unknown beforehand?</p>
+      <p><strong>A</strong>: Use the <code>CellMeasurer</code> component!</p>
       <CodeMirror
         highlightLines={[[6,12]]}
         source={sourceCellMeasurer}

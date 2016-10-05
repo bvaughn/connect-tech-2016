@@ -8,8 +8,14 @@ export default class ExampleList extends Component {
     list: PropTypes.array
   };
 
+  static propTypes = {
+    scrollToAlignment: PropTypes.string,
+    scrollToIndex: PropTypes.number
+  };
+
   render () {
     const { list } = this.context;
+    const { scrollToAlignment, scrollToIndex } = this.props;
 
     return (
       <List
@@ -38,8 +44,13 @@ export default class ExampleList extends Component {
               <div className='RowName'>{list[index].name}</div>
               <div className='RowRowNumber'>This is row {index}</div>
             </div>
+            {index === scrollToIndex && (
+              <i className='fa fa-star RowStar' />
+            )}
           </div>
         )}
+        scrollToAlignment={scrollToAlignment}
+        scrollToIndex={scrollToIndex}
         width={240}
       />
     );
