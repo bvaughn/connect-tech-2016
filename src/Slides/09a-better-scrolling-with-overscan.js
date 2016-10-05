@@ -1,5 +1,6 @@
 import React from 'react';
 import Slide from '../Components/Slide';
+import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
 import movie from '../../public/overscan-example.mp4';
 import './09-better-scrolling-with-overscan.css';
@@ -10,20 +11,17 @@ export default () => (
       <Slide>
         <h1>Scrolling challenges for windowed elements</h1>
         <ul>
-          {index >= 1 && (
+          <Step>
             <li>Scrolling animation runs in a separate thread</li>
-          )}
-          {index >= 2 && (
+          </Step>
+          <Step>
             <li>JavaScript is periodically updated of new scroll positions</li>
-          )}
-          {index >= 3 && (
+          </Step>
+          <Step>
             <li>This can cause empty space to appear near the edges</li>
-          )}
-          {index >= 4 && (
-            <li>Example video:</li>
-          )}
+          </Step>
         </ul>
-        {index >= 4 && (
+        <Step>
           <video
             autoPlay
             className='Movie'
@@ -36,7 +34,7 @@ export default () => (
               type='video/mp4'
             />
           </video>
-        )}
+        </Step>
       </Slide>
     )}
   </Stepper>

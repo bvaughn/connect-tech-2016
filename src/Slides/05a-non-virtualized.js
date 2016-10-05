@@ -64,9 +64,12 @@ export default class Stepper extends Component {
 
             <div className='List'>
               {list.map((item, index) => (
-                <div className={classnames('ListRow', {
-                  ListRowEven: index % 2 === 0
-                })}>
+                <div
+                  className={classnames('ListRow', {
+                    ListRowEven: index % 2 === 0
+                  })}
+                  key={index}
+                >
                   <div
                     className='RowNumber'
                     style={{
