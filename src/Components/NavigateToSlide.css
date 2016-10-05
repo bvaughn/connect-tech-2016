@@ -45,3 +45,10 @@
   text-overflow: ellipsis;
   text-transform: capitalize;
 }
+
+.VirtualizedSelectOptionHeader {
+  background-color: #ddd;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}

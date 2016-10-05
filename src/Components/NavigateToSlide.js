@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import React, { Component, PropTypes } from 'react';
 import Select from 'react-virtualized-select';
 import './NavigateToSlide.css';
@@ -24,6 +25,8 @@ export default class NavigateToSlide extends Component {
 
     this._onChange = this._onChange.bind(this);
     this._onKeyDown = this._onKeyDown.bind(this);;
+    this._optionHeight = this._optionHeight.bind(this);;
+    this._optionRenderer = this._optionRenderer.bind(this);;
   }
 
   componentDidMount () {
@@ -65,6 +68,8 @@ export default class NavigateToSlide extends Component {
             clearable={false}
             options={options}
             onChange={this._onChange}
+            optionHeight={this._optionHeight}
+            optionRenderer={this._optionRenderer}
             value={slideIndex}
           />
         </div>
@@ -75,14 +80,16 @@ export default class NavigateToSlide extends Component {
   _filenamesToOptions (filenames) {
     return filenames
       .map((filename, index) => ({
+        disabled: filename.indexOf('--') > 0,
         label: filename
           .replace(/^[^-]+-/g, '')
           .replace(/\.js$/g, '')
-          .replace(/-/g, ' '),
+          .replace(/-+/g, ' ')
+          .trim(),
         value: index
       }))
       .filter((option, index, options) => (
-        index === 0 ||
+        index > 0 &&
         option.label !== options[index - 1].label
       ))
   }
@@ -97,6 +104,37 @@ export default class NavigateToSlide extends Component {
     });
 
     router.transitionTo(`/${slideIndex}`);
+  }
+
+  _optionHeight ({ option }) {
+    return option.disabled
+      ? 20
+      : 35
+  }
+
+  _optionRenderer ({ focusedOption, focusOption, key, labelKey, option, selectValue, style }) {
+    const className = classnames('VirtualizedSelectOption', {
+      VirtualizedSelectFocusedOption: option === focusedOption,
+      VirtualizedSelectOptionHeader: option.disabled
+    });
+
+    const events = option.disabled
+      ? {}
+      : {
+        onClick: () => selectValue(option),
+        onMouseOver: () => focusOption(option)
+      };
+
+    return (
+      <div
+        className={className}
+        key={key}
+        style={style}
+        {...events}
+      >
+        {option[labelKey]}
+      </div>
+    )
   }
 
   _onKeyDown (event) {
