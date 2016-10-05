@@ -31,3 +31,17 @@
   font-size: 20px;
   font-weight: 100;
 }
+
+.VirtualizedSelect {
+  width: 250px;
+  max-width: 100%;
+  font-size: 12px;
+}
+
+.Select-value-label,
+.VirtualizedSelectOption {
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}

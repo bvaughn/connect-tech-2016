@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Select from 'react-virtualized-select';
 import './NavigateToSlide.css';
 
 export default class NavigateToSlide extends Component {
@@ -17,7 +18,8 @@ export default class NavigateToSlide extends Component {
     super(props, context);
 
     this.state = {
-      active: false
+      active: false,
+      options: this._filenamesToOptions(props.filenames)
     };
 
     this._onChange = this._onChange.bind(this);
@@ -36,10 +38,19 @@ export default class NavigateToSlide extends Component {
     unregisterKeyDownHandler(this._onKeyDown);
   }
 
+  componentWillUpdate (nextProps, nextState) {
+    const { filenames } = this.props;
+
+    if (filenames !== nextProps.filenames) {
+      this.setState({
+        options: this._filenamesToOptions(nextProps.filenames)
+      })
+    }
+  }
+
   render () {
     const { slideIndex } = this.context;
-    const { filenames } = this.props;
-    const { active } = this.state;
+    const { active, options } = this.state;
 
     if (!active) {
       return null;
@@ -48,32 +59,38 @@ export default class NavigateToSlide extends Component {
     return (
       <div className='NavigateToSlideOverlay'>
         <div className='NavigateToSlide'>
-          <select
+          <Select
+            autofocus
+            className='VirtualizedSelect'
+            clearable={false}
+            options={options}
             onChange={this._onChange}
-            ref={(ref) => this._select = ref}
             value={slideIndex}
-          >
-            {filenames.map((filename, index) => (
-              <option
-                key={index}
-                value={index}
-              >
-                {filename
-                    .replace(/^[^-]+-/g, '')
-                    .replace(/-/g, ' ')
-                    .replace(/\.js$/g, '')}
-              </option>
-            ))}
-          </select>
+          />
         </div>
       </div>
     );
   }
 
-  _onChange (event) {
-    const { router } = this.context;
+  _filenamesToOptions (filenames) {
+    return filenames
+      .map((filename, index) => ({
+        label: filename
+          .replace(/^[^-]+-/g, '')
+          .replace(/\.js$/g, '')
+          .replace(/-/g, ' '),
+        value: index
+      }))
+      .filter((option, index, options) => (
+        index === 0 ||
+        option.label !== options[index - 1].label
+      ))
+  }
 
-    let slideIndex = this._select.value;
+  _onChange (option) {
+    const slideIndex = option.value;
+
+    const { router } = this.context;
 
     this.setState({
       active: false
