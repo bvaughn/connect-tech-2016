@@ -61,3 +61,8 @@
   color: #FFD600;
   font-size: 1.25rem;
 }
+
+.ListScrolling {
+  font-style: italic;
+  opacity: 0.5;
+}

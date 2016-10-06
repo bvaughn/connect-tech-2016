@@ -1,5 +1,5 @@
 const markup = `// Example item renderer for List
-function rowRenderer ({ key, index, style}) {
+function rowRenderer ({ key, index, style }) {
   const item = list[index]
 
   return (
