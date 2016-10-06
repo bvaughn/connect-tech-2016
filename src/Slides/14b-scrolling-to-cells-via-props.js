@@ -20,30 +20,34 @@ export default class MySlide extends Component {
       <Slide>
         <h1>Scrolling to cells via props</h1>
 
-        <p>
-          <code>scrollToAlignment</code> <RadioGroup
-            Component='span'
-            name='scrollToAlignment'
-            onChange={(scrollToAlignment) => this.setState({ scrollToAlignment })}
-            selectedValue={scrollToAlignment}
-          >
-            <Radio value='auto' /> Auto (default)
-            <Radio value='center' /> Center
-            <Radio value='end' /> End
-            <Radio value='start' /> Start
-          </RadioGroup>
-        </p>
+        <p>Driven by 2 simple properties:</p>
 
-        <p>
-          <code>scrollToIndex</code> <input
-            onChange={() => this.setState({
-              scrollToIndex: parseInt(this._input.value, 10)
-            })}
-            ref={(ref) => this._input = ref}
-            type='number'
-            value={scrollToIndex}
-          />
-        </p>
+        <ul>
+          <li>
+            <code>scrollToAlignment</code> <RadioGroup
+              Component='span'
+              name='scrollToAlignment'
+              onChange={(scrollToAlignment) => this.setState({ scrollToAlignment })}
+              selectedValue={scrollToAlignment}
+            >
+              <Radio value='auto' /> "auto" (default)
+              <Radio value='center' /> "center"
+              <Radio value='end' /> "end"
+              <Radio value='start' /> "start"
+            </RadioGroup>
+          </li>
+
+          <li>
+            <code>scrollToIndex</code> <input
+              onChange={() => this.setState({
+                scrollToIndex: parseInt(this._input.value, 10)
+              })}
+              ref={(ref) => this._input = ref}
+              type='number'
+              value={scrollToIndex}
+            />
+          </li>
+        </ul>
 
         <ExampleList
           scrollToAlignment={scrollToAlignment}
