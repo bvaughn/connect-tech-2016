@@ -3,7 +3,7 @@ import React from 'react';
 import Slide from '../Components/Slide'
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
-import './10-bypassing-native-browser-limitations.css';
+import './24-bypassing-native-browser-limitations.css';
 
 export default () => (
   <Stepper numSteps={4}>

@@ -17,8 +17,7 @@ export default () => (
     </div>
     <br/>
     <Note>
-      What is this crazy syntax?!
-      I'll explain on the next slide.
+      Note the use of function children
     </Note>
   </Slide>
 );

@@ -3,13 +3,13 @@ import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
 import movie from '../../public/overscan-example.mp4';
-import './09-better-scrolling-with-overscan.css';
+import './23-overscan-to-defeat-scroll-jank.css';
 
 export default () => (
   <Stepper numSteps={5}>
     {(index) => (
       <Slide>
-        <h1>Scrolling challenges for windowed elements</h1>
+        <h1>Overscan to defeat scroll jank</h1>
         <ul>
           <Step>
             <li>Scrolling animation runs in a separate thread</li>

@@ -7,15 +7,15 @@ export default () => (
     {(index) => (
       <Slide>
         <h1>Function children <small>(aka render callbacks)</small></h1>
-        <p>Function children are powerful!</p>
+        <p>react-virtualized makes heavy use of this pattern because it is powerful.</p>
         {index >= 1 && (
           <ul>
-            <li>They enable arbitrary composition</li>
+            <li>It enables arbitrary composition</li>
             {index >= 2 && (
               <li>Which enables more modular code (aka more maintainable code)</li>
             )}
             {index >= 3 && (
-              <li>They provide an alternative to <code>context</code></li>
+              <li>It provides an alternative to <code>context</code></li>
             )}
           </ul>
         )}

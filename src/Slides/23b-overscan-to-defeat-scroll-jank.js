@@ -9,7 +9,7 @@ export default () => (
   <Stepper numSteps={5}>
     {(index) => (
       <Slide>
-        <h1>Scrolling challenges for windowed elements</h1>
+        <h1>Overscan to defeat scroll jank</h1>
         <div className='OverscanListRow'>
           {index === 0 && (
             <div>
