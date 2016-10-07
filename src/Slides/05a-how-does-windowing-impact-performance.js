@@ -87,7 +87,7 @@ export default class Stepper extends Component {
             </div>
 
             <Note>
-              Open the browser Timeline view and scroll
+              Scrolling performance will be horrible if repaints are triggered (eg border-radius)
             </Note>
           </div>
         )}
