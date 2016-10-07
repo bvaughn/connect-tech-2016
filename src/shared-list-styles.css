@@ -2,9 +2,7 @@
   width: 15rem;
   height: 15rem;
   overflow: auto;
-  border-radius: 0.25rem;
   font-size: 12px;
-  border-radius: 0.5rem;
   border: 1px solid #CFD8DC;
   margin: 1rem 0;
 }
