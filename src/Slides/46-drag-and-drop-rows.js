@@ -38,22 +38,27 @@ export default class MySlide extends Component {
           <Slide>
             <h1>Drag-and-drop rows</h1>
 
-            <p>
-              Connect <a href='https://github.com/clauderic/react-sortable-hoc'>react-sortable-hoc</a> with <code>List</code>, <code>Table</code>, or <code>Grid</code> for drag and drop behavior.
-            </p>
+            {index === 0 && (
+              <p>
+                Connect <a href='https://github.com/clauderic/react-sortable-hoc'>react-sortable-hoc</a> with <code>List</code>, <code>Table</code>, or <code>Grid</code> for drag and drop behavior.
+              </p>
+            )}
 
             {index === 1 && (
-              <SortableList
-                className='List'
-                height={240}
-                helperClass='SortableListRowActive'
-                onSortEnd={this._onSortEnd}
-                overscanRowCount={2}
-                rowCount={list.length}
-                rowHeight={40}
-                rowRenderer={this._rowRenderer}
-                width={240}
-              />
+              <div>
+                <p>Click and drag rows below:</p>
+                <SortableList
+                  className='List'
+                  height={240}
+                  helperClass='SortableListRowActive'
+                  onSortEnd={this._onSortEnd}
+                  overscanRowCount={2}
+                  rowCount={list.length}
+                  rowHeight={40}
+                  rowRenderer={this._rowRenderer}
+                  width={240}
+                />
+              </div>
             )}
 
             {index === 2 && (

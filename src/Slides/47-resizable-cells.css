@@ -1,0 +1,53 @@
+.ResizableTable {
+  font-size: 12px;
+}
+
+.ResizableTableHeaderRow,
+.ResizableTableRow {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ResizableTableHeaderRow {
+  background-color: #f7f7f7;
+}
+
+.ResizableTableHeaderColumn,
+.ResizableTableColumn {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-right: 1px solid #ddd;
+}
+
+.DragHandleWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.DragHandle {
+  position: absolute;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  z-index: 2;
+  color: rgba(0, 0, 0, .15);
+  cursor: col-resize;
+}
+.DragHandle:hover {
+  color: rgba(0, 0, 0, .25);
+}
+
+.DragHandleActive,
+.DragHandleActive:hover {
+  color: rgba(0, 0, 0, .5);
+}
+
+.DragHandleIcon {
+  fill: currentColor;
+}
