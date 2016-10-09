@@ -5,7 +5,7 @@ import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 import '../shared-list-styles.css';
 
-export default class Stepper extends Component {
+export default class MySlide extends Component {
   static contextTypes = {
     list: PropTypes.array
   };

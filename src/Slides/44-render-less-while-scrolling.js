@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import React, { Component, PropTypes } from 'react';
 import { List } from 'react-virtualized';
 import CodeMirror from '../Components/CodeMirror';
+import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
@@ -30,29 +31,35 @@ export default class DefaultSlide extends Component {
               <CodeMirror source={source} />
             )}
             {index === 4 && (
-              <List
-                className='List'
-                height={200}
-                overscanRowCount={2}
-                rowCount={list.length}
-                rowHeight={40}
-                rowRenderer={({ index, isScrolling, key, style }) => (
-                  <div
-                    className={classnames('ListRow', {
-                      ListRowEven: index % 2 === 0,
-                      ListScrolling: isScrolling
-                    })}
-                    key={index}
-                    style={style}
-                  >
-                    {isScrolling
-                      ? 'Scrolling...'
-                      : list[index].name
-                    }
-                  </div>
-                )}
-                width={240}
-              />
+              <div>
+                <List
+                  className='List'
+                  height={200}
+                  overscanRowCount={2}
+                  rowCount={list.length}
+                  rowHeight={40}
+                  rowRenderer={({ index, isScrolling, key, style }) => (
+                    <div
+                      className={classnames('ListRow', {
+                        ListRowEven: index % 2 === 0,
+                        ListScrolling: isScrolling
+                      })}
+                      key={index}
+                      style={style}
+                    >
+                      {isScrolling
+                        ? 'Scrolling...'
+                        : list[index].name
+                      }
+                    </div>
+                  )}
+                  width={240}
+                />
+
+                <Note>
+                  Scroll to see row renderer changes.
+                </Note>
+              </div>
             )}
           </Slide>
         )}

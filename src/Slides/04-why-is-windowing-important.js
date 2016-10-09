@@ -1,5 +1,4 @@
 import React from 'react';
-import List from '../Components/AnimatedList';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';

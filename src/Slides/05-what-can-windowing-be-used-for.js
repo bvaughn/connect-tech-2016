@@ -1,5 +1,4 @@
 import React from 'react';
-import { Table } from 'react-virtualized';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import calendarGif from '../../public/how-is-it-used-calendar.gif';
@@ -36,16 +35,16 @@ export default () => (
 
         <div className='HowCanItBeUsedImageContainer'>
           {index === 1 && (
-            <img className='HowCanItBeUsedImage' src={tableGif} width={320} height={223} />
+            <img className='HowCanItBeUsedImage' role='presentation' src={tableGif} width={320} height={223} />
           )}
           {index === 2 && (
-            <img className='HowCanItBeUsedImage' src={dropDownGif} width={250} height={161} />
+            <img className='HowCanItBeUsedImage' role='presentation' src={dropDownGif} width={250} height={161} />
           )}
           {index === 3 && (
-            <img className='HowCanItBeUsedImage' src={calendarGif} width={153} height={240} />
+            <img className='HowCanItBeUsedImage' role='presentation' src={calendarGif} width={153} height={240} />
           )}
           {index === 4 && (
-            <img className='HowCanItBeUsedImage' src={treeGif} width={423} height={284} />
+            <img className='HowCanItBeUsedImage' role='presentation' src={treeGif} width={423} height={284} />
           )}
         </div>
       </Slide>
