@@ -1,49 +1,48 @@
 import React from 'react';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
+import Step from '../Components/Step';
 import './13-the-building-blocks.css';
 
 export default () => (
   <Stepper numSteps={5}>
-    {(index) => (
-      <Slide>
-        <h1>
-          The building blocks: Grid & Collection
-        </h1>
+    <Slide>
+      <h1>
+        The building blocks: Grid & Collection
+      </h1>
 
-        <div className='Slides__BuildingBlocks'>
-          {index >= 1 && (
-            <div className='Slides__BuildingBlocks__Block'>
-              <h3>Grid</h3>
-              <GridSvg />
-            </div>
-          )}
+      <div className='Slides__BuildingBlocks'>
+        <Step>
+          <div className='Slides__BuildingBlocks__Block'>
+            <h3>Grid</h3>
+            <GridSvg />
+          </div>
+        </Step>
 
-          {index >= 2 && (
-            <div className='Slides__BuildingBlocks__Block'>
-              <h3>List</h3>
-              <ListSvg />
-            </div>
-          )}
-        </div>
+        <Step>
+          <div className='Slides__BuildingBlocks__Block'>
+            <h3>List</h3>
+            <ListSvg />
+          </div>
+        </Step>
+      </div>
 
-        <div className='Slides__BuildingBlocks'>
-          {index >= 3 && (
-            <div className='Slides__BuildingBlocks__Block'>
-              <h3>Table</h3>
-              <TableSvg />
-            </div>
-          )}
+      <div className='Slides__BuildingBlocks'>
+        <Step>
+          <div className='Slides__BuildingBlocks__Block'>
+            <h3>Table</h3>
+            <TableSvg />
+          </div>
+        </Step>
 
-          {index >= 4 && (
-            <div className='Slides__BuildingBlocks__Block'>
-              <h3>Collection</h3>
-              <CollectionSvg />
-            </div>
-          )}
-        </div>
-      </Slide>
-    )}
+        <Step>
+          <div className='Slides__BuildingBlocks__Block'>
+            <h3>Collection</h3>
+            <CollectionSvg />
+          </div>
+        </Step>
+      </div>
+    </Slide>
   </Stepper>
 );
 

@@ -8,6 +8,7 @@ export default class Step extends Component {
 
   static propTypes = {
     children: PropTypes.node.isRequired,
+    exactMatch: PropTypes.bool,
     index: PropTypes.number
   };
 
@@ -26,10 +27,14 @@ export default class Step extends Component {
 
   render () {
     const { stepIndex } = this.context;
-    const { children } = this.props;
+    const { children, exactMatch } = this.props;
     const { index } = this.state;
 
-    return stepIndex >= index
+    const match = exactMatch
+      ? stepIndex === index
+      : stepIndex >= index
+
+    return match
       ? children
       : null
   }

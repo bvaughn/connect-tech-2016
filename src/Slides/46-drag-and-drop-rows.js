@@ -4,6 +4,7 @@ import { List } from 'react-virtualized';
 import CodeMirror from '../Components/CodeMirror';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
+import Step from '../Components/Step';
 import source from './Examples/drag-and-drop-key-points.js';
 import './46-drag-and-drop-rows.css';
 
@@ -34,38 +35,36 @@ export default class MySlide extends Component {
 
     return (
       <Stepper numSteps={3}>
-        {(index) => (
-          <Slide>
-            <h1>Drag-and-drop rows</h1>
+        <Slide>
+          <h1>Drag-and-drop rows</h1>
 
-            {index === 0 && (
-              <p>
-                Connect <a href='https://github.com/clauderic/react-sortable-hoc'>react-sortable-hoc</a> with <code>List</code>, <code>Table</code>, or <code>Grid</code> for drag and drop behavior.
-              </p>
-            )}
+          <Step exactMatch index={0}>
+            <p>
+              Connect <a href='https://github.com/clauderic/react-sortable-hoc'>react-sortable-hoc</a> with <code>List</code>, <code>Table</code>, or <code>Grid</code> for drag and drop behavior.
+            </p>
+          </Step>
 
-            {index === 1 && (
-              <div>
-                <p>Click and drag rows below:</p>
-                <SortableList
-                  className='List'
-                  height={240}
-                  helperClass='SortableListRowActive'
-                  onSortEnd={this._onSortEnd}
-                  overscanRowCount={2}
-                  rowCount={list.length}
-                  rowHeight={40}
-                  rowRenderer={this._rowRenderer}
-                  width={240}
-                />
-              </div>
-            )}
+          <Step exactMatch index={1}>
+            <div>
+              <p>Click and drag rows below:</p>
+              <SortableList
+                className='List'
+                height={240}
+                helperClass='SortableListRowActive'
+                onSortEnd={this._onSortEnd}
+                overscanRowCount={2}
+                rowCount={list.length}
+                rowHeight={40}
+                rowRenderer={this._rowRenderer}
+                width={240}
+              />
+            </div>
+          </Step>
 
-            {index === 2 && (
-              <CodeMirror source={source} />
-            )}
-          </Slide>
-        )}
+          <Step exactMatch index={2}>
+            <CodeMirror source={source} />
+          </Step>
+        </Slide>
       </Stepper>
     );
   }

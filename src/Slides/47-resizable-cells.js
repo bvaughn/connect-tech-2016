@@ -4,6 +4,7 @@ import { AutoSizer, defaultTableHeaderRenderer, Table, Column } from 'react-virt
 import CodeMirror from '../Components/CodeMirror';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
+import Step from '../Components/Step';
 import source from './Examples/resizable-cells-key-points.js';
 import './47-resizable-cells.css';
 
@@ -46,61 +47,59 @@ export default class MySlide extends Component {
 
     return (
       <Stepper numSteps={3}>
-        {(index) => (
-          <Slide>
-            <h1>Resizable cells</h1>
+        <Slide>
+          <h1>Resizable cells</h1>
 
-            {index === 0 && (
-              <p>
-                Connect <a href='https://github.com/mzabriskie/react-draggable/'>react-draggable</a> with <code>Table</code> or <code>Grid</code> for resizable behavior.
-              </p>
-            )}
+          <Step exactMatch index={0}>
+            <p>
+              Connect <a href='https://github.com/mzabriskie/react-draggable/'>react-draggable</a> with <code>Table</code> or <code>Grid</code> for resizable behavior.
+            </p>
+          </Step>
 
-            {index === 1 && (
-              <AutoSizer>
-                {({ width }) => (
-                  <div style={{ width }}>
-                    <p>Click and drag columns below:</p>
+          <Step exactMatch index={1}>
+            <AutoSizer>
+              {({ width }) => (
+                <div style={{ width }}>
+                  <p>Click and drag columns below:</p>
 
-                    <Table
-                      className='ResizableTable'
-                      columnCount={100}
-                      columnWidth={this._getCellWidth}
-                      headerClassName='ResizableTableHeaderColumn'
-                      headerHeight={40}
-                      height={200}
-                      ref={(ref) => this._table = ref}
-                      rowClassName={this._rowClassName}
-                      rowCount={list.length}
-                      rowGetter={({ index }) => list[index]}
-                      rowHeight={40}
-                      width={width}
-                    >
-                      <Column
-                        className='ResizableTableColumn'
-                        dataKey='age'
-                        headerRenderer={this._draggableHeaderRenderer}
-                        label='Age'
-                        {...flexColumProps.age}
-                      />
-                      <Column
-                        className='ResizableTableColumn'
-                        dataKey='name'
-                        headerRenderer={this._draggableHeaderRenderer}
-                        label='Name'
-                        {...flexColumProps.name}
-                      />
-                    </Table>
-                  </div>
-                )}
-              </AutoSizer>
-            )}
+                  <Table
+                    className='ResizableTable'
+                    columnCount={100}
+                    columnWidth={this._getCellWidth}
+                    headerClassName='ResizableTableHeaderColumn'
+                    headerHeight={40}
+                    height={200}
+                    ref={(ref) => this._table = ref}
+                    rowClassName={this._rowClassName}
+                    rowCount={list.length}
+                    rowGetter={({ index }) => list[index]}
+                    rowHeight={40}
+                    width={width}
+                  >
+                    <Column
+                      className='ResizableTableColumn'
+                      dataKey='age'
+                      headerRenderer={this._draggableHeaderRenderer}
+                      label='Age'
+                      {...flexColumProps.age}
+                    />
+                    <Column
+                      className='ResizableTableColumn'
+                      dataKey='name'
+                      headerRenderer={this._draggableHeaderRenderer}
+                      label='Name'
+                      {...flexColumProps.name}
+                    />
+                  </Table>
+                </div>
+              )}
+            </AutoSizer>
+          </Step>
 
-            {index === 2 && (
-              <CodeMirror source={source} />
-            )}
-          </Slide>
-        )}
+          <Step exactMatch index={2}>
+            <CodeMirror source={source} />
+          </Step>
+        </Slide>
       </Stepper>
     );
   }
