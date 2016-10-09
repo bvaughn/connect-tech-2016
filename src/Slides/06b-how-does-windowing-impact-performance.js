@@ -10,7 +10,8 @@ export default class Stepper extends Component {
 
     this.state = {
       initializationTime: 0,
-      initialized: false
+      initialized: false,
+      useBorderRadius: false
     };
   }
 
@@ -35,7 +36,7 @@ export default class Stepper extends Component {
   }
 
   render () {
-    const { initializationTime, initialized } = this.state;
+    const { initializationTime, initialized, useBorderRadius } = this.state;
 
     return (
       <Slide>
@@ -56,11 +57,24 @@ export default class Stepper extends Component {
               ` in ${Math.round(initializationTime) / 1e3} seconds`
             )}
 
-            <ExampleList />
+            <ExampleList className={useBorderRadius ? 'ListWithBorderRadius' : null} />
 
             <Note>
               Open the browser Timeline view and scroll
             </Note>
+
+            <p>
+              <label>
+                <input
+                  checked={useBorderRadius}
+                  onChange={() => this.setState({
+                    useBorderRadius: this._checkbox.checked
+                  })}
+                  ref={(ref) => this._checkbox = ref}
+                  type='checkbox'
+                /> Trigger repaints on scroll?
+              </label>
+            </p>
           </div>
         )}
       </Slide>

@@ -10,7 +10,7 @@ export default () => (
       <Slide>
         <h1>What is windowing?</h1>
         <Step>
-          <p>Only rendering enough elements to fill the viewport.</p>
+          <p><strong>A</strong>: Only rendering enough elements to fill the viewport.</p>
         </Step>
         <Step>
           <List

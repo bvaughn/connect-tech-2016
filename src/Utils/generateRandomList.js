@@ -29,6 +29,7 @@ export default function generateRandomList (count = 25e3) {
 
   for (var i = 0; i < count; i++) {
     list.push({
+      age: 20 + Math.round(Math.random() * 50),
       color: BADGE_COLORS[i % BADGE_COLORS.length],
       index: i,
       name: NAMES[i % NAMES.length],

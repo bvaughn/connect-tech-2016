@@ -1,0 +1,10 @@
+.HowCanItBeUsedImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HowCanItBeUsedImage {
+  margin-top: 1rem;
+  border: 1px solid #ddd;
+}

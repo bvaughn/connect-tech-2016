@@ -9,17 +9,18 @@ export default class ExampleList extends Component {
   };
 
   static propTypes = {
+    className: PropTypes.string,
     scrollToAlignment: PropTypes.string,
     scrollToIndex: PropTypes.number
   };
 
   render () {
     const { list } = this.context;
-    const { scrollToAlignment, scrollToIndex } = this.props;
+    const { className, scrollToAlignment, scrollToIndex } = this.props;
 
     return (
       <List
-        className='List'
+        className={classnames('List', className)}
         height={240}
         overscanRowCount={2}
         rowCount={list.length}
