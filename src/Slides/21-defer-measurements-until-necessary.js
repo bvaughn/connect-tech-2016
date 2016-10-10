@@ -1,33 +1,28 @@
 import React from 'react';
+import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
-import './21-defer-measurements-until-necessary.css';
 
 export default () => (
-  <Stepper numSteps={5}>
+  <Stepper numSteps={4}>
     <Slide>
       <h1>Defer measurements until necessary</h1>
       <Step>
         <p>
-          <strong className='ProblemLabel'>Problem</strong>: Measuring wastes cycles (particularly with <code>CellMeasurer</code>)
+          <strong className='QuestionLabel'>Problem</strong>: Measuring wastes cycles (particularly with <code>CellMeasurer</code>)
         </p>
       </Step>
       <Step>
         <p>
-          <strong className='SolutionLabel'>Solution</strong>: Don't estimate size until content is actually displayed)
+          <strong className='AnswerLabel'>Solution</strong>: Don't estimate size until content is actually displayed)
         </p>
       </Step>
       <br/>
       <Step>
-        <p>
-          <strong className='ProblemLabel'>Problem</strong>: Scroll-to-cell prop can cause a lot of measuring
-        </p>
-      </Step>
-      <Step>
-        <p>
-          <strong className='SolutionLabel'>Solution</strong>: Use mixed exponential and binary search to limit
-        </p>
+        <Note>
+          Mixed exponential &amp; binary search is used for <em>scrollToRow</em>
+        </Note>
       </Step>
     </Slide>
   </Stepper>

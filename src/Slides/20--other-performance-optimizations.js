@@ -3,6 +3,6 @@ import Centered from '../Components/Centered'
 
 export default () => (
   <Centered>
-    <h1>Implementation challenges</h1>
+    <h1>Other performance optimizations</h1>
   </Centered>
 );

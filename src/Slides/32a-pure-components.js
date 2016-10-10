@@ -8,16 +8,16 @@ export default () => (
     <Slide>
       <h1>Pure components</h1>
       <ul>
-        <Step><li>All components use <a href='https://facebook.github.io/react/docs/shallow-compare.html'><code>shallowCompare</code></a></li></Step>
-        <Step><li>No components have access to the underlying array/collection</li></Step>
+        <Step index={1}><li>Remember, all components use <a href='https://facebook.github.io/react/docs/shallow-compare.html'><code>shallowCompare</code></a></li></Step>
+        <Step index={2}><li>No components have access to the underlying array/collection</li></Step>
       </ul>
-      <Step>
+      <Step index={3}>
         <div>
-          <p>This means...</p>
+          <h3>This means...</h3>
           <ul>
-            <Step><li>Sorting a list will not auto-update RV components</li></Step>
-            <Step><li>Changing an item within a list will not auto-update RV components</li></Step>
-            <Step><li>State changes that change item sizes will not auto-update RV components</li></Step>
+            <Step index={4}><li>Sorting a list will not auto-update RV components</li></Step>
+            <Step index={5}><li>Changing an item within a list will not auto-update RV components</li></Step>
+            <Step index={6}><li>State changes that change item sizes will not auto-update RV components</li></Step>
           </ul>
         </div>
       </Step>

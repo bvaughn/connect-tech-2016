@@ -3,7 +3,7 @@ import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
 import movie from '../../public/overscan-example.mp4';
-import './23-overscan-to-defeat-scroll-jank.css';
+import './24-overscan-to-defeat-scroll-jank.css';
 
 export default () => (
   <Stepper numSteps={5}>

@@ -1,3 +1,10 @@
 .App {
   height: 100%;
 }
+
+.QuestionLabel {
+}
+
+.AnswerLabel {
+  color: #f92672;
+}

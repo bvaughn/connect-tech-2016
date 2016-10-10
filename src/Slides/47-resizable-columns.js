@@ -6,7 +6,7 @@ import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
 import source from './Examples/resizable-cells-key-points.js';
-import './47-resizable-cells.css';
+import './47-resizable-columns.css';
 
 const MIN_COLUMN_WIDTH = 40;
 
@@ -48,7 +48,7 @@ export default class MySlide extends Component {
     return (
       <Stepper numSteps={3}>
         <Slide>
-          <h1>Resizable cells</h1>
+          <h1>Resizable columns</h1>
 
           <Step exactMatch index={0}>
             <p>
