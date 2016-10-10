@@ -32,9 +32,11 @@ export default function generateRandomList (count = 25e3) {
       age: 20 + Math.round(Math.random() * 50),
       color: BADGE_COLORS[i % BADGE_COLORS.length],
       index: i,
+      left: Math.round(Math.random() * 20e3),
       name: NAMES[i % NAMES.length],
       random: loremIpsum[i % loremIpsum.length],
-      size: ROW_HEIGHTS[Math.floor(Math.random() * ROW_HEIGHTS.length)]
+      size: ROW_HEIGHTS[Math.floor(Math.random() * ROW_HEIGHTS.length)],
+      top: Math.round(Math.random() * 20e3)
     })
   }
 
