@@ -9,6 +9,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "lodash.times": "^4.3.2",
+    "numeral": "^1.5.3",
     "performance-now": "^0.2.0",
     "react": "^15.3.2",
     "react-addons-shallow-compare": "^15.3.2",

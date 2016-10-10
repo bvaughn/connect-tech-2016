@@ -1,12 +1,25 @@
+import classnames from 'classnames';
 import React from 'react';
 import './Note.css';
 
 export default function Note ({
-  children
+  children,
+  type = 'default'
 }) {
   return (
-    <div className='Note'>
-      <i className='fa fa-info-circle' /> {children}
+    <div
+      className={classnames('Note', {
+        NoteWarning: type === 'warning'
+      })}
+    >
+      {type === 'default' && (
+        <i className='fa fa-info-circle' />
+      )}
+      {type === 'warning' && (
+        <i className='fa fa-exclamation-triangle' />
+      )}
+
+      {children}
     </div>
   );
 }

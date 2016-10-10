@@ -55,12 +55,15 @@ export default class MySlide extends Component {
         )}
         {initialized && (
           <div>
-            <button disabled>
-              Created List
-            </button>
-
+            {initializationTime === 0 && (
+              <Note type='warning'>
+                Measuring ...
+              </Note>
+            )}
             {initializationTime > 0 && (
-              ` in ${Math.round(initializationTime) / 1e3} seconds`
+              <Note type='warning'>
+                Created list in {Math.round(initializationTime) / 1e3} seconds
+              </Note>
             )}
 
             <div className={classnames('List', {

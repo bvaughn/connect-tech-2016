@@ -1,14 +1,20 @@
+import numeral from 'numeral';
 import now from 'performance-now';
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ExampleList from '../Components/ExampleList';
 import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 
 export default class Stepper extends Component {
+  static contextTypes = {
+    list: PropTypes.number
+  };
+
   constructor (props, context) {
     super(props, context);
 
     this.state = {
+      formattedListSize: numeral(context.list.length).format(),
       initializationTime: 0,
       initialized: false,
       useBorderRadius: false
@@ -36,7 +42,7 @@ export default class Stepper extends Component {
   }
 
   render () {
-    const { initializationTime, initialized, useBorderRadius } = this.state;
+    const { formattedListSize, initializationTime, initialized, useBorderRadius } = this.state;
 
     return (
       <Slide>
@@ -49,12 +55,15 @@ export default class Stepper extends Component {
         )}
         {initialized && (
           <div>
-            <button disabled>
-              Created List
-            </button>
-
+            {initializationTime === 0 && (
+              <Note>
+                Creating List ...
+              </Note>
+            )}
             {initializationTime > 0 && (
-              ` in ${Math.round(initializationTime) / 1e3} seconds`
+              <Note type='warning'>
+                Created list in {Math.round(initializationTime) / 1e3} seconds ({formattedListSize} items)
+              </Note>
             )}
 
             <ExampleList className={useBorderRadius ? 'ListWithBorderRadius' : null} />

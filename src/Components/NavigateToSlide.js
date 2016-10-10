@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import Select from 'react-virtualized-select';
 import './NavigateToSlide.css';
 
@@ -24,6 +25,7 @@ export default class NavigateToSlide extends Component {
     };
 
     this._onChange = this._onChange.bind(this);
+    this._onClick = this._onClick.bind(this);
     this._onKeyDown = this._onKeyDown.bind(this);;
     this._optionHeight = this._optionHeight.bind(this);;
     this._optionRenderer = this._optionRenderer.bind(this);;
@@ -33,12 +35,16 @@ export default class NavigateToSlide extends Component {
     const { registerKeyDownHandler } = this.context;
 
     registerKeyDownHandler(this._onKeyDown);
+
+    document.body.addEventListener('click', this._onClick);
   }
 
   componentWillUnmount () {
     const { unregisterKeyDownHandler } = this.context;
 
     unregisterKeyDownHandler(this._onKeyDown);
+
+    document.body.removeEventListener('click', this._onClick);
   }
 
   componentWillUpdate (nextProps, nextState) {
@@ -70,6 +76,7 @@ export default class NavigateToSlide extends Component {
             onChange={this._onChange}
             optionHeight={this._optionHeight}
             optionRenderer={this._optionRenderer}
+            ref={(ref) => this._select = ref}
             value={slideIndex}
           />
         </div>
@@ -92,6 +99,21 @@ export default class NavigateToSlide extends Component {
         index > 0 &&
         option.label !== options[index - 1].label
       ))
+  }
+
+  _onClick (event) {
+    const select = findDOMNode(this._select);
+
+    if (
+      select === event.target ||
+      select.contains(event.target)
+    ) {
+      return;
+    }
+
+    this.setState({
+      active: false
+    });
   }
 
   _onChange (option) {

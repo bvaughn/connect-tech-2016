@@ -26,7 +26,7 @@ export default class MySlide extends Component {
         <Slide>
           <h1>Collection demo</h1>
 
-          <p><strong className='QuestionLabel'>Question</strong>: What if your data is more random?</p>
+          <p><strong className='QuestionLabel'>Question</strong>: What if your data is more...random? (eg gantt chart, graphs)</p>
 
           <Step>
             <p>

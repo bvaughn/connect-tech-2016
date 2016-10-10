@@ -23,7 +23,10 @@ export default () => (
       </Step>
       </ul>
       <Step index={4}>
-        <CodeMirror source={source} />
+        <CodeMirror
+          highlightLines={[[6,6]]}
+          source={source}
+        />
       </Step>
     </Slide>
   </Stepper>
