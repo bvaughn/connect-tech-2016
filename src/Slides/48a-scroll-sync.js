@@ -40,6 +40,8 @@ export default class MySlide extends Component {
   }
 
   render () {
+    const { focusedColumnIndex, focusedRowIndex } = this.state;
+
     return (
       <Stepper numSteps={3}>
         <Slide>
@@ -97,6 +99,8 @@ export default class MySlide extends Component {
                         ref={(ref) => this._mainGrid = ref}
                         rowHeight={25}
                         rowCount={100}
+                        scrollToColumn={focusedColumnIndex}
+                        scrollToRow={focusedRowIndex}
                         width={width - 50}
                       />
                     </div>
