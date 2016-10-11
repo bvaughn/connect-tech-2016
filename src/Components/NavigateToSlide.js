@@ -102,6 +102,12 @@ export default class NavigateToSlide extends Component {
   }
 
   _onClick (event) {
+    const { active } = this.state;
+
+    if (!active) {
+      return;
+    }
+
     const select = findDOMNode(this._select);
 
     if (
