@@ -17,7 +17,12 @@ export default () => (
         <Step><li>But don't scale the viewport!</li></Step>
       </ul>
       <Step>
-        <svg width='250' height='320'>
+        <svg
+          width='380'
+          height='480'
+          viewBox='0 0 260 320'
+          preserveAspectRatio='xMinYMax meet'
+        >
           {times(6).map((index) => (
             <rect key={index} x='0' y={index * 16} className='unscaledListItem' />
           ))}
@@ -28,10 +33,10 @@ export default () => (
             <rect key={index} x='0' y={160 + index * 16} className='unscaledListItem' />
           ))}
 
-          <text x='-52' y='58' className='listLabel'>
+          <text x='-63' y='59' className='listLabel'>
             Unscaled
           </text>
-          <text x='-38' y='197' className='listLabel'>
+          <text x='-46' y='259' className='listLabel'>
             Scaled
           </text>
 

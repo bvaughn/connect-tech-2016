@@ -25,7 +25,7 @@
 }
 .scaledListItem,
 .unscaledListItem {
-  fill: #CFD8DC;
+  fill: #aaa;
 }
 .scaledListItemActive,
 .unscaledListItemActive {
@@ -45,7 +45,7 @@
 }
 
 .listLabel {
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
   transform: rotate(-90deg);
 }
