@@ -1,0 +1,9 @@
+.CacheAllTheThingsHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.CacheAllTheThingsImage {
+  margin-left: 0.5rem;
+}
