@@ -2,6 +2,7 @@ import { Component, PropTypes } from 'react';
 
 export default class SlideshowController extends Component {
   static childContextTypes = {
+    location: PropTypes.any,
     previousSlideIndex: PropTypes.number,
     registerKeyDownHandler: PropTypes.func,
     slideIndex: PropTypes.number,
@@ -9,7 +10,7 @@ export default class SlideshowController extends Component {
   };
 
   static contextTypes = {
-    location: PropTypes.any.isRequired,
+    history: PropTypes.any.isRequired,
     router: PropTypes.any.isRequired
   };
 
@@ -47,9 +48,11 @@ export default class SlideshowController extends Component {
   }
 
   getChildContext () {
+    const { history } = this.context;
     const { previousSlideIndex, slideIndex } = this.state;
 
     return {
+      location: history.location,
       previousSlideIndex,
       registerKeyDownHandler: this._registerKeyDownHandler,
       slideIndex,
@@ -64,10 +67,10 @@ export default class SlideshowController extends Component {
   }
 
   _processCurrentLocation () {
-    const { location } = this.context;
+    const { history } = this.context;
     const { slideIndex } = this.state;
 
-    const newSlideIndex = parseInt(location.pathname.substr(1), 10);
+    const newSlideIndex = parseInt(history.location.pathname.substr(1), 10);
 
     this.setState({
       previousSlideIndex: slideIndex || 0,
@@ -98,10 +101,10 @@ export default class SlideshowController extends Component {
       return;
     }
 
-    const { location, router } = this.context;
+    const { history, router } = this.context;
     const { slides } = this.props;
 
-    const previousSlideIndex = parseInt(location.pathname.substr(1), 10);
+    const previousSlideIndex = parseInt(history.location.pathname.substr(1), 10);
 
     let slideIndex = previousSlideIndex;
 
