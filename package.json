@@ -20,8 +20,9 @@
     "react-router": "^4.0.0-2",
     "react-sortable-hoc": "0.0.9",
     "react-virtualized": "^8.0.11",
-    "react-virtualized-select": "^2.0.0",
-    "spectacle": "^1.2.3"
+    "react-virtualized-select": "^2.0.2",
+    "spectacle": "^1.2.3",
+    "codemirror": "^5.19.0"
   },
   "scripts": {
     "start": "react-scripts start",
