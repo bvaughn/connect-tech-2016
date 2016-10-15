@@ -6,7 +6,7 @@ import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
 import source from './Examples/drag-and-drop-key-points.js';
-import './46-drag-and-drop-rows.css';
+import './36-drag-and-drop-rows.css';
 
 // Connect react-virtualized and react-sortable-hoc
 const SortableList = SortableContainer(List, {

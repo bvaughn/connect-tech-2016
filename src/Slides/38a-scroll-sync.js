@@ -5,7 +5,7 @@ import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
-import './48-scroll-sync.css';
+import './38-scroll-sync.css';
 
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 

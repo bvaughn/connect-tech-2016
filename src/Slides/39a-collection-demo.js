@@ -4,7 +4,7 @@ import { AutoSizer, Collection } from 'react-virtualized';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
-import './49-collection-demo.css';
+import './39-collection-demo.css';
 
 export default class MySlide extends Component {
   static contextTypes = {

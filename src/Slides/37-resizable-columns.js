@@ -6,7 +6,7 @@ import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
 import source from './Examples/resizable-cells-key-points.js';
-import './47-resizable-columns.css';
+import './37-resizable-columns.css';
 
 const MIN_COLUMN_WIDTH = 40;
 
