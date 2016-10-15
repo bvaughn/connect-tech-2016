@@ -8,7 +8,7 @@ export default () => (
     <Slide>
       <h1>Pure components</h1>
       <ul>
-        <Step index={1}><li>Remember, all components use <a href='https://facebook.github.io/react/docs/shallow-compare.html'><code>shallowCompare</code></a></li></Step>
+        <Step index={1}><li>All components use <a href='https://facebook.github.io/react/docs/shallow-compare.html'><code>shallowCompare</code></a></li></Step>
         <Step index={2}><li>No components have access to the underlying array/collection</li></Step>
       </ul>
       <Step index={3}>

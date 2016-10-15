@@ -1,6 +1,6 @@
 const markup = `function renderList (props) {
-  // List does not use a sortBy prop
-  // But specifying it will let shallowCompare know to re-render
+  const { sortBy, ...rest } = props
+
   return (
     <List
       {...rest}

@@ -3,30 +3,34 @@ import CodeMirror from '../Components/CodeMirror';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
-import source from './Examples/pass-through-props.js';
+import sourceA from './Examples/pass-through-props.js';
+import sourceB from './Examples/force-update.js';
 
 export default () => (
-  <Stepper numSteps={5}>
+  <Stepper numSteps={3}>
     <Slide>
       <h1>Pure components</h1>
-      <p>The solution?</p>
-      <ul>
-      <Step index={1}><li>Clear cached sizes (with <code>recomputeGridSize</code> / <code>recomputeRowHeights</code>.)</li></Step>
-      <Step index={2}>
-        <li>
-          Let react-virtualized know that something external has changed:
-          <ul>
-            <Step index={3}><li>Rerender via public API methods (eg <code>forceUpdate</code> and <code>forceUpdateGrid</code>) or...</li></Step>
-            <Step index={4}><li>Use pass-through properties:</li></Step>
-          </ul>
-        </li>
+      <p>
+        <strong className='AnswerLabel'>Solution</strong>:
+        Let react-virtualized know that something external has changed:
+      </p>
+      <Step>
+        <div>
+          <p>The simplest way is with pass-through properties:</p>
+          <CodeMirror
+            highlightLines={[[6,6]]}
+            source={sourceA}
+          />
+        </div>
       </Step>
-      </ul>
-      <Step index={4}>
-        <CodeMirror
-          highlightLines={[[6,6]]}
-          source={source}
-        />
+      <Step>
+        <div>
+          <p>But you can also use Api methods (eg <code>forceUpdate</code>)</p>
+          <CodeMirror
+            highlightLines={[[2,4]]}
+            source={sourceB}
+          />
+        </div>
       </Step>
     </Slide>
   </Stepper>

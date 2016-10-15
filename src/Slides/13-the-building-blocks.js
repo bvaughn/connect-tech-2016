@@ -14,15 +14,15 @@ export default () => (
       <div className='Slides__BuildingBlocks'>
         <Step>
           <div className='Slides__BuildingBlocks__Block'>
-            <h3>Grid</h3>
-            <GridSvg />
+            <h3>List</h3>
+            <ListSvg />
           </div>
         </Step>
 
         <Step>
           <div className='Slides__BuildingBlocks__Block'>
-            <h3>List</h3>
-            <ListSvg />
+            <h3>Table</h3>
+            <TableSvg />
           </div>
         </Step>
       </div>
@@ -30,8 +30,8 @@ export default () => (
       <div className='Slides__BuildingBlocks'>
         <Step>
           <div className='Slides__BuildingBlocks__Block'>
-            <h3>Table</h3>
-            <TableSvg />
+            <h3>Grid</h3>
+            <GridSvg />
           </div>
         </Step>
 
