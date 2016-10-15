@@ -1,15 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import CodeMirror from 'react-codemirror';
 import './CodeMirror.css';
-
-require('codemirror/mode/jsx/jsx')
+import 'codemirror/mode/jsx/jsx';
 
 const codeMirrorOptions = {
   lineNumbers: false,
   mode: 'jsx',
   readOnly: true,
   theme: 'brian'
-}
+};
 
 export default class ReactCodeMirrorWrapper extends Component {
   static propTypes = {
