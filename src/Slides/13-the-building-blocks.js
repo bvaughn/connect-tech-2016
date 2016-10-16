@@ -1,7 +1,10 @@
 import React from 'react';
+import LabeledCircle from '../Components/LabeledCircle';
+import LabeledRect from '../Components/LabeledRect';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
+import SvgWrapper from '../Components/SvgWrapper';
 import './13-the-building-blocks.css';
 
 export default () => (
@@ -46,75 +49,35 @@ export default () => (
   </Stepper>
 );
 
-function SvgWrapper ({ children, size = '100%' }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox='0 0 280 280'
-      preserveAspectRatio='xMinYMax meet'
-    >
-      <rect
-        x={0}
-        y={0}
-        width={280}
-        height={280}
-        className='svgOuterBox'
-      />
-
-      {children}
-    </svg>
-  );
-}
-
-function LabeledCircle ({ children, className, cx, cy, r }) {
-  return (
-    <g>
-      <circle
-        cx={cx}
-        cy={cy}
-        r={r}
-        className={className}
-      />
-      <text
-        x={cx}
-        y={cy}
-        textAnchor='middle'
-        alignmentBaseline='central'
-      >
-        {children}
-      </text>
-    </g>
-  );
-}
-
-function LabeledRect ({ children, className, x, y, width, height }) {
-  return (
-    <g>
-      <rect
-        x={x}
-        y={y}
-        width={width}
-        height={height}
-        className={className}
-      />
-      <text
-        x={x + width / 2}
-        y={y + height / 2}
-        textAnchor='middle'
-        alignmentBaseline='central'
-      >
-        {children}
-      </text>
-    </g>
-  );
-}
-
 const GRID_BOX_OFFSETS = [10, 100, 190]
+
+function StyledSvgWrapper ({ children, ...rest }) {
+  return (
+    <SvgWrapper
+      {...rest}
+      height='100%'
+      width='100%'
+      viewBoxHeight={280}
+      viewBoxWidth={280}
+    >
+      <g>
+        <rect
+          x={0}
+          y={0}
+          width={280}
+          height={280}
+          className='svgOuterBox'
+        />
+
+        {children}
+      </g>
+    </SvgWrapper>
+  );
+}
 
 function GridSvg (props) {
   return (
-    <SvgWrapper {...props}>
+    <StyledSvgWrapper {...props}>
       {GRID_BOX_OFFSETS.map((xOffset) => (
         GRID_BOX_OFFSETS.map((yOffset) => (
           <LabeledRect
@@ -129,7 +92,7 @@ function GridSvg (props) {
          </LabeledRect>
         ))
       ))}
-    </SvgWrapper>
+    </StyledSvgWrapper>
   );
 }
 
@@ -137,7 +100,7 @@ const LIST_ROW_OFFSETS = [10, 64, 118, 172, 226]
 
 function ListSvg (props) {
   return (
-    <SvgWrapper {...props}>
+    <StyledSvgWrapper {...props}>
       {LIST_ROW_OFFSETS.map((yOffset) => (
         <LabeledRect
           key={yOffset}
@@ -150,7 +113,7 @@ function ListSvg (props) {
           Row
         </LabeledRect>
       ))}
-    </SvgWrapper>
+    </StyledSvgWrapper>
   );
 }
 
@@ -158,7 +121,7 @@ const TABLE_COLUMN_OFFSETS = [10, 145]
 
 function TableSvg (props) {
   return (
-    <SvgWrapper {...props}>
+    <StyledSvgWrapper {...props}>
       {LIST_ROW_OFFSETS.map((yOffset, index) => (
         TABLE_COLUMN_OFFSETS.map((xOffset) => (
           <LabeledRect
@@ -173,13 +136,13 @@ function TableSvg (props) {
           </LabeledRect>
        ))
       ))}
-    </SvgWrapper>
+    </StyledSvgWrapper>
   );
 }
 
 function CollectionSvg (props) {
   return (
-    <SvgWrapper {...props}>
+    <StyledSvgWrapper {...props}>
       <LabeledCircle
         cx={70}
         cy={70}
@@ -206,6 +169,6 @@ function CollectionSvg (props) {
       >
         Rectangle
       </LabeledRect>
-    </SvgWrapper>
+    </StyledSvgWrapper>
   );
 }

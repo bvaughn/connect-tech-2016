@@ -46,8 +46,8 @@ export default class MySlide extends Component {
 
     return (
       <Slide>
-        <h1>How does windowing impact performance?</h1>
-        <h3>Vanilla React (no windowing)</h3>
+        <h1>How much can windowing improve performance?</h1>
+        <h3>Rendering a big list with React</h3>
         {initialized || (
           <button onClick={() => this.setState({ initialized: true })}>
             Create List

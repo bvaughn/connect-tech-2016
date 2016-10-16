@@ -1,0 +1,21 @@
+.scuFalse {
+  fill: #aaa;
+}
+
+.scuTrue {
+  fill: #a6e22e;
+}
+
+.scuLine,
+.scuDottedLine {
+  stroke-width: 1px;
+}
+.scuDottedLine {
+  stroke-dasharray: 2, 4;
+}
+.scuLine {
+  stroke: #aaa;
+}
+.scuDottedLine {
+  stroke: #222;
+}

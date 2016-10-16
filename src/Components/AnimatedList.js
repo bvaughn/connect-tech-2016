@@ -82,8 +82,6 @@ export default function AnimatedListList ({
       </div>
 
       <div className='InnerFrame' />
-      <div className='OuterFrame' />
-      <div className='BottomBlocker' />
     </div>
   );
 }

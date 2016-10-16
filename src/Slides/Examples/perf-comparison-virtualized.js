@@ -6,18 +6,18 @@ function rowRenderer ({ index, key, style }) {
       key={index}
       style={style}
     >
-      {items[index].name}
+      {itemsArray[index].name}
     </div>
   )
 }
 
-function render () {
+function renderList () {
   return (
     <List
       height={240}
       width={240}
       rowHeight={26}
-      rowCount={items.length}
+      rowCount={itemsArray.length}
       rowRenderer={rowRenderer}
     />
   )

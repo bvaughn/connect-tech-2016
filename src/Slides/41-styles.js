@@ -1,6 +1,5 @@
 import React from 'react';
 import CodeMirror from '../Components/CodeMirror';
-import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';

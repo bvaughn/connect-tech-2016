@@ -6,7 +6,7 @@ import calendarGif from '../../public/how-is-it-used-calendar.gif';
 import dropDownGif from '../../public/how-is-it-used-dropdown.gif';
 import tableGif from '../../public/how-is-it-used-table.gif';
 import treeGif from '../../public/how-is-it-used-tree.gif';
-import './05-what-can-windowing-be-used-for.css';
+import './07-what-can-windowing-be-used-for.css';
 
 export default () => (
   <Stepper numSteps={7}>

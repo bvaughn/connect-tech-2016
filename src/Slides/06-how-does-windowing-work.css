@@ -1,0 +1,53 @@
+.HowWorksGroup {
+  transform: skewX(0deg);
+}
+
+.HowWorksGroupSkewed {
+  transition: all 1s ease;
+  transform: skewX(15deg);
+}
+
+.HowWorksOuterRect {
+  fill: transparent;
+  stroke-width: 4px;
+  stroke: #f92672;
+}
+
+.HowWorksHidden {
+  opacity: 0;
+}
+
+.HowWorksVisible {
+  transition: all 1s ease;
+  opacity: 1;
+}
+
+.HowWorksInnerRect,
+.HowWorksInnerLine {
+  fill: transparent;
+  stroke-width: 1px;
+  stroke-dasharray: 2, 4;
+  stroke: #222;
+}
+
+.HowWorksRowGroup {
+  font-size: 10px;
+}
+
+.HowWorksRowRendered {
+  fill: transparent;
+  color: #222;
+  stroke: #222;
+}
+
+.HowWorksRowRendered:nth-of-type(odd) {
+  fill: #eee;
+}
+
+.HowWorksRowNotRendered {
+  fill: transparent;
+  color: #aaa;
+  stroke-width: 1px;
+  stroke-dasharray: 2, 4;
+  stroke: #222;
+}

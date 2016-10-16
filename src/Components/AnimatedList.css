@@ -20,20 +20,3 @@
   right: -8px;
   border: 3px dotted #f92672;
 }
-
-.OuterFrame {
-  position: absolute;
-  left: -25px;
-  right: -25px;
-  top: 0;
-  height: 100%;
-  box-shadow: 0 0 15px 15px white inset;
-}
-
-.BottomBlocker {
-  position: absolute;
-  top: 300px;
-  height: 100px;
-  width: 100%;
-  background-color: white;
-}

@@ -1,13 +1,5 @@
 const markup = `const itemsArray = [...] // This is our data
 
-function rowRenderer ({ index }) {
-  return (
-    <div key={index}>
-      {itemsArray[index].name}
-    </div>
-  )
-}
-
 function renderList () {
   return (
     <div
@@ -16,7 +8,11 @@ function renderList () {
         width: 240
       }}
     >
-      {itemsArray.map((item, index) => rowRenderer({ index }))}
+      {itemsArray.map((item, index) => {
+        <div key={index}>
+          {item.name}
+        </div>
+      })}
     </div>
   )
 }`;
