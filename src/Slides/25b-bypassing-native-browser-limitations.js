@@ -11,10 +11,10 @@ export default () => (
       <h1>
         Bypassing native browser limitations
       </h1>
-      <p>The solution?</p>
+      <p><strong className='AnswerLabel'>Solution</strong>: Scale things down</p>
       <ul>
-        <Step><li>Scale size and offsets</li></Step>
-        <Step><li>But don't scale the viewport!</li></Step>
+        <Step><li>Scale size and offsets of hidden rows</li></Step>
+        <Step><li>Don't scale visible rows</li></Step>
       </ul>
       <Step>
         <svg

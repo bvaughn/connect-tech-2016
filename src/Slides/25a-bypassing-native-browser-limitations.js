@@ -5,13 +5,13 @@ import Stepper from '../Components/Stepper';
 import image from '../../public/browser-limits-cutoff.png';
 
 export default () => (
-  <Stepper numSteps={5}>
+  <Stepper numSteps={4}>
     <Slide>
       <h1>
         Bypassing native browser limitations
       </h1>
       <ul>
-        <Step><li>Elements have size limits (eg Chrome 33.5M pixels, IE 1.5M pixel)</li></Step>
+        <li>DOM elements have size limits (eg Chrome 33.5M pixels, IE 1.5M pixel)</li>
         <Step><li>You can't scroll past the threshold</li></Step>
         <Step><li>Layout gets wonky as you approach the threshold</li></Step>
       </ul>
