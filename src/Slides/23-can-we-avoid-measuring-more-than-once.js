@@ -12,9 +12,7 @@ export default () => (
         Can we avoid measuring more than once?
       </h1>
 
-      <ul>
-        <Step><li>Once a row is measured, cache the measurements</li></Step>
-      </ul>
+      <Step><p>Once a row is measured, cache the measurements</p></Step>
 
       <Step>
         <p>

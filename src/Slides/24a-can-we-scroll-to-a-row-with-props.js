@@ -7,11 +7,7 @@ export default () => (
   <Stepper numSteps={5}>
     <Slide>
       <h1>Can we scroll to a row with props?</h1>
-      <Step>
-        <p>
-          Many use-cases:
-        </p>
-      </Step>
+      <Step><p>Why would we want to?</p></Step>
       <ul>
         <Step>
           <li>Jump to a notification in a chat application</li>

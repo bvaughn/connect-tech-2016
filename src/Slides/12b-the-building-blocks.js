@@ -15,8 +15,7 @@ export default () => (
       </h1>
 
       <p>
-        I'm going to blow your mind now
-        <Step><span>: Windowing isn't just vertical!</span></Step>
+        I'm going to blow your mind now: <Step><span>Windowing isn't just vertical!</span></Step>
       </p>
 
       <Step>

@@ -97,7 +97,10 @@ export default class MySlide extends Component {
           </Step>
 
           <Step exactMatch index={2}>
-            <CodeMirror source={source} />
+            <CodeMirror
+              highlightLines={[[0,0], [9,12]]}
+              source={source}
+            />
           </Step>
         </Slide>
       </Stepper>

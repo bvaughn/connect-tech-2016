@@ -1,4 +1,4 @@
-const markup = `const items = [...] // This is our data
+const markup = `const itemsArray = [...] // This is our data
 
 function rowRenderer ({ index, key, style }) {
   return (
