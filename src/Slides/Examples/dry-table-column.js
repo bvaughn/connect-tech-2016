@@ -1,15 +1,14 @@
-const string = `import { Column, Table } from 'react-virtualized';
-
-function DryColumn ({
+const string = `function createColumn ({
   dataKey,
+  width = 100,
   ...rest
 }) {
-  // Set defaults that can be overridden if needed
   return (
     <Column
       cellRenderer={YourCustomCellRenderer}
       dataKey={dataKey}
       headerRenderer={YourCustomHeaderRenderer}
+      width={width}
       {...rest}
     />
   )
@@ -18,9 +17,9 @@ function DryColumn ({
 function renderTable (props) {
   return (
     <Table {...props}>
-      {DryColumn({ dataKey: 'name' })}
-      {DryColumn({ dataKey: 'age' })}
-      {DryColumn({ dataKey: 'address' })}
+      {createColumn({ dataKey: 'name', label: 'Name' })}
+      {createColumn({ dataKey: 'age', label: 'Age' })}
+      {createColumn({ dataKey: 'address', label: 'Address', width: 200 })}
     </Table>
   )
 }`;
