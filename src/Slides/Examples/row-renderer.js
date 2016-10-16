@@ -1,13 +1,10 @@
-const markup = `// Example item renderer for List
-function rowRenderer ({ key, index, style }) {
-  const item = list[index]
-
+const markup = `function rowRenderer ({ key, index, style }) {
   return (
     <div
       key={key}
       style={style}
     >
-      {item.name}
+      {itemsArray[index].name}
     </div>
   )
 }`;

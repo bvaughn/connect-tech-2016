@@ -5,7 +5,7 @@ import Stepper from '../Components/Stepper';
 import ScuChart from '../Components/ScuChart';
 
 export default () => (
-  <Stepper numSteps={5}>
+  <Stepper numSteps={6}>
     <Slide>
       <h1>Avoid unnecessary renders</h1>
       <Step>
@@ -19,6 +19,7 @@ export default () => (
         <Step><li>Slow for big applications</li></Step>
         <Step><li>Virtual DOM is faster than DOM, but still not free</li></Step>
       </ul>
+      <Step><h3>So how do we handle this?</h3></Step>
     </Slide>
   </Stepper>
 );

@@ -5,7 +5,7 @@ import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
 import SvgWrapper from '../Components/SvgWrapper';
-import './13-the-building-blocks.css';
+import './12-the-building-blocks.css';
 
 export default () => (
   <Stepper numSteps={5}>
