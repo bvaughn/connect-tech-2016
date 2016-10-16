@@ -1,17 +1,19 @@
+import classnames from 'classnames';
 import times from 'lodash.times';
 import React from 'react';
 import Slide from '../Components/Slide'
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
-import './25-bypassing-native-browser-limitations.css';
+import './26-can-we-beat-dom-element-size-limits.css';
 
 export default () => (
-  <Stepper numSteps={4}>
+  <Stepper numSteps={5}>
     <Slide>
       <h1>
-        Bypassing native browser limitations
+        Can we beat DOM element size limits?
       </h1>
-      <p><strong className='AnswerLabel'>Solution</strong>: Scale things down</p>
+      <h2>So how can we beat this?</h2>
+      <Step><p><strong className='AnswerLabel'>Solution</strong>: Scale things down.</p></Step>
       <ul>
         <Step><li>Scale size and offsets of hidden rows</li></Step>
         <Step><li>Don't scale visible rows</li></Step>
@@ -27,7 +29,9 @@ export default () => (
             <rect key={index} x='0' y={index * 16} className='unscaledListItem' />
           ))}
           {times(4).map((index) => (
-            <rect key={index} x='0' y={96 + index * 16} className='unscaledListItemActive' />
+            <rect key={index} x='0' y={96 + index * 16} className={classnames('unscaledListItemActive', {
+              unscaledListItemActiveOdd: index % 2 === 0
+            })} />
           ))}
           {times(10).map((index) => (
             <rect key={index} x='0' y={160 + index * 16} className='unscaledListItem' />
@@ -50,7 +54,9 @@ export default () => (
               <rect key={index} y={index * 8} className='scaledListItem' />
             ))}
             {times(4).map((index) => (
-              <rect key={index} y={48 + index * 16} className='scaledListItemActive' />
+              <rect key={index} y={48 + index * 16} className={classnames('scaledListItemActive', {
+                scaledListItemActiveOdd: index % 2 === 0
+              })} />
             ))}
             {times(10).map((index) => (
               <rect key={index} y={112 + index * 8} className='scaledListItem' />

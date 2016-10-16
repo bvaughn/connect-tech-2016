@@ -1,16 +1,10 @@
-const string = `// This is our list data
-const collection = [...]
-
-// This tells List the height of each item / row
-function rowHeight ({ index }) {
-  return collection[index].size
-}
-
-function render (listProps) {
+const string = `function renderList (listProps) {
   return (
     <List
-      rowCount={collection.length}
-      rowHeight={rowHeight}
+      rowCount={itemArray.length}
+      rowHeight={
+        ({ index }) => itemArray[index].type === 'header' ? 20 : 30
+      }
       {...listProps}
     />
   )

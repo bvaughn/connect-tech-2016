@@ -9,7 +9,7 @@ import Step from '../Components/Step';
 export default () => (
   <Stepper numSteps={4}>
     <Slide>
-      <h1>Avoid scroll jank</h1>
+      <h1>Can we avoid scroll lag?</h1>
       <div className='OverscanListRow'>
         <Step index={0} exactMatch>
           <div>
@@ -19,20 +19,20 @@ export default () => (
         </Step>
         <Step exactMatch>
           <div>
-            <p>Shift in the direction being scrolled</p>
+            <p>Shift in the direction being scrolled (scrolling down)</p>
             <List direction={1} />
           </div>
         </Step>
         <Step exactMatch>
           <div>
-            <p>Shift in the direction being scrolled</p>
+            <p>Shift in the direction being scrolled (scrolling up)</p>
             <List direction={-1} />
           </div>
         </Step>
         <Step exactMatch>
           <div>
-            <p>Limits the overall number of rows and reduces scrolling flicker</p>
             <ExampleList />
+
             <Note>
               View source to see overscanned rows
             </Note>

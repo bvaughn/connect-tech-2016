@@ -25,11 +25,21 @@
 }
 .scaledListItem,
 .unscaledListItem {
-  fill: #aaa;
+  fill: transparent;
+  stroke-width: 1px;
+  stroke: #aaa;
+  stroke-dasharray: 1,1;
 }
 .scaledListItemActive,
 .unscaledListItemActive {
-  fill: #222;
+  stroke-width: 1px;
+  fill: #999;
+  stroke: transparent;
+}
+.scaledListItemActiveOdd,
+.unscaledListItemActiveOdd {
+  fill: #ccc;
+  stroke: transparent;
 }
 
 .listLine,

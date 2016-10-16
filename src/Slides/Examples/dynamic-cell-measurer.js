@@ -1,7 +1,4 @@
-const string = `// This is our list data
-const collection = [...]
-
-function render (listProps) {
+const string = `function render (listProps) {
   return (
     <CellMeasurer {...listProps}>
       {({ getColumnWidth, getRowHeight }) => (

@@ -3,12 +3,13 @@ import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
 import movie from '../../public/overscan-example.mp4';
-import './24-avoid-scroll-jank.css';
+import './25-avoid-scroll-jank.css';
 
 export default () => (
   <Stepper numSteps={5}>
     <Slide>
-      <h1>Avoid scroll jank</h1>
+      <h1>Can we avoid scroll lag?</h1>
+      <h2>Why does windowing cause this?</h2>
       <ul>
         <Step>
           <li>Browsers manage scrolling in a separate thread</li>
@@ -17,23 +18,10 @@ export default () => (
           <li>JavaScript is periodically updated of new scroll positions</li>
         </Step>
         <Step>
-          <li>This can cause empty space to appear near the edges</li>
+          <li>Sometimes JS doesn't respond fast enough</li>
         </Step>
       </ul>
-      <Step>
-        <video
-          autoPlay
-          className='Movie'
-          height={293}
-          loop
-          width={220}
-        >
-          <source
-            src={movie}
-            type='video/mp4'
-          />
-        </video>
-      </Step>
+      <Step><h2>So what can we do about it?</h2></Step>
     </Slide>
   </Stepper>
 );
