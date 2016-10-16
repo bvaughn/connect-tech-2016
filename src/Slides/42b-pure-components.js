@@ -14,7 +14,7 @@ export default () => (
         <strong className='AnswerLabel'>Solution</strong>:
         Let react-virtualized know that something external has changed:
       </p>
-      <Step>
+      <Step exactMatch>
         <div>
           <p>The simplest way is with pass-through properties:</p>
           <CodeMirror
@@ -23,7 +23,7 @@ export default () => (
           />
         </div>
       </Step>
-      <Step>
+      <Step exactMatch>
         <div>
           <p>But you can also use Api methods (eg <code>forceUpdate</code>)</p>
           <CodeMirror

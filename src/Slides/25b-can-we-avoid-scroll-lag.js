@@ -2,7 +2,6 @@ import React from 'react';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
-import movie from '../../public/overscan-example.mp4';
 import './25-avoid-scroll-jank.css';
 
 export default () => (
