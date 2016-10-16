@@ -6,7 +6,7 @@ import image from '../../public/cache-all-the-things.png';
 import './23-cache-all-the-things.css';
 
 export default () => (
-  <Stepper numSteps={4}>
+  <Stepper numSteps={3}>
     <Slide>
       <h1 className='CacheAllTheThingsHeader'>
         Cache all the things
@@ -19,9 +19,8 @@ export default () => (
         />
       </h1>
       <ul>
-        <Step><li><code>Grid</code> caches cell sizes and positions</li></Step>
-        <Step><li><code>CellMeasurer</code> caches measurements</li></Step>
-        <Step><li><code>Grid</code> also caches rendered cells while a scroll is in progress</li></Step>
+        <Step><li>Once items are measured, cache the measurements</li></Step>
+        <Step><li>Also caches rendered items while scrolling</li></Step>
       </ul>
     </Slide>
   </Stepper>

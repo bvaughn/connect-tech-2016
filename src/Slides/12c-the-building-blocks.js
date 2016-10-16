@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import React from 'react';
 import BuildingBlocksSvgWrapper from '../Components/BuildingBlocksSvgWrapper';
 import LabeledCircle from '../Components/LabeledCircle';

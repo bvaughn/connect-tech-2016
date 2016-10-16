@@ -7,34 +7,29 @@ import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
 
 export default () => (
-  <Stepper numSteps={5}>
+  <Stepper numSteps={4}>
     <Slide>
-      <h1>Overscan to defeat scroll jank</h1>
+      <h1>Avoid scroll jank</h1>
       <div className='OverscanListRow'>
         <Step index={0} exactMatch>
           <div>
-            <p>The solution?</p>
-          </div>
-        </Step>
-        <Step index={1} exactMatch>
-          <div>
-            <p>Overscan rows</p>
+            <p><strong className='AnswerLabel'>Solution</strong>: Use "overscanning"</p> 
             <List direction={0} />
           </div>
         </Step>
-        <Step index={2} exactMatch>
+        <Step exactMatch>
           <div>
             <p>Shift in the direction being scrolled</p>
             <List direction={1} />
           </div>
         </Step>
-        <Step index={3} exactMatch>
+        <Step exactMatch>
           <div>
             <p>Shift in the direction being scrolled</p>
             <List direction={-1} />
           </div>
         </Step>
-        <Step index={4} exactMatch>
+        <Step exactMatch>
           <div>
             <p>Limits the overall number of rows and reduces scrolling flicker</p>
             <ExampleList />

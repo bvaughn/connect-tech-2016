@@ -4,7 +4,6 @@ import React from 'react';
 import LabeledRect from '../Components/LabeledRect';
 import SvgWrapper from '../Components/SvgWrapper';
 import Slide from '../Components/Slide';
-import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
 import './06-how-does-windowing-work.css';
 
@@ -52,29 +51,30 @@ function Image ({ index }) {
 
   return (
     <SvgWrapper
-      height={300}
-      viewBoxHeight={300}
+      height={304}
+      viewBoxHeight={304}
       viewBoxWidth={300}
       width={300}
     >
       <g className={groupClassName}>
         <g className={innerGroupClassName}>
           {times(9).map((index) => (
-            <line key={index} x1={25} y1={30 * (index + 1)} x2={125} y2={30 * (index + 1)} className={innerLinesClassName} />
+            <line key={index} x1={25} y1={2 + 30 * (index + 1)} x2={125} y2={2 + 30 * (index + 1)} className={innerLinesClassName} />
           ))}
-          <rect x={25}  y={0}  width={100} height={300} className='HowWorksInnerRect' />
+          <rect x={25}  y={2}  width={100} height={300} className='HowWorksInnerRect' />
         </g>
         <g className={rowGroupClassName}>
           {times(10).map((index) => (
             <LabeledRect
               key={index}
               x={25}
-              y={index * 30}
+              y={2 + index * 30}
               width={100}
               height={30}
               className={classnames({
                 HowWorksRowNotRendered: index < 2 || index > 5,
-                HowWorksRowRendered: index >= 2 && index <= 5
+                HowWorksRowRendered: index >= 2 && index <= 5,
+                HowWorksRowRenderedOdd: index >= 2 && index <= 5 && index % 2 === 0
               })}
             >
               {index >= 2 && index <= 5

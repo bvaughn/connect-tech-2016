@@ -35,19 +35,20 @@
 }
 
 .HowWorksRowRendered {
-  fill: transparent;
+  stroke-width: 1px;
+  fill: #fff;
   color: #222;
   stroke: #222;
 }
 
-.HowWorksRowRendered:nth-of-type(odd) {
+.HowWorksRowRenderedOdd {
   fill: #eee;
 }
 
 .HowWorksRowNotRendered {
-  fill: transparent;
+  fill: #fff;
   color: #aaa;
   stroke-width: 1px;
   stroke-dasharray: 2, 4;
-  stroke: #222;
+  stroke: #aaa;
 }

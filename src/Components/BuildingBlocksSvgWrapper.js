@@ -1,6 +1,4 @@
 import React from 'react';
-import LabeledCircle from './LabeledCircle';
-import LabeledRect from './LabeledRect';
 import SvgWrapper from './SvgWrapper';
 
 export default function BuildingBlocksSvgWrapper ({ children, ...rest }) {

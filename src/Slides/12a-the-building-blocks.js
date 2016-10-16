@@ -5,7 +5,6 @@ import LabeledRect from '../Components/LabeledRect';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
-import SvgWrapper from '../Components/SvgWrapper';
 import './12-the-building-blocks.css';
 
 export default () => (
