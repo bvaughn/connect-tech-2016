@@ -1,7 +1,7 @@
 .Slides__BuildingBlocks {
   width: 100%;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
   text-align: center;
@@ -16,7 +16,6 @@
 
 .Slides__BuildingBlocks__Block {
   flex: 1 1 auto;
-  max-width: 200px;
 }
 .Slides__BuildingBlocks__Block:first-of-type {
   margin-right: 1rem;
@@ -30,8 +29,22 @@
 .svgOuterBox {
   fill: transparent;
   stroke: #f92672;  
-  stroke-width: 4px;
-  stroke-dasharray: 4,4;
+  stroke-width: 2px;
+  stroke-dasharray: 2,4;
+}
+
+.svgCollectionBoxNotRendered,
+.svgGridBoxNotRendered,
+.svgTableColumnNotRendered,
+.svgListRowNotRendered {
+  fill: transparent;
+  stroke: #aaa;
+  stroke-dasharray: 2,2;
+}
+
+.svgOddRow {
+  fill: #ddd !important;
+  stroke: transparent !important;
 }
 
 .svgCollectionBox,
@@ -39,11 +52,10 @@
 .svgListRow,
 .svgTableColumn {
   fill: transparent;
-  stroke: #272822;
-  stroke-dasharray: 2,2;
+  stroke: #aaa;
 }
 
 .svgTableHeader {
-  fill: #ddd;
+  fill: #75715e;
   stroke: transparent;
 }

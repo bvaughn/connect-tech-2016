@@ -1,14 +1,4 @@
-const source = `// It is not important where user and locale info comes from for this example.
-
-function WithUser ({ children }) {
-  return children({ user })
-}
-
-function WithLocalization ({ children }) {
-  return children({ localization })
-}
-
-function LocalizedUserBadge () {
+const source = `function LocalizedUserBadge () {
   return (
     <WithLocalization>
       {({ localization }) => (
