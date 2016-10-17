@@ -35,7 +35,7 @@ export default class MySlide extends Component {
     const { list } = this.context;
 
     return (
-      <Stepper numSteps={4}>
+      <Stepper numSteps={7}>
         {(index) => (
           <Slide>
             <h1>Drag-and-drop rows</h1>
@@ -78,9 +78,24 @@ export default class MySlide extends Component {
 
             <Step exactMatch index={3}>
               <CodeMirror
-                highlightLines={[[0,0], [4,6], [21,23]]}
+                dimLines={[[1,3], [6,27]]}
                 source={source}
               />
+            </Step>
+            <Step exactMatch index={4}>
+              <CodeMirror
+                dimLines={[[0,9], [13,18], [26,27]]}
+                source={source}
+              />
+            </Step>
+            <Step exactMatch index={5}>
+              <CodeMirror
+                dimLines={[[0,20], [24,27]]}
+                source={source}
+              />
+            </Step>
+            <Step exactMatch index={6}>
+              <CodeMirror source={source} />
             </Step>
           </Slide>
         )}
