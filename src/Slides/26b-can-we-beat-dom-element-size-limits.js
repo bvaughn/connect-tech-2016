@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import times from 'lodash.times';
 import React from 'react';
 import Slide from '../Components/Slide'
@@ -29,9 +28,7 @@ export default () => (
             <rect key={index} x='0' y={index * 16} className='unscaledListItem' />
           ))}
           {times(4).map((index) => (
-            <rect key={index} x='0' y={96 + index * 16} className={classnames('unscaledListItemActive', {
-              unscaledListItemActiveOdd: index % 2 === 0
-            })} />
+            <rect key={index} x='0' y={96 + index * 16} className='unscaledListItemActive' />
           ))}
           {times(10).map((index) => (
             <rect key={index} x='0' y={160 + index * 16} className='unscaledListItem' />
@@ -54,9 +51,7 @@ export default () => (
               <rect key={index} y={index * 8} className='scaledListItem' />
             ))}
             {times(4).map((index) => (
-              <rect key={index} y={48 + index * 16} className={classnames('scaledListItemActive', {
-                scaledListItemActiveOdd: index % 2 === 0
-              })} />
+              <rect key={index} y={48 + index * 16} className='scaledListItemActive' />
             ))}
             {times(10).map((index) => (
               <rect key={index} y={112 + index * 8} className='scaledListItem' />

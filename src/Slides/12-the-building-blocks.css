@@ -28,34 +28,29 @@
 
 .svgOuterBox {
   fill: transparent;
-  stroke: #f92672;  
-  stroke-width: 2px;
-  stroke-dasharray: 2,4;
+  stroke: #222;
+  stroke-width: 4px;
+  rx: 8px;
+  ry: 8px;
 }
 
 .svgCollectionBoxNotRendered,
 .svgGridBoxNotRendered,
 .svgTableColumnNotRendered,
 .svgListRowNotRendered {
-  fill: transparent;
-  stroke: #aaa;
-  stroke-dasharray: 2,2;
-}
-
-.svgOddRow {
-  fill: #ddd !important;
-  stroke: transparent !important;
+  fill: #aaa;
+  stroke: transparent;
 }
 
 .svgCollectionBox,
 .svgGridBox,
 .svgListRow,
 .svgTableColumn {
-  fill: transparent;
-  stroke: #aaa;
+  fill: #a6e22e;
+  stroke: transparent;
 }
 
 .svgTableHeader {
-  fill: #75715e;
-  stroke: transparent;
+  fill: transparent;
+  stroke: #222;
 }

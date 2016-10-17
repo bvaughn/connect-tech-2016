@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import React from 'react';
 import DeferMeasurements from '../Components/DeferMeasurements';
 import Slide from '../Components/Slide';

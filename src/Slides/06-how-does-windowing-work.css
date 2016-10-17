@@ -8,9 +8,11 @@
 }
 
 .HowWorksOuterRect {
-  fill: transparent;
+  rx: 8px;
+  ry: 8px;
   stroke-width: 4px;
-  stroke: #f92672;
+  fill: transparent;
+  stroke: #222;
 }
 
 .HowWorksHidden {
@@ -34,21 +36,21 @@
   font-size: 10px;
 }
 
-.HowWorksRowRendered {
-  stroke-width: 1px;
-  fill: #fff;
-  color: #222;
-  stroke: #222;
+.HowWorksRowRendered,
+.HowWorksRowNotRendered,
+.HowWorksRowEstimated {
+  stroke-width: 2px;
+  stroke: #fff;
 }
 
-.HowWorksRowRenderedOdd {
-  fill: #eee;
+.HowWorksRowEstimated {
+  fill: #ddd;
+}
+
+.HowWorksRowRendered {
+  fill: #a6e22e;
 }
 
 .HowWorksRowNotRendered {
-  fill: #fff;
-  color: #aaa;
-  stroke-width: 1px;
-  stroke-dasharray: 2, 4;
-  stroke: #aaa;
+  fill: #aaa;
 }

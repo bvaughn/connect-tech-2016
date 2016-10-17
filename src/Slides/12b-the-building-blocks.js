@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import React from 'react';
 import BuildingBlocksSvgWrapper from '../Components/BuildingBlocksSvgWrapper';
 import LabeledRect from '../Components/LabeledRect';
@@ -49,9 +48,7 @@ function GridSvg (props) {
             y={yOffset}
             width={80}
             height={80}
-            className={classnames('svgGridBox', {
-              svgOddRow: (xIndex + yIndex) % 2 === 1
-            })}
+            className='svgGridBox'
           >
             Cell
          </LabeledRect>

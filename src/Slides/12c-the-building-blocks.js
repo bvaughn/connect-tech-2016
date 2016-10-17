@@ -43,7 +43,7 @@ function CollectionSvg (props) {
         cx={70}
         cy={70}
         r={50}
-        className='svgCollectionBox svgOddRow'
+        className='svgCollectionBox'
       >
         Circle
       </LabeledCircle>
@@ -52,7 +52,7 @@ function CollectionSvg (props) {
         y={100}
         width={80}
         height={80}
-        className='svgCollectionBox svgOddRow'
+        className='svgCollectionBox'
       >
         Square
       </LabeledRect>
@@ -61,7 +61,7 @@ function CollectionSvg (props) {
         y={210}
         width={240}
         height={50}
-        className='svgCollectionBox svgOddRow'
+        className='svgCollectionBox'
       >
         Rectangle
       </LabeledRect>

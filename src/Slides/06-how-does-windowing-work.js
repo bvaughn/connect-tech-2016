@@ -61,7 +61,10 @@ function Image ({ index }) {
           {times(9).map((index) => (
             <line key={index} x1={25} y1={2 + 30 * (index + 1)} x2={125} y2={2 + 30 * (index + 1)} className={innerLinesClassName} />
           ))}
-          <rect x={25}  y={2}  width={100} height={300} className='HowWorksInnerRect' />
+          <rect x={25}  y={2}  width={100} height={300}
+            className={classnames('HowWorksInnerRect', {
+              HowWorksHidden: index >= 4
+            })} />
         </g>
         <g className={rowGroupClassName}>
           {times(10).map((index) => (
@@ -73,8 +76,7 @@ function Image ({ index }) {
               height={30}
               className={classnames({
                 HowWorksRowNotRendered: index < 2 || index > 5,
-                HowWorksRowRendered: index >= 2 && index <= 5,
-                HowWorksRowRenderedOdd: index >= 2 && index <= 5 && index % 2 === 0
+                HowWorksRowRendered: index >= 2 && index <= 5
               })}
             >
               {index >= 2 && index <= 5

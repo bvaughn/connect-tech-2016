@@ -25,32 +25,22 @@
 }
 .scaledListItem,
 .unscaledListItem {
-  fill: transparent;
-  stroke-width: 1px;
-  stroke: #aaa;
-  stroke-dasharray: 1,1;
+  fill: #aaa;
 }
 .scaledListItemActive,
 .unscaledListItemActive {
   stroke-width: 1px;
-  fill: #999;
-  stroke: transparent;
-}
-.scaledListItemActiveOdd,
-.unscaledListItemActiveOdd {
-  fill: #ccc;
+  fill: #a6e22e;
   stroke: transparent;
 }
 
-.listLine,
-.listLineActive {
+.listLine {
   stroke-width: 1px;
   stroke-dasharray: 2,4;
-}
-.listLine {
   stroke: #aaa;
 }
 .listLineActive {
+  stroke-width: 1px;
   stroke: #222;
 }
 

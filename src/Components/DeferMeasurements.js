@@ -1,9 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
 import LabeledRect from '../Components/LabeledRect';
-import Slide from '../Components/Slide';
-import Step from '../Components/Step';
-import Stepper from '../Components/Stepper';
 import SvgWrapper from '../Components/SvgWrapper';
 
 const BOXES = [
@@ -35,9 +32,9 @@ export default function DeferMeasurements () {
               width={100}
               height={height}
               className={classnames({
-                HowWorksRowNotRendered: index < 2 || index > 5,
-                HowWorksRowRendered: index >= 2 && index <= 5,
-                HowWorksRowRenderedOdd: index >= 2 && index <= 5 && index % 2 === 0
+                HowWorksRowNotRendered: index < 2,
+                HowWorksRowEstimated: index > 5,
+                HowWorksRowRendered: index >= 2 && index <= 5
               })}
             >
               {index < 2 && 'Not rendered'}

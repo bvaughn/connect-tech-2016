@@ -52,8 +52,7 @@ export function ListSvg (props) {
           height={44}
           className={classnames({
             svgListRow: index < 5,
-            svgListRowNotRendered: index >= 5,
-            svgOddRow: index < 5 && index % 2 === 0
+            svgListRowNotRendered: index >= 5
           })}
         >
           {index < 5
@@ -88,8 +87,7 @@ export function TableSvg (props) {
             className={classnames({
               svgTableHeader: index === 0,
               svgTableColumn: index < 5,
-              svgTableColumnNotRendered: index >= 5,
-              svgOddRow: index > 0 && index < 5 && index % 2 === 0
+              svgTableColumnNotRendered: index >= 5
             })}
           >
             {index === 0 && 'Header'}
