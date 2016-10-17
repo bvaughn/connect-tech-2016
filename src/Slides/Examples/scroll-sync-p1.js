@@ -1,33 +1,30 @@
-const markup = `function renderSpreadsheet (gridProps) {
+const markup = `function renderSpreadsheet () {
   return (
     <ScrollSync>
       {({ onScroll, scrollLeft, scrollTop }) => (
-        <AutoSizer disableHeight>
-          {({ width }) => (
-            <div className='Container'>
-              <Grid
-                {...gridProps}
-                cellRenderer={cellRendererFixed}
-                className='LeftGrid'
-                columnCount={1}
-                scrollTop={scrollTop}
-              />
-              <Grid
-                {...gridProps}
-                cellRenderer={cellRendererFixed}
-                className='HeaderGrid'
-                rowCount={1}
-                scrollLeft={scrollLeft}
-              />
-              <Grid
-                {...gridProps}
-                cellRenderer={cellRendererBody}
-                className='BodyGrid'
-                onScroll={onScroll}
-              />
-            </div>
-          )}
-        </AutoSizer>
+        <div className='Container'>
+          <Grid
+            cellRenderer={cellRendererFixed}
+            className='LeftGrid'
+            columnCount={1}
+            rowCount={100}
+            scrollTop={scrollTop}
+          />
+          <Grid
+            cellRenderer={cellRendererFixed}
+            className='HeaderGrid'
+            columnCount={100}
+            rowCount={1}
+            scrollLeft={scrollLeft}
+          />
+          <Grid
+            cellRenderer={cellRendererBody}
+            className='BodyGrid'
+            columnCount={100}
+            onScroll={onScroll}
+            rowCount={100}
+          />
+        </div>
       )}
     </ScrollSync>
   );

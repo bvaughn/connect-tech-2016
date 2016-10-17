@@ -46,57 +46,60 @@ export default class MySlide extends Component {
     const { flexColumProps } = this.state;
 
     return (
-      <Stepper numSteps={3}>
+      <Stepper numSteps={4}>
         <Slide>
           <h1>Resizable columns</h1>
 
-          <Step exactMatch index={0}>
+          <p>
+            <strong className='QuestionLabel'>Question</strong>:
+            Can rows and columns be resizable?
+          </p>
+
+          <Step index={1}>
             <p>
-              Connect <a href='https://github.com/mzabriskie/react-draggable/'>react-draggable</a> with <code>Table</code> or <code>Grid</code> for resizable behavior.
+              <strong className='AnswerLabel'>Answer</strong>:
+              Yes!
+              Use <a href='https://github.com/mzabriskie/react-draggable/'>react-draggable</a> with <code>Table</code> or <code>Grid</code> for resizable behavior.
             </p>
           </Step>
 
-          <Step exactMatch index={1}>
+          <Step exactMatch index={2}>
             <AutoSizer>
               {({ width }) => (
-                <div style={{ width }}>
-                  <p>Click and drag columns below:</p>
-
-                  <Table
-                    className='ResizableTable'
-                    columnCount={100}
-                    columnWidth={this._getCellWidth}
-                    headerClassName='ResizableTableHeaderColumn'
-                    headerHeight={40}
-                    height={200}
-                    ref={(ref) => this._table = ref}
-                    rowClassName={this._rowClassName}
-                    rowCount={list.length}
-                    rowGetter={({ index }) => list[index]}
-                    rowHeight={40}
-                    width={width}
-                  >
-                    <Column
-                      className='ResizableTableColumn'
-                      dataKey='age'
-                      headerRenderer={this._draggableHeaderRenderer}
-                      label='Age'
-                      {...flexColumProps.age}
-                    />
-                    <Column
-                      className='ResizableTableColumn'
-                      dataKey='name'
-                      headerRenderer={this._draggableHeaderRenderer}
-                      label='Name'
-                      {...flexColumProps.name}
-                    />
-                  </Table>
-                </div>
+                <Table
+                  className='ResizableTable'
+                  columnCount={100}
+                  columnWidth={this._getCellWidth}
+                  headerClassName='ResizableTableHeaderColumn'
+                  headerHeight={40}
+                  height={200}
+                  ref={(ref) => this._table = ref}
+                  rowClassName={this._rowClassName}
+                  rowCount={list.length}
+                  rowGetter={({ index }) => list[index]}
+                  rowHeight={40}
+                  width={width}
+                >
+                  <Column
+                    className='ResizableTableColumn'
+                    dataKey='age'
+                    headerRenderer={this._draggableHeaderRenderer}
+                    label='Age'
+                    {...flexColumProps.age}
+                  />
+                  <Column
+                    className='ResizableTableColumn'
+                    dataKey='name'
+                    headerRenderer={this._draggableHeaderRenderer}
+                    label='Name'
+                    {...flexColumProps.name}
+                  />
+                </Table>
               )}
             </AutoSizer>
           </Step>
 
-          <Step exactMatch index={2}>
+          <Step exactMatch index={3}>
             <CodeMirror
               highlightLines={[[0,0], [9,12]]}
               source={source}

@@ -11,7 +11,7 @@ export default () => (
         Can we beat DOM element size limits?
       </h1>
       <ul>
-        <Step><li>DOM elements have size limits (eg Chrome 33.5M pixels, IE 1.5M pixel)</li></Step>
+        <Step><li>DOM elements have size limits (eg Chrome 33.5M pixels, IE 1.5M pixels)</li></Step>
         <Step><li>You can't scroll past the threshold</li></Step>
         <Step><li>Layout gets wonky as you approach the threshold</li></Step>
       </ul>

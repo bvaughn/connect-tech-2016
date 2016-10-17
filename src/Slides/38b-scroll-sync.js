@@ -10,10 +10,13 @@ import sourceP3 from './Examples/scroll-sync-p3.js';
 export default () => (
   <Stepper numSteps={3}>
     <Slide>
-      <h1>Sticky rows &amp; columns with <code>ScrollSync</code></h1>
+      <h1>Sticky rows &amp; columns</h1>
 
       <Step index={0} exactMatch>
-        <CodeMirror source={sourceP1} />
+        <CodeMirror
+          highlightLines={[[3,3], [10,10], [17,17], [23,23]]}
+          source={sourceP1}
+        />
       </Step>
 
       <Step index={1} exactMatch>
@@ -21,7 +24,10 @@ export default () => (
       </Step>
 
       <Step index={2} exactMatch>
-        <CodeMirror source={sourceP3} />
+        <CodeMirror
+          highlightLines={[[5,5], [8,8]]}
+          source={sourceP3}
+        />
       </Step>
     </Slide>
   </Stepper>

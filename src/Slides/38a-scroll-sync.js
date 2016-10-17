@@ -45,13 +45,17 @@ export default class MySlide extends Component {
     return (
       <Stepper numSteps={3}>
         <Slide>
-          <h1>Sticky rows &amp; columns with <code>ScrollSync</code></h1>
+          <h1>Sticky rows &amp; columns</h1>
 
-          <p><strong className='QuestionLabel'>Question</strong>: Want sticky columns and rows? (eg spreadsheet)</p>
+          <p>
+            <strong className='QuestionLabel'>Question</strong>:
+            Is it possible to create sticky rows or columns? (eg spreadsheet)
+          </p>
 
           <Step>
             <p>
-              <strong className='AnswerLabel'>Answer</strong>: Use <code>ScrollSync</code>.
+              <strong className='AnswerLabel'>Answer</strong>:
+              Yes! Use <code>ScrollSync</code>.
             </p>
           </Step>
 

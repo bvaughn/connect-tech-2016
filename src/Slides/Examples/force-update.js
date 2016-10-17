@@ -1,6 +1,6 @@
 const markup = `class Example extends Component {
   componentDidUpdate (prevProps, prevState) {
-    if (this.props.sortBy !== prevProps.sortBy) {
+    if (this.props.sortOrder !== prevProps.sortOrder) {
       this._grid.forceUpdate()
     }
   }

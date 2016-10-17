@@ -1,20 +1,15 @@
 const markup = `function cellRendererBody ({ columnIndex, key, rowIndex, style }) {
-  const { cellValues } = this.state;
-
   return (
     <input
       key={key}
-      onChange={(event) => {
-        this.setState({
-          cellValues: cellValues.set(key, event.target.value)
-        })
-      }}
-      onFocus={() => this.setState({
-        focusedColumnIndex: columnIndex,
-        focusedRowIndex: rowIndex
-      })}
+      onChange={
+        (event) => updateCellValue(key, event.target.value)
+      }
+      onFocus={
+        () => updateSelectedCell({ columnIndex, rowIndex })
+      }
       style={style}
-      value={cellValues.get(key, '')}
+      value={getCellValue(key)}
     />
   );
 }`;

@@ -1,10 +1,12 @@
-const string = `function renderList (listProps) {
+const string = `function getRowHeight ({ index }) {
+  return itemArray[index].type === 'header' ? 20 : 30
+}
+
+function renderList (listProps) {
   return (
     <List
       rowCount={itemArray.length}
-      rowHeight={
-        ({ index }) => itemArray[index].type === 'header' ? 20 : 30
-      }
+      rowHeight={getRowHeight}
       {...listProps}
     />
   )

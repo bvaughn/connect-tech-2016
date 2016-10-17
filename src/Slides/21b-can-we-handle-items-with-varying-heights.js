@@ -8,12 +8,12 @@ import sourceRowHeightGetter from './Examples/dynamic-row-height-getter.js';
 export default () => (
   <Stepper numSteps={3}>
     <Slide>
-      <h1>Can we handle items with multiple size?</h1>
+      <h1>Can we handle items with varying heights?</h1>
       <h3>If size can be inferred from the data ...</h3>
       <Step><p><strong className='AnswerLabel'>Solution</strong>: Use a function property!</p></Step>
       <Step>
         <CodeMirror
-          highlightLines={[[4,6]]}
+          highlightLines={[[0,2], [8,8]]}
           source={sourceRowHeightGetter}
         />
       </Step>

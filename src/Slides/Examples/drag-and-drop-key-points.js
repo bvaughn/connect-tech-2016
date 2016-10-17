@@ -20,7 +20,7 @@ function renderList (props) {
     <SortableList
       {...props}
       onSortEnd={
-        ({ newIndex, oldIndex }) => arrayMove(list, oldIndex, newIndex)
+        ({ oldIndex, newIndex }) => arrayMove(list, oldIndex, newIndex)
       }
       rowRenderer={rowRenderer}
     />

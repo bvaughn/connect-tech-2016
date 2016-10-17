@@ -1,10 +1,10 @@
 const markup = `function renderList (props) {
-  const { sortBy, ...rest } = props
+  const { sortOrder, ...rest } = props
 
   return (
     <List
       {...rest}
-      sortBy={sortBy}
+      sortOrder={sortOrder}
     />
   );
 }`;

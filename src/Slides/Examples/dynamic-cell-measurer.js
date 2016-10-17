@@ -1,9 +1,8 @@
-const string = `function render (listProps) {
+const string = `function renderList (listProps) {
   return (
     <CellMeasurer {...listProps}>
-      {({ getColumnWidth, getRowHeight }) => (
-        <Grid
-          columnWidth={getColumnWidth}
+      {({ getRowHeight }) => (
+        <List
           rowHeight={getRowHeight}
           {...listProps}
         />

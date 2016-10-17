@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { arrayMove, SortableContainer, SortableElement } from 'react-sortable-hoc';
 import { List } from 'react-virtualized';
 import CodeMirror from '../Components/CodeMirror';
+import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
@@ -34,40 +35,55 @@ export default class MySlide extends Component {
     const { list } = this.context;
 
     return (
-      <Stepper numSteps={3}>
-        <Slide>
-          <h1>Drag-and-drop rows</h1>
+      <Stepper numSteps={4}>
+        {(index) => (
+          <Slide>
+            <h1>Drag-and-drop rows</h1>
 
-          <Step exactMatch index={0}>
-            <p>
-              Connect <a href='https://github.com/clauderic/react-sortable-hoc'>react-sortable-hoc</a> with <code>List</code>, <code>Table</code>, or <code>Grid</code> for drag and drop behavior.
-            </p>
-          </Step>
+            {index < 3 && (
+              <div>
+                <Step index={0}>
+                  <p>
+                    <strong className='QuestionLabel'>Question</strong>:
+                    Is it possible to integrate with another library for drag-and-drop?
+                  </p>
+                </Step>
 
-          <Step exactMatch index={1}>
-            <div>
-              <p>Click and drag rows below:</p>
-              <SortableList
-                className='List'
-                height={240}
-                helperClass='SortableListRowActive'
-                onSortEnd={this._onSortEnd}
-                overscanRowCount={2}
-                rowCount={list.length}
-                rowHeight={40}
-                rowRenderer={this._rowRenderer}
-                width={240}
+                <Step index={1}>
+                  <p>
+                    <strong className='AnswerLabel'>Answer</strong>:
+                    Yes!
+                    Use <a href='https://github.com/clauderic/react-sortable-hoc'>react-sortable-hoc</a> with react-virtualized for drag-and-drop.
+                  </p>
+                </Step>
+
+                <Step index={2}>
+                  <div>
+                    <SortableList
+                      className='List'
+                      height={240}
+                      helperClass='SortableListRowActive'
+                      onSortEnd={this._onSortEnd}
+                      overscanRowCount={2}
+                      rowCount={list.length}
+                      rowHeight={40}
+                      rowRenderer={this._rowRenderer}
+                      width={240}
+                    />
+                    <Note>Click and drag rows above</Note>
+                  </div>
+                </Step>
+              </div>
+            )}
+
+            <Step exactMatch index={3}>
+              <CodeMirror
+                highlightLines={[[0,0], [4,6], [21,23]]}
+                source={source}
               />
-            </div>
-          </Step>
-
-          <Step exactMatch index={2}>
-            <CodeMirror
-              highlightLines={[[0,0], [4,6], [21,23]]}
-              source={source}
-            />
-          </Step>
-        </Slide>
+            </Step>
+          </Slide>
+        )}
       </Stepper>
     );
   }

@@ -4,7 +4,7 @@ const markup = `function cellRendererFixed ({ columnIndex, key, rowIndex, style 
       key={key}
       style={style}
     >
-      {index}
+      {/* ... */}
     </div>
   );
 }`;

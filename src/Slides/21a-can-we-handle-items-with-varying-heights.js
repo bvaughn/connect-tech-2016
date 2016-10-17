@@ -8,7 +8,7 @@ import dropDownImage from '../../public/non-uniform-heights-drop-down.png';
 export default () => (
   <Stepper numSteps={7}>
     <Slide>
-      <h1>Can we handle items with multiple size?</h1>
+      <h1>Can we handle items with varying heights?</h1>
       <Step><p>This introduces a couple of challenges:</p></Step>
       <ul>
         <Step><li>Calculating total size becomes more difficult</li></Step>
