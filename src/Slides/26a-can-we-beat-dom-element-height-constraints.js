@@ -5,14 +5,20 @@ import Stepper from '../Components/Stepper';
 import image from '../../public/browser-limits-cutoff.png';
 
 export default () => (
-  <Stepper numSteps={5}>
+  <Stepper numSteps={6}>
     <Slide>
       <h1>
-        Can we beat DOM element size limits?
+        Can we beat DOM element height constraints?
       </h1>
+      <Step>
+        <p>
+          <strong className='QuestionLabel'>Problem</strong>:
+          DOM elements have height constraints (eg Chrome 33.5M pixels, IE 1.5M pixels)
+        </p>
+      </Step>
       <ul>
-        <Step><li>DOM elements have size limits (eg Chrome 33.5M pixels, IE 1.5M pixels)</li></Step>
-        <Step><li>You can't scroll past the threshold</li></Step>
+        <Step><li>Browser won't render items past this point</li></Step>
+        <Step><li>You can't scroll past it either</li></Step>
         <Step><li>Layout gets wonky as you approach the threshold</li></Step>
       </ul>
       <Step>

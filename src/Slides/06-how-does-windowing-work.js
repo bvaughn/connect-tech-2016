@@ -87,7 +87,9 @@ function Image ({ index }) {
           ))}
         </g>
         <g className={outerGroupClassName}>
-          <rect x={100} y={70} width={100} height={90} className='HowWorksOuterRect' />
+          <LabeledRect x={100} y={70} width={100} height={90} className='HowWorksOuterRect'>
+            &lt;div&gt;
+          </LabeledRect>
         </g>
       </g>
     </SvgWrapper>

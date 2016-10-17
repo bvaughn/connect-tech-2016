@@ -9,13 +9,13 @@ export default () => (
   <Stepper numSteps={5}>
     <Slide>
       <h1>
-        Can we beat DOM element size limits?
+        Can we beat DOM element height constraints?
       </h1>
       <h2>So how can we beat this?</h2>
       <Step><p><strong className='AnswerLabel'>Solution</strong>: Scale things down.</p></Step>
       <ul>
-        <Step><li>Scale size and offsets of hidden rows</li></Step>
-        <Step><li>Don't scale visible rows</li></Step>
+        <Step><li>Scale/shift positions of hidden rows</li></Step>
+        <Step><li>Render visible rows normally</li></Step>
       </ul>
       <Step>
         <svg
