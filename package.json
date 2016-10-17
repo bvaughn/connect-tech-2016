@@ -8,6 +8,8 @@
   "homepage": "https://bvaughn.github.io/connect-tech-2016/",
   "dependencies": {
     "classnames": "^2.2.5",
+    "codemirror": "^5.19.0",
+    "immutable": "^3.8.1",
     "lodash.times": "^4.3.2",
     "numeral": "^1.5.3",
     "performance-now": "^0.2.0",
@@ -21,8 +23,7 @@
     "react-sortable-hoc": "0.0.9",
     "react-virtualized": "^8.0.11",
     "react-virtualized-select": "^2.0.2",
-    "spectacle": "^1.2.3",
-    "codemirror": "^5.19.0"
+    "spectacle": "^1.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

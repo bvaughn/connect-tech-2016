@@ -1,33 +1,31 @@
 const markup = `import Draggable from 'react-draggable';
-import { AutoSizer, defaultTableHeaderRenderer, Table, Column } from 'react-virtualized';
+import { List } from 'react-virtualized';
 
-function draggableHeaderRenderer (props) {
+function rowRenderer ({ index, isScrolling, key, style }) {
   return (
-    <div>
-      {defaultTableHeaderRenderer(props)}
+    <div
+      key={index}
+      style={style}
+    >
+      {...}
 
       <Draggable
-        onStop={(event, data) => resizeColumn({
-          dataKey: props.dataKey,
-          deltaX: data.x
-        })}
-      >
-        <svg>...</svg>
-      </Draggable>
+        axis='y'
+        onStop={
+          (event, data) => resizeRow({ deltaY: data.y, index })
+        }
+      />
     </div>
   );
 }
 
-function renderTable (tableProps) {
+function renderList (listProps) {
   return (
-    <Table {...tableProps}>
-      {columns.map((columnProps) => (
-        <Column
-          headerRenderer={draggableHeaderRenderer}
-          {...columnProps}
-        />
-      ))}
-    </Table>
+    <List
+      {...listProps}
+      ref={(ref) => this._list = ref}
+      rowRenderer={rowRenderer}
+    />
   );
 }`;
 
