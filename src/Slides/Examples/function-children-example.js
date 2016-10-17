@@ -1,4 +1,12 @@
-const source = `function LocalizedUserBadge () {
+const source = `function WithUser ({ children }) {
+  return children({ user })
+}
+
+function WithLocalization ({ children }) {
+  return children({ localization })
+}
+
+function LocalizedUserBadge () {
   return (
     <WithLocalization>
       {({ localization }) => (

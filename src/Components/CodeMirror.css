@@ -39,6 +39,11 @@
 
 .cm-s-brian span.cm-bracket { color: #900; }
 
+.cm-s-brian span.dim {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
 .cm-s-brian span.highlight {
   background-color: rgba(189,147,249, .2);
 }

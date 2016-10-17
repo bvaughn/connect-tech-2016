@@ -12,26 +12,21 @@ const codeMirrorOptions = {
 
 export default class ReactCodeMirrorWrapper extends Component {
   static propTypes = {
+    dimLines: PropTypes.array.isRequired,
     highlightLines: PropTypes.array.isRequired,
     source: PropTypes.string.isRequired
   };
 
   static defaultProps = {
+    dimLines: [],
     highlightLines: []
   };
 
   componentDidMount () {
-    const { highlightLines } = this.props;
+    const { dimLines, highlightLines } = this.props;
 
-    highlightLines.forEach((tuple) => {
-      const [ start, stop ] = tuple;
-
-      this.reactCodeMirror.codeMirror.doc.markText(
-        { line: start, ch: 0 },
-        { line: stop + 1, ch: 0 },
-        { className: 'highlight' }
-      );
-    })
+    this._addClassNameToLines(dimLines, 'dim');
+    this._addClassNameToLines(highlightLines, 'highlight');
   }
 
   render () {
@@ -44,5 +39,15 @@ export default class ReactCodeMirrorWrapper extends Component {
         value={source}
       />
     );
+  }
+
+  _addClassNameToLines (lineNumbers, className) {
+    lineNumbers.forEach(([start, stop]) => {
+      this.reactCodeMirror.codeMirror.doc.markText(
+        { line: start, ch: 0 },
+        { line: stop + 1, ch: 0 },
+        { className }
+      );
+    })
   }
 }
