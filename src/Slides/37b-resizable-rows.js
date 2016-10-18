@@ -8,6 +8,8 @@ import source from './Examples/resizable-cells-key-points.js';
 export default () => (
   <Stepper numSteps={2}>
     <Slide>
+      <h1>Resizable rows</h1>
+
       <Step exactMatch index={0}>
         <CodeMirror
           dimLines={[[1,10], [17,29]]}

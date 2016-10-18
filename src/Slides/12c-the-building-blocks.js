@@ -15,7 +15,7 @@ export default () => (
       </h1>
 
       <ul>
-        <li>What about data that isn't linear (eg Gantt charts, graphs)?</li>
+        <li>What about data that isn't linear (eg Gantt charts, Pinterest layout)?</li>
         <Step><li>Can we even window this type of data?</li></Step>
       </ul>
 
