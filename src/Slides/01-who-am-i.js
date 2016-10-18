@@ -13,7 +13,7 @@ export default () => (
     <Slide>
       <h1>Who am I?</h1>
       <ul>
-        <Step><li>Written JavaScript professionally for 15 years</li></Step>
+        <Step><li>Software engineer for &gt; 15 years</li></Step>
         <Step>
           <li>
             I've worked some cool places:
