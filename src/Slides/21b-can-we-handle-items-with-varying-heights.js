@@ -6,16 +6,19 @@ import Stepper from '../Components/Stepper';
 import sourceRowHeightGetter from './Examples/dynamic-row-height-getter.js';
 
 export default () => (
-  <Stepper numSteps={3}>
+  <Stepper numSteps={4}>
     <Slide>
       <h1>Can we handle items with varying heights?</h1>
       <h3>If size can be inferred from the data ...</h3>
       <Step><p><strong className='AnswerLabel'>Solution</strong>: Use a function property!</p></Step>
-      <Step>
+      <Step exactMatch>
         <CodeMirror
-          highlightLines={[[0,2], [8,8]]}
+          dimLines={[[3,7], [9,12]]}
           source={sourceRowHeightGetter}
         />
+      </Step>
+      <Step exactMatch>
+        <CodeMirror source={sourceRowHeightGetter} />
       </Step>
     </Slide>
   </Stepper>

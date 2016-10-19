@@ -45,7 +45,6 @@
 .RowStack {
   flex: 1 0 5.25rem;
   margin: 0 0.5rem;
-  color: #f92672;
   font-size: 20px;
 }
 
@@ -65,6 +64,7 @@
   flex: 0 0 auto;
   color: #FFD600;
   font-size: 1.25rem;
+  color: #f92672;
 }
 
 .ListScrolling {

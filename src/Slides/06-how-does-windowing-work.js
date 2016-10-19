@@ -58,8 +58,8 @@ function Image ({ index }) {
     >
       <g className={groupClassName}>
         <g className={innerGroupClassName}>
-          {times(9).map((index) => (
-            <line key={index} x1={25} y1={2 + 30 * (index + 1)} x2={125} y2={2 + 30 * (index + 1)} className={innerLinesClassName} />
+          {times(10).map((index) => (
+            <line key={index} x1={25} y1={2 + 30 * index} x2={125} y2={2 + 30 * index} className={innerLinesClassName} />
           ))}
           <rect x={25}  y={2}  width={100} height={300}
             className={classnames('HowWorksInnerRect', {

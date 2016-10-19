@@ -5,6 +5,7 @@ import { List } from 'react-virtualized';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
+import SvgWrapper from '../Components/SvgWrapper';
 import './37-resizable-rows.css';
 
 export default class MySlide extends Component {
@@ -100,7 +101,22 @@ export default class MySlide extends Component {
           }}
           zIndex={999}
         >
-          <div> </div>
+          <div className='DragHandleIcon'>
+            <SvgWrapper
+              height={24}
+              width={24}
+              viewBoxHeight={24}
+              viewBoxWidth={24}
+            >
+              <defs>
+                <path d='M0 0h24v24H0V0z' id='a'/>
+              </defs>
+              <clipPath id='b'>
+                <use overflow='visible' href='#a'/>
+              </clipPath>
+              <path clipPath='url(#b)' d='M20 9H4v2h16V9zM4 15h16v-2H4v2z'/>
+            </SvgWrapper>
+          </div>
         </Draggable>
       </div>
     );

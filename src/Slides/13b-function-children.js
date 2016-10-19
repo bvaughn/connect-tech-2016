@@ -17,7 +17,7 @@ export default () => (
       </Step>
       <Step index={1} exactMatch>
         <CodeMirror
-          dimLines={[[8,22]]}
+          dimLines={[[0,3], [8,22]]}
           source={source}
         />
       </Step>

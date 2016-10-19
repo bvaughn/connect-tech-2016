@@ -26,7 +26,7 @@ export default () => (
           </li>
         </Step>
         <Step><li>I <i className='fa fa-heart' style={{ color: '#f92672' }} /> open source (<a href="https://github.com/bvaughn/">github.com/bvaughn</a>)</li></Step>
-        <Step><li>Passionate about performance and architecture</li></Step>
+        <Step><li>Passionate about performance, search, and architecture</li></Step>
       </ul>
     </Slide>
   </Stepper>

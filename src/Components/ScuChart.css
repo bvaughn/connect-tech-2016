@@ -11,11 +11,23 @@
   stroke-width: 1px;
 }
 .scuDottedLine {
+  stroke: #222;
   stroke-dasharray: 2, 4;
+  animation: dash 1s linear;
+  animation-iteration-count: infinite;
 }
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 6;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .scuLine {
   stroke: #aaa;
 }
 .scuDottedLine {
-  stroke: #222;
 }

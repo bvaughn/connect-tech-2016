@@ -24,6 +24,20 @@
   opacity: 1;
 }
 
+.HowWorksInnerLine {
+  animation: scrolling 1s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scrolling {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(30px);
+  }
+}
+
 .HowWorksInnerRect,
 .HowWorksInnerLine {
   fill: transparent;

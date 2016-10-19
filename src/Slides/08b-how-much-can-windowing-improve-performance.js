@@ -7,7 +7,7 @@ import Slide from '../Components/Slide';
 
 export default class Stepper extends Component {
   static contextTypes = {
-    list: PropTypes.number
+    list: PropTypes.array
   };
 
   constructor (props, context) {

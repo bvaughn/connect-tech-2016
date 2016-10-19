@@ -6,7 +6,7 @@ import Stepper from '../Components/Stepper';
 import source from './Examples/shallow-compare.js';
 
 export default () => (
-  <Stepper numSteps={4}>
+  <Stepper numSteps={5}>
     <Slide>
       <h1>Avoid unnecessary renders</h1>
       <p>
@@ -16,11 +16,14 @@ export default () => (
         <Step><li>Compares current vs next <code>props</code> and <code>state</code></li></Step>
         <Step><li>Only re-renders if something has changed</li></Step>
       </ul>
-      <Step>
+      <Step exactMatch>
         <CodeMirror
-          highlightLines={[[4,6]]}
+          dimLines={[[0,0], [2,3], [7,11]]}
           source={source}
         />
+      </Step>
+      <Step exactMatch>
+        <CodeMirror source={source} />
       </Step>
     </Slide>
   </Stepper>
