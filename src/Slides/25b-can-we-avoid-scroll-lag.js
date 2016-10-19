@@ -17,7 +17,7 @@ export default () => (
           <li>JavaScript is periodically updated of new scroll positions</li>
         </Step>
         <Step>
-          <li>Sometimes JS doesn't respond fast enough</li>
+          <li>Sometimes JS doesn't respond fast enough (eg 16ms frame budget)</li>
         </Step>
       </ul>
       <Step><h2>So what can we do about it?</h2></Step>

@@ -6,7 +6,7 @@ import logoRosettaStone from '../../public/logo-rosetta-stone.jpg';
 import logoGoogle from '../../public/logo-google.jpg';
 import logoTreasureData from '../../public/logo-treasure-data.jpg';
 import logoFacebook from '../../public/logo-facebook.png';
-import './01-who-am-i.css';
+import './00-who-am-i.css';
 
 export default () => (
   <Stepper numSteps={5}>
