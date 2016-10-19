@@ -166,21 +166,29 @@ export default class NavigateToSlide extends Component {
   }
 
   _onKeyDown (event) {
+    const { active } = this.state;
+
     switch (event.key) {
       case 't':
-        this.setState({
-          active: true
-        });
+        if (!active) {
+          this.setState({
+            active: true
+          });
 
-        event.preventDefault();
+          event.preventDefault();
 
-        return true;
+          return true;
+        }
+        break;
       case 'Escape':
-        this.setState({
-          active: false
-        });
+        if (active) {
+          this.setState({
+            active: false
+          });
 
-        return true;
+          return true;
+        }
+        break;
       default:
         // Linting requires this :)
         break;
