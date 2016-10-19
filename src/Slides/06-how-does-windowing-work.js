@@ -37,15 +37,23 @@ function Image ({ index }) {
     HowWorksGroupSkewed: index > 2
   })
   const innerGroupClassName = classnames('HowWorksHidden', {
-    HowWorksVisible: index > 2
+    HowWorksVisible: index > 1
   })
   const innerLinesClassName = classnames('HowWorksInnerLine', {
-    HowWorksHidden: index > 3
+    HowWorksHidden: index > 3,
+    HowWorksInnerLineAnimated: index > 2
   })
   const outerGroupClassName = classnames('HowWorksHidden', {
-    HowWorksVisible: index > 0
+    HowWorksVisible: index > 0,
+    HowWorksOuterRectShifted: index > 2
   })
   const rowGroupClassName = classnames('HowWorksRowGroup', 'HowWorksHidden', {
+    HowWorksVisible: index > 3
+  })
+  const viewportLineClassName = classnames('HowWorksViewportLine', 'HowWorksHidden', {
+    HowWorksVisible: index > 2
+  })
+  const scrollbarClassName = classnames('HowWorksHidden', {
     HowWorksVisible: index > 3
   })
 
@@ -87,6 +95,18 @@ function Image ({ index }) {
           ))}
         </g>
         <g className={outerGroupClassName}>
+          <g>
+            <line x1={102} y1={72} x2={25} y2={92} className={viewportLineClassName} />
+            <line x1={102} y1={158} x2={25} y2={178} className={viewportLineClassName} />
+            <line x1={198} y1={72} x2={125} y2={92} className={viewportLineClassName} />
+            <line x1={198} y1={158} x2={125} y2={178} className={viewportLineClassName} />
+          </g>
+
+          <g className={scrollbarClassName}>
+            <rect x={190} y={72} width={10} height={86} className='HowWorksScrollTrack' />
+            <rect x={192} y={100} width={5} rx={3} ry={3} height={15} className='HowWorksScrollThumb' />
+          </g>
+
           <LabeledRect x={100} y={70} width={100} height={90} className='HowWorksOuterRect'>
             &lt;div&gt;
           </LabeledRect>

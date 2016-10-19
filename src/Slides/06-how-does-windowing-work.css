@@ -13,6 +13,11 @@
   stroke-width: 4px;
   fill: transparent;
   stroke: #222;
+  transition: transform 1s ease;
+}
+
+.HowWorksOuterRectShifted {
+  transform: translateY(-20px);
 }
 
 .HowWorksHidden {
@@ -24,7 +29,7 @@
   opacity: 1;
 }
 
-.HowWorksInnerLine {
+.HowWorksInnerLineAnimated {
   animation: scrolling 1s linear;
   animation-iteration-count: infinite;
 }
@@ -67,4 +72,18 @@
 
 .HowWorksRowNotRendered {
   fill: #aaa;
+}
+
+.HowWorksViewportLine {
+  stroke-width: 1px;
+  stroke-dasharray: 2, 4;
+  stroke: #222;
+}
+
+.HowWorksScrollTrack {
+  fill: rgba(0,0,0,.1);
+}
+
+.HowWorksScrollThumb {
+  fill: rgba(0,0,0,.5);  
 }

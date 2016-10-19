@@ -19,15 +19,15 @@ export default function DeferMeasurements () {
     <SvgWrapper
       height={275}
       viewBoxHeight={275}
-      viewBoxWidth={110}
-      width={110}
+      viewBoxWidth={300}
+      width={300}
     >
-      <g className='HowWorksGroup'>
+      <g className='HowWorksGroup HowWorksGroupSkewed'>
         <g className='HowWorksRowGroup'>
           {BOXES.map(([y, height], index) => (
             <LabeledRect
               key={index}
-              x={6}
+              x={25}
               y={y}
               width={100}
               height={height}
@@ -43,8 +43,20 @@ export default function DeferMeasurements () {
            </LabeledRect>
           ))}
         </g>
-        <g className='HowWorksVisible'>
-          <rect x={4} y={70} width={104} height={90} className='HowWorksOuterRect' />
+        <g className='HowWorksVisible HowWorksOuterRectShifted'>
+          <g>
+            <line x1={102} y1={72} x2={25} y2={92} className='HowWorksViewportLine' />
+            <line x1={102} y1={158} x2={25} y2={178} className='HowWorksViewportLine' />
+            <line x1={198} y1={72} x2={125} y2={92} className='HowWorksViewportLine' />
+            <line x1={198} y1={158} x2={125} y2={178} className='HowWorksViewportLine' />
+          </g>
+
+          <rect x={190} y={72} width={10} height={86} className='HowWorksScrollTrack' />
+          <rect x={192} y={100} width={5} rx={3} ry={3} height={15} className='HowWorksScrollThumb' />
+
+          <LabeledRect x={100} y={70} width={100} height={90} className='HowWorksOuterRect'>
+            &lt;div&gt;
+          </LabeledRect>
         </g>
       </g>
     </SvgWrapper>
