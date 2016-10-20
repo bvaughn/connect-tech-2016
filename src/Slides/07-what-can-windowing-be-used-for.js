@@ -41,16 +41,16 @@ export default () => (
 
       <div className='HowCanItBeUsedImageContainer'>
         <Step index={1} exactMatch>
-          <img className='HowCanItBeUsedImage' role='presentation' src={tableGif} width={320} height={223} />
+          <img className='HowCanItBeUsedImage' role='presentation' src={tableGif} width={500} />
         </Step>
         <Step index={2} exactMatch>
-          <img className='HowCanItBeUsedImage' role='presentation' src={dropDownGif} width={250} height={161} />
+          <img className='HowCanItBeUsedImage' role='presentation' src={dropDownGif} width={300} />
         </Step>
         <Step index={3} exactMatch>
-          <img className='HowCanItBeUsedImage' role='presentation' src={calendarGif} width={153} height={240} />
+          <img className='HowCanItBeUsedImage' role='presentation' src={calendarGif} width={306} />
         </Step>
         <Step index={4} exactMatch>
-          <img className='HowCanItBeUsedImage' role='presentation' src={treeGif} width={423} height={284} />
+          <img className='HowCanItBeUsedImage' role='presentation' src={treeGif} width={500} />
         </Step>
       </div>
     </Slide>

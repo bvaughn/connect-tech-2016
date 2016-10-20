@@ -1,6 +1,11 @@
+import classnames from 'classnames';
 import React from 'react';
+import './LabeledSvg.css';
 
-export default function LabeledRect ({ children, className, x, y, width, height }) {
+export default function LabeledRect ({ children, className, x, y, width, height, mono }) {
+  const textClassName = classnames('LabeledSvgText', {
+    LabeledSvgTextMono: mono
+  })
   return (
     <g>
       <rect
@@ -15,6 +20,7 @@ export default function LabeledRect ({ children, className, x, y, width, height 
         y={y + height / 2}
         textAnchor='middle'
         alignmentBaseline='central'
+        className={textClassName}
       >
         {children}
       </text>

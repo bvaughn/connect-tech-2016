@@ -3,18 +3,22 @@ import CodeMirror from '../Components/CodeMirror';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
-import sourceA from './Examples/collection-a.js';
-import sourceB from './Examples/collection-b.js';
-import sourceC from './Examples/collection-c.js';
+import source from './Examples/collection.js';
 
 export default () => (
   <Stepper numSteps={3}>
     <Slide>
       <h1>Collection demo</h1>
 
-      <Step index={0} exactMatch><CodeMirror source={sourceA} /></Step>
-      <Step index={1} exactMatch><CodeMirror source={sourceB} /></Step>
-      <Step index={2} exactMatch><CodeMirror source={sourceC} /></Step>
+      <Step index={0} exactMatch>
+        <CodeMirror dimLines={[[0,21]]} source={source} />
+      </Step>
+      <Step index={1} exactMatch>
+        <CodeMirror dimLines={[[10,30]]} source={source} />
+      </Step>
+      <Step index={2} exactMatch>
+        <CodeMirror dimLines={[[0,10], [21,30]]} source={source} />
+      </Step>
     </Slide>
   </Stepper>
 );

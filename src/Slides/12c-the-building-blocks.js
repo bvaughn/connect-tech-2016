@@ -15,7 +15,7 @@ export default () => (
       </h1>
 
       <ul>
-        <li>What about data that isn't linear (eg Gantt charts, Pinterest layout)?</li>
+        <li>What about data that isn't linear (eg Pinterest layout, Gantt chart)?</li>
         <Step><li>Can we even window this type of data?</li></Step>
       </ul>
 
@@ -45,16 +45,16 @@ function CollectionSvg (props) {
         r={50}
         className='svgCollectionBox'
       >
-        Circle
+        Rendered
       </LabeledCircle>
       <LabeledRect
-        x={160}
-        y={100}
-        width={80}
+        x={135}
+        y={105}
+        width={100}
         height={80}
         className='svgCollectionBox'
       >
-        Square
+        Rendered
       </LabeledRect>
       <LabeledRect
         x={20}
@@ -63,7 +63,16 @@ function CollectionSvg (props) {
         height={50}
         className='svgCollectionBox'
       >
-        Rectangle
+        Rendered
+      </LabeledRect>
+      <LabeledRect
+        x={155}
+        y={20}
+        width={140}
+        height={50}
+        className='svgCollectionBox'
+      >
+        Rendered
       </LabeledRect>
       <LabeledCircle
         cx={340}
@@ -82,6 +91,8 @@ function CollectionSvg (props) {
       >
         Hidden
       </LabeledRect>
+      <rect x={274} y={0} width={111} height={274} className='svgNotRenderedDimmer' />
+      <rect x={0} y={274} width={385} height={111} className='svgNotRenderedDimmer' />
     </BuildingBlocksSvgWrapper>
   );
 }

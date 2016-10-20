@@ -81,6 +81,9 @@ export default function AnimatedListList ({
         })}
       </div>
 
+      <div className='AnimatedListDimmerTop' />
+      <div className='AnimatedListDimmerBottom' />
+
       <div className='InnerFrame' />
     </div>
   );

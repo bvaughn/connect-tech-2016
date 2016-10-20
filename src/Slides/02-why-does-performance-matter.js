@@ -2,7 +2,7 @@ import React from 'react';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
-import image from '../../public/telephone.png';
+import image from '../../public/computer-guy.png';
 
 export default () => (
   <Stepper numSteps={5}>
@@ -10,7 +10,7 @@ export default () => (
       <h1>Why does performance matter?</h1>
       <Step index={0} exactMatch>
         <img
-          height={250}
+          height={144}
           role='presentation'
           src={image}
           width='auto'

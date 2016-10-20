@@ -15,6 +15,8 @@ const BOXES = [
 ]
 
 export default function DeferMeasurements () {
+  const notRenderedDimmerClassName = 'HowWorksNotRenderedDimmer HowWorksNotRenderedDimmerVisible'
+
   return (
     <SvgWrapper
       height={275}
@@ -43,19 +45,25 @@ export default function DeferMeasurements () {
            </LabeledRect>
           ))}
         </g>
+
+        <g>
+          <rect x={25} y={0} width={100} height={80} className={notRenderedDimmerClassName} />
+          <rect x={25} y={170} width={100} height={134} className={notRenderedDimmerClassName} />
+        </g>
+
         <g className='HowWorksVisible HowWorksOuterRectShifted'>
           <g>
-            <line x1={102} y1={72} x2={25} y2={92} className='HowWorksViewportLine' />
-            <line x1={102} y1={158} x2={25} y2={178} className='HowWorksViewportLine' />
-            <line x1={198} y1={72} x2={125} y2={92} className='HowWorksViewportLine' />
-            <line x1={198} y1={158} x2={125} y2={178} className='HowWorksViewportLine' />
+            <line x1={102} y1={72} x2={25} y2={112} className='HowWorksViewportLine' />
+            <line x1={102} y1={158} x2={25} y2={198} className='HowWorksViewportLine' />
+            <line x1={198} y1={72} x2={125} y2={112} className='HowWorksViewportLine' />
+            <line x1={198} y1={158} x2={125} y2={198} className='HowWorksViewportLine' />
           </g>
 
           <rect x={190} y={72} width={10} height={86} className='HowWorksScrollTrack' />
           <rect x={192} y={100} width={5} rx={3} ry={3} height={15} className='HowWorksScrollThumb' />
 
-          <LabeledRect x={100} y={70} width={100} height={90} className='HowWorksOuterRect'>
-            &lt;div&gt;
+          <LabeledRect x={100} y={70} width={100} height={90} className='HowWorksOuterRect' mono>
+            &lt;ul&gt;
           </LabeledRect>
         </g>
       </g>

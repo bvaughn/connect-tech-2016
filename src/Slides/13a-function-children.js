@@ -15,7 +15,7 @@ export default () => (
             <li>Which enables more modular code (aka more maintainable code)</li>
           </Step>
           <Step index={3}>
-            <li>Provides an alternative to <code>context</code></li>
+            <li>Provides an alternative to <code>context</code> (React docs: "use sparingly")</li>
           </Step>
         </ul>
       </Step>

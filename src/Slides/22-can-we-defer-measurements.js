@@ -5,14 +5,12 @@ import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
 
 export default () => (
-  <Stepper numSteps={6}>
+  <Stepper numSteps={5}>
     <Slide>
       <h1>Can we defer measurements?</h1>
-      <Step>
-        <p>
-          <strong className='QuestionLabel'>Problem</strong>: Measuring wastes cycles, especially if it requires rendering.
-        </p>
-      </Step>
+      <p>
+        <strong className='QuestionLabel'>Problem</strong>: Measuring wastes cycles, especially if it requires rendering.
+      </p>
       <Step>
         <p>
           <strong className='AnswerLabel'>Solution</strong>: Don't measure sizes until content is actually displayed.

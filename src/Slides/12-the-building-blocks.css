@@ -54,3 +54,8 @@
   fill: transparent;
   stroke: #222;
 }
+
+.svgNotRenderedDimmer {
+  fill: #fff;
+  opacity: 0.65;
+}

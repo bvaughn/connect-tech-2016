@@ -85,5 +85,14 @@
 }
 
 .HowWorksScrollThumb {
-  fill: rgba(0,0,0,.5);  
+  fill: rgba(0,0,0,.5);
+}
+
+.HowWorksNotRenderedDimmer {
+  fill: #fff;
+  opacity: 0;
+}
+.HowWorksNotRenderedDimmerVisible {
+  opacity: 0.5;
+  transition: all 10s ease;
 }

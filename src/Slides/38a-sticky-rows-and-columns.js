@@ -5,7 +5,7 @@ import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 import Stepper from '../Components/Stepper';
 import Step from '../Components/Step';
-import './38-scroll-sync.css';
+import './38-sticky-rows-and-columns.css';
 
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -77,7 +77,7 @@ export default class MySlide extends Component {
                         height={275}
                         ref={(ref) => this._leftGrid = ref}
                         rowCount={100}
-                        rowHeight={25}
+                        rowHeight={40}
                         scrollTop={scrollTop}
                         width={50}
                       />
@@ -86,10 +86,10 @@ export default class MySlide extends Component {
                         className='TopGrid'
                         columnCount={LETTERS.length}
                         columnWidth={100}
-                        height={25}
+                        height={40}
                         ref={(ref) => this._topGrid = ref}
                         rowCount={1}
-                        rowHeight={25}
+                        rowHeight={40}
                         scrollLeft={scrollLeft}
                         width={width - 50}
                       />
@@ -101,7 +101,7 @@ export default class MySlide extends Component {
                         height={275}
                         onScroll={onScroll}
                         ref={(ref) => this._mainGrid = ref}
-                        rowHeight={25}
+                        rowHeight={40}
                         rowCount={100}
                         scrollToColumn={focusedColumnIndex}
                         scrollToRow={focusedRowIndex}

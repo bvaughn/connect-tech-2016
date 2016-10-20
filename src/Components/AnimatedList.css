@@ -21,3 +21,23 @@
   border: 4px solid #222;
   border-radius: 8px;
 }
+
+.AnimatedListDimmerBottom,
+.AnimatedListDimmerTop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  opacity: 0.35;
+}
+
+.AnimatedListDimmerBottom {
+  top: 200px;
+  height: 130px;
+}
+
+
+.AnimatedListDimmerTop {
+  top: 0;
+  height: 100px;
+}

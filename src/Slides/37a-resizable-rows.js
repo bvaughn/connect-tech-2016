@@ -73,7 +73,7 @@ export default class MySlide extends Component {
   _rowHeight ({ index }) {
     const { rowHeights } = this.state;
 
-    return rowHeights.get(index, 40);
+    return rowHeights.get(index, 50);
   }
 
   _rowRenderer ({ index, isScrolling, key, style }) {
@@ -107,6 +107,9 @@ export default class MySlide extends Component {
               width={24}
               viewBoxHeight={24}
               viewBoxWidth={24}
+              style={{
+                fill: 'currentColor'
+              }}
             >
               <defs>
                 <path d='M0 0h24v24H0V0z' id='a'/>
@@ -124,8 +127,9 @@ export default class MySlide extends Component {
 
   _resizeRow ({ deltaY, index }) {
     const { rowHeights } = this.state;
-    let rowHeight = rowHeights.get(index, 40);
-    rowHeight = Math.max(30, Math.min(100, rowHeight + deltaY));
+
+    let rowHeight = this._rowHeight({ index });
+    rowHeight = Math.max(40, Math.min(200, rowHeight + deltaY));
 
     this.setState({
       rowHeights: rowHeights.set(index, rowHeight)

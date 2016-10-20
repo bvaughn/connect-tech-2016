@@ -12,11 +12,17 @@ export default () => (
         Can we avoid measuring more than once?
       </h1>
 
-      <Step><p>Once a row is measured, cache the measurements</p></Step>
+      <Step>
+        <p>
+          <strong className='AnswerLabel'>Answer</strong>: Once a row is measured, cache the measurements
+        </p>
+      </Step>
+
+      <div className='Spacer' />
 
       <Step>
         <p>
-          <strong className='QuestionLabel'>Problem</strong>: Can we cache more than this? <Step index={3}><span>Can we cache the rows themselves?</span></Step>
+          <strong className='QuestionLabel'>Question</strong>: Can we cache more than this? <Step index={3}><span>Can we cache the rows themselves?</span></Step>
         </p>
       </Step>
 

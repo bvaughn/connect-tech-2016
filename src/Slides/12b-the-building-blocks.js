@@ -28,17 +28,17 @@ export default () => (
   </Stepper>
 );
 
-const GRID_BOX_OFFSETS = [10, 100, 190]
-const HIDDEN_GRID_BOX_OFFSETS = [[290, 10], [290, 100], [290, 190], [10, 290], [100, 290], [190, 290]]
+const GRID_BOX_OFFSETS = [10, 105, 200]
+const HIDDEN_GRID_BOX_OFFSETS = [[295, 10], [295, 105], [295, 200], [10, 295], [105, 295], [200, 295], [295, 295]]
 
 function GridSvg (props) {
   return (
     <BuildingBlocksSvgWrapper
       {...props}
-      height={371}
-      viewBoxHeight={371}
-      viewBoxWidth={371}
-      width={371}
+      height={385}
+      viewBoxHeight={385}
+      viewBoxWidth={385}
+      width={385}
     >
       {GRID_BOX_OFFSETS.map((xOffset, xIndex) => (
         GRID_BOX_OFFSETS.map((yOffset, yIndex) => (
@@ -46,8 +46,8 @@ function GridSvg (props) {
             key={`${xOffset}${yOffset}`}
             x={xOffset}
             y={yOffset}
-            width={80}
-            height={80}
+            width={90}
+            height={90}
             className='svgGridBox'
           >
             Cell
@@ -59,13 +59,15 @@ function GridSvg (props) {
           key={index}
           x={xOffset}
           y={yOffset}
-          width={80}
-          height={80}
+          width={90}
+          height={90}
           className='svgGridBoxNotRendered'
         >
           Hidden
        </LabeledRect>
       ))}
+      <rect x={274} y={0} width={111} height={274} className='svgNotRenderedDimmer' />
+      <rect x={0} y={274} width={385} height={111} className='svgNotRenderedDimmer' />
     </BuildingBlocksSvgWrapper>
   );
 }

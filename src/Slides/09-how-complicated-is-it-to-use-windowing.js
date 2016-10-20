@@ -8,32 +8,44 @@ import sourceNonVirtualized from './Examples/perf-comparison-non-virtualized.js'
 import sourceVirtualized from './Examples/perf-comparison-virtualized.js';
 
 export default () => (
-  <Stepper numSteps={3}>
+  <Stepper numSteps={5}>
     <Slide>
       <h1>How complicated is it to use windowing?</h1>
       <Step index={0} exactMatch>
         <div>
           <h2>Rendering a list with React</h2>
-          <CodeMirror
-            highlightLines={[[10,14]]}
-            source={sourcePlain}
-          />
+          <CodeMirror source={sourcePlain} />
         </div>
       </Step>
       <Step index={1} exactMatch>
         <div>
           <h2>Rendering a list with React</h2>
           <CodeMirror
-            highlightLines={[[2,8]]}
-            source={sourceNonVirtualized}
+            dimLines={[[0,9], [15,17]]}
+            source={sourcePlain}
           />
         </div>
       </Step>
       <Step index={2} exactMatch>
         <div>
+          <h2>Rendering a list with React</h2>
+          <CodeMirror
+            dimLines={[[0,1], [9,17], [19,21]]}
+            source={sourceNonVirtualized}
+          />
+        </div>
+      </Step>
+      <Step index={3} exactMatch>
+        <div>
+          <h2>Rendering a list with react-virtualized</h2>
+          <CodeMirror source={sourceVirtualized} />
+        </div>
+      </Step>
+      <Step index={4} exactMatch>
+        <div>
           <h2>Rendering a list with react-virtualized</h2>
           <CodeMirror
-            highlightLines={[[15,21]]}
+            dimLines={[[0,1], [11,14], [22,23]]}
             source={sourceVirtualized}
           />
         </div>

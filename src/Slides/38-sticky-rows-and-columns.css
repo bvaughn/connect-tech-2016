@@ -2,12 +2,11 @@
   height: 300px;
   position: relative;
   border: 1px solid #dadada;
-  font-size: 12px;
   overflow: hidden;
 }
 
 .TopLeftCell {
-  height: 25px;
+  height: 40px;
   width: 50px;
   background-color: #f3f3f3;
   border-bottom: 4px solid #bcbcbc;
@@ -17,7 +16,7 @@
 .MainGrid {
   position: absolute !important;
   left: 50px;
-  top: 25px;
+  top: 40px;
 }
 
 .MainGridCell {
@@ -31,6 +30,7 @@
   border-right: 1px solid #dadada;
   border-bottom: 1px solid #dadada;
   background-color: #fff;
+  font-size: 1rem;
 }
 
 .MainGridCellFocused {
@@ -40,7 +40,7 @@
 .LeftGrid {
   position: absolute !important;
   left: 0;
-  top: 25px;
+  top: 40px;
   overflow: hidden !important;
 }
 
@@ -48,7 +48,7 @@
   position: absolute !important;
   left: 50px;
   top: 0;
-  height: 25px;
+  height: 40px;
   overflow: hidden !important;
 }
 
@@ -60,7 +60,6 @@
   background-color: #f3f3f3;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  font-size: 10px;
 }
 
 .FixedGridCellFocused {

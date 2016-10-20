@@ -13,7 +13,7 @@ export default () => (
       <Step>
         <p>
           <strong className='QuestionLabel'>Problem</strong>:
-          DOM elements have height constraints (eg Chrome 33.5M pixels, IE 1.5M pixels)
+          DOM elements have height constraints (eg Chrome 33.5M px, IE 1.5M px)
         </p>
       </Step>
       <ul>

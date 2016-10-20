@@ -11,15 +11,15 @@ export default function BuildingBlocksSvgWrapper ({ children, ...rest }) {
       {...rest}
     >
       <g>
+        {children}
+
         <rect
-          x={1}
-          y={1}
-          width={278}
-          height={278}
+          x={4}
+          y={4}
+          width={272}
+          height={272}
           className='svgOuterBox'
         />
-
-        {children}
       </g>
     </SvgWrapper>
   );

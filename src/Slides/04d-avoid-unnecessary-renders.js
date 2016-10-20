@@ -7,12 +7,17 @@ export default () => (
   <Stepper numSteps={4}>
     <Slide>
       <h1>Avoid unnecessary renders</h1>
-      <p>Is that all?</p>
+      <h2>Is that all?</h2>
       <ul>
-        <Step><li>Choose <code>props</code> carefully (eg <code>userName</code> not <code>user</code>)</li></Step>
-        <Step><li>Use immutable data (see <a href='https://facebook.github.io/immutable-js/'>Immutable JS</a>)</li></Step>
+        <Step><li><a href='https://facebook.github.io/immutable-js/'>Immutable</a> data speeds up comparisons</li></Step>
+        <Step>
+          <li>
+            Choose <code>props</code> carefully (eg <code>userName</code> not <code>user</code>)
+
+            <Step><ul><li>This also helps with testing!</li></ul></Step>
+          </li>
+        </Step>
       </ul>
-      <Step><h2>This also helps with testing!</h2></Step>
     </Slide>
   </Stepper>
 );

@@ -38,11 +38,19 @@ export default class DefaultSlide extends Component {
                 <div className='ImagePlaceholder'></div>
               )}
               {!isScrolling && (
-                <img
-                  className='Image'
-                  role='presentation'
-                  src={image}
-                />
+                <div className='ImageContainer'>
+                  <img
+                    className='Image'
+                    role='presentation'
+                    src={image}
+                  />
+                  <div
+                    className='ImageTinter'
+                    style={{
+                      background: hexToRgba(list[index].color, 0.35)
+                    }}
+                  />
+                </div>
               )}
               {list[index].name}
             </div>
@@ -56,4 +64,12 @@ export default class DefaultSlide extends Component {
       </Slide>
     );
   }
+}
+
+function hexToRgba(hex, alpha) {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const r = parseInt(result[1], 16);
+  const g = parseInt(result[2], 16);
+  const b = parseInt(result[3], 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }

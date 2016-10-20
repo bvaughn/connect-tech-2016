@@ -9,14 +9,18 @@ export default () => (
     <Slide>
       <h1>Can we scroll to a row with props?</h1>
       <p>
-        The basic approach:
+        <strong className='AnswerLabel'>Solution</strong>: The basic approach:
       </p>
       <ul>
-        <Step><li>J.I.T. measure rows before the specified index</li></Step>
-        <Step><li>(No need to measure rows that come after)</li></Step>
-        <Step><li>Keep running total of measured sizes (in cache)</li></Step>
+        <Step index={1}>
+          <li>
+            J.I.T. measure rows before the specified index
+            <Step index={2}><ul><li>No need to measure rows that come after</li></ul></Step>
+          </li>
+        </Step>
+        <Step index={3}><li>Keep running total of measured sizes (in cache)</li></Step>
       </ul>
-      <Step>
+      <Step index={4}>
         <DeferMeasurements />
       </Step>
     </Slide>

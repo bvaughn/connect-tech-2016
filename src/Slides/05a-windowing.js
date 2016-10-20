@@ -12,9 +12,10 @@ export default () => (
       <ul>
         <Step><li>Technique known as "windowing".</li></Step>
         <Step><li>Simple to describe but complex to implement.</li></Step>
+        <Step><li>Analog example: books</li></Step>
       </ul>
 
-      <Step>
+      <Step index={3}>
         <img
           className='BooksImage'
           role='presentation'

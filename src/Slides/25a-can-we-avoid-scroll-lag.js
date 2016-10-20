@@ -1,4 +1,5 @@
 import React from 'react';
+import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
@@ -24,7 +25,7 @@ export default () => (
           />
         </video>
       </Step>
-      <Step><h2>This concern is unique to windowing.</h2></Step>
+      <Step><p><Note>This concern is unique to windowing.</Note></p></Step>
     </Slide>
   </Stepper>
 );

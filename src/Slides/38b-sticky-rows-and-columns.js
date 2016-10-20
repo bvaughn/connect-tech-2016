@@ -18,29 +18,36 @@ export default () => (
 
       <Step index={1} exactMatch>
         <CodeMirror
-          dimLines={[[0,1], [4,9], [11,16], [18,22], [24,26], [29,30]]}
+          dimLines={[[0,1], [4,22], [24,26], [29,30]]}
           source={sourceP1}
         />
       </Step>
 
       <Step index={2} exactMatch>
-        <CodeMirror source={sourceP2} />
+        <CodeMirror
+          dimLines={[[0,1], [4,9], [11,16], [18,26], [29,30]]}
+          source={sourceP1}
+        />
       </Step>
 
       <Step index={3} exactMatch>
+        <CodeMirror source={sourceP2} />
+      </Step>
+
+      <Step index={4} exactMatch>
         <CodeMirror
           source={sourceP3}
         />
       </Step>
 
-      <Step index={4} exactMatch>
+      <Step index={5} exactMatch>
         <CodeMirror
           dimLines={[[0,1], [4,6], [8,8], [10,11]]}
           source={sourceP3}
         />
       </Step>
 
-      <Step index={5} exactMatch>
+      <Step index={6} exactMatch>
         <CodeMirror
           dimLines={[[0,3], [7,7], [9,11]]}
           source={sourceP3}

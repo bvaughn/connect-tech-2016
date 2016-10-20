@@ -14,6 +14,7 @@ export default function LabeledCircle ({ children, className, cx, cy, r }) {
         y={cy}
         textAnchor='middle'
         alignmentBaseline='central'
+        className='SvgLabel'
       >
         {children}
       </text>

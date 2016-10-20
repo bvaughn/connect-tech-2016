@@ -1,15 +1,12 @@
 import React from 'react';
 
-export default function SvgWrapper ({ children, height, viewBoxHeight, viewBoxWidth, width }) {
+export default function SvgWrapper ({ viewBoxHeight, viewBoxWidth, ...rest }) {
   return (
     <svg
-      width={width}
-      height={height}
+      {...rest}
       viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
       preserveAspectRatio='xMinYMax meet'
-    >
-      {children}
-    </svg>
+    />
   );
 }
 

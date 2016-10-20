@@ -28,7 +28,7 @@ export default class ExampleList extends Component {
         rowRenderer={({ index, key, style }) => (
           <div
             className={classnames('ListRow', {
-              ListRowEven: index % 2 === 0
+              ListRowActived: index === scrollToIndex
             })}
             key={index}
             style={style}
@@ -45,9 +45,6 @@ export default class ExampleList extends Component {
               <div className='RowName'>{list[index].name}</div>
               <div className='RowRowNumber'>This is row {index}</div>
             </div>
-            {index === scrollToIndex && (
-              <i className='fa fa-star RowStar' />
-            )}
           </div>
         )}
         scrollToAlignment={scrollToAlignment}

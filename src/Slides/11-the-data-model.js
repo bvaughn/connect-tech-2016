@@ -19,8 +19,20 @@ export default () => (
           </Step>
         </ul>
       </Step>
-      <Step index={2}>
+      <Step index={2} exactMatch>
         <CodeMirror source={source} />
+      </Step>
+      <Step index={3} exactMatch>
+        <CodeMirror
+          dimLines={[[0,1], [3,4], [6,6], [8,9]]}
+          source={source}
+        />
+      </Step>
+      <Step index={4} exactMatch>
+        <CodeMirror
+          dimLines={[[0,3], [5,9]]}
+          source={source}
+        />
       </Step>
       <Step index={3}>
         <p><Note>You can return any DOM element</Note></p>

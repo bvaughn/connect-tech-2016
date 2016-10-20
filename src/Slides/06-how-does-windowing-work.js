@@ -14,7 +14,7 @@ export default () => (
         <h1>How does windowing work?</h1>
         <ul>
           <li className={classnames({ HowWorksHidden: index < 1 })}>
-            Normal DOM element for presenting data (eg <code>&lt;div&gt;</code>, 180px tall)
+            Normal DOM element for presenting data (eg <code>&lt;ul&gt;</code>, 180px tall)
           </li>
           <li className={classnames({ HowWorksHidden: index < 2 })}>
             Set of items (eg 10 items, each 60px tall)
@@ -56,6 +56,9 @@ function Image ({ index }) {
   const scrollbarClassName = classnames('HowWorksHidden', {
     HowWorksVisible: index > 3
   })
+  const notRenderedDimmerClassName = classnames('HowWorksNotRenderedDimmer', {
+    HowWorksNotRenderedDimmerVisible: index > 3
+  })
 
   return (
     <SvgWrapper
@@ -94,6 +97,12 @@ function Image ({ index }) {
            </LabeledRect>
           ))}
         </g>
+
+        <g>
+          <rect x={25} y={0} width={100} height={80} className={notRenderedDimmerClassName} />
+          <rect x={25} y={170} width={100} height={134} className={notRenderedDimmerClassName} />
+        </g>
+
         <g className={outerGroupClassName}>
           <g>
             <line x1={102} y1={72} x2={25} y2={112} className={viewportLineClassName} />
@@ -107,8 +116,8 @@ function Image ({ index }) {
             <rect x={192} y={100} width={5} rx={3} ry={3} height={15} className='HowWorksScrollThumb' />
           </g>
 
-          <LabeledRect x={100} y={70} width={100} height={90} className='HowWorksOuterRect'>
-            &lt;div&gt;
+          <LabeledRect x={100} y={70} width={100} height={90} className='HowWorksOuterRect' mono>
+            &lt;ul&gt;
           </LabeledRect>
         </g>
       </g>
