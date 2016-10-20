@@ -21,7 +21,7 @@ export default () => (
 
       <Step>
         <div>
-          <h3>Collection</h3>
+          <h2>Collection</h2>
 
           <CollectionSvg />
         </div>

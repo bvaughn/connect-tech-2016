@@ -9,7 +9,7 @@ export default () => (
   <Stepper numSteps={4}>
     <Slide>
       <h1>Can we handle items with varying heights?</h1>
-      <h3>If size can be inferred from the data ...</h3>
+      <h2>If size can be inferred from the data ...</h2>
       <Step><p><strong className='AnswerLabel'>Solution</strong>: Use a function property!</p></Step>
       <Step exactMatch>
         <CodeMirror

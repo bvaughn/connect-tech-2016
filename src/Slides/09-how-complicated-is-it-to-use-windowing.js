@@ -13,7 +13,7 @@ export default () => (
       <h1>How complicated is it to use windowing?</h1>
       <Step index={0} exactMatch>
         <div>
-          <h3>Rendering a list with React</h3>
+          <h2>Rendering a list with React</h2>
           <CodeMirror
             highlightLines={[[10,14]]}
             source={sourcePlain}
@@ -22,7 +22,7 @@ export default () => (
       </Step>
       <Step index={1} exactMatch>
         <div>
-          <h3>Rendering a list with React</h3>
+          <h2>Rendering a list with React</h2>
           <CodeMirror
             highlightLines={[[2,8]]}
             source={sourceNonVirtualized}
@@ -31,7 +31,7 @@ export default () => (
       </Step>
       <Step index={2} exactMatch>
         <div>
-          <h3>Rendering a list with react-virtualized</h3>
+          <h2>Rendering a list with react-virtualized</h2>
           <CodeMirror
             highlightLines={[[15,21]]}
             source={sourceVirtualized}

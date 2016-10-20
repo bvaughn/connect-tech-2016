@@ -19,7 +19,7 @@ export default () => (
 
       <Step>
         <div>
-          <h3>Grid</h3>
+          <h2>Grid</h2>
 
           <GridSvg />
         </div>

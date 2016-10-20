@@ -29,7 +29,13 @@ export default () => (
           <li>Image carousels</li>
         </Step>
         <Step index={6}>
-          <li>And more: News feeds (eg Facebook, Twitter), chat applications (eg Slack, Messenger), etc.</li>
+          <li>
+            And more:
+            <ul>
+              <li>News feeds like Facebook and Twitter</li>
+              <li>Chat applications like Slack and Messenger</li>
+            </ul>
+          </li>
         </Step>
       </ul>
 

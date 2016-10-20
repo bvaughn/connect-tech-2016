@@ -47,7 +47,7 @@ export default class Stepper extends Component {
     return (
       <Slide>
         <h1>How much can windowing improve performance?</h1>
-        <h3>Rendering the same list with windowing</h3>
+        <h2>Rendering the same list with windowing</h2>
         {initialized || (
           <button onClick={() => this.setState({ initialized: true })}>
             Create List

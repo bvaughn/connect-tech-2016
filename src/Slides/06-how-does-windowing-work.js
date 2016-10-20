@@ -96,10 +96,10 @@ function Image ({ index }) {
         </g>
         <g className={outerGroupClassName}>
           <g>
-            <line x1={102} y1={72} x2={25} y2={92} className={viewportLineClassName} />
-            <line x1={102} y1={158} x2={25} y2={178} className={viewportLineClassName} />
-            <line x1={198} y1={72} x2={125} y2={92} className={viewportLineClassName} />
-            <line x1={198} y1={158} x2={125} y2={178} className={viewportLineClassName} />
+            <line x1={102} y1={72} x2={25} y2={112} className={viewportLineClassName} />
+            <line x1={102} y1={158} x2={25} y2={198} className={viewportLineClassName} />
+            <line x1={198} y1={72} x2={125} y2={112} className={viewportLineClassName} />
+            <line x1={198} y1={158} x2={125} y2={198} className={viewportLineClassName} />
           </g>
 
           <g className={scrollbarClassName}>

@@ -2,7 +2,6 @@ import React from 'react';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
-import slackImage from '../../public/jump-to-row-slack.png';
 
 export default () => (
   <Stepper numSteps={5}>
@@ -20,9 +19,6 @@ export default () => (
           <li>Jump to a cell in a spreadsheet</li>
         </Step>
       </ul>
-      <Step index={2} exactMatch>
-        <img src={slackImage} role='presentation' height={300} width='auto' />
-      </Step>
     </Slide>
   </Stepper>
 );

@@ -9,8 +9,8 @@ export default () => (
     <div>
       Slide deck (and source code) available at:
     </div>
-    <h3>
+    <h2>
       <a href='https://github.com/bvaughn/connect-tech-2016'>github.com/bvaughn/connect-tech-2016</a>
-    </h3>
+    </h2>
   </Centered>
 );

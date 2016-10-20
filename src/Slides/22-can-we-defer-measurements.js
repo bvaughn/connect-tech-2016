@@ -29,6 +29,7 @@ export default () => (
           <strong className='AnswerLabel'>Solution</strong>: Use estimated sizes initially and gradually adjust.
         </p>
       </Step>
+      <div className='Spacer' />
       <Step>
         <DeferMeasurements />
       </Step>

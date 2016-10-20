@@ -9,7 +9,7 @@ export default () => (
   <Stepper numSteps={4}>
     <Slide>
       <h1>Can we handle items with varying heights?</h1>
-      <h3>If size must be measured by the browser ...</h3>
+      <h2>If size must be measured by the browser ...</h2>
       <Step><p><strong className='AnswerLabel'>Solution</strong>: Use a HOC (<code>CellMeasurer</code>)</p></Step>
       <Step exactMatch>
         <CodeMirror

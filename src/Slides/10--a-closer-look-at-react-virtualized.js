@@ -6,6 +6,6 @@ export default () => (
     <h1>
       react-virtualized <i className='fa fa-github' />
     </h1>
-    <h3><a href='https://github.com/bvaughn/react-virtualized'>github.com/bvaughn/react-virtualized</a></h3>
+    <h2><a href='https://github.com/bvaughn/react-virtualized'>github.com/bvaughn/react-virtualized</a></h2>
   </Centered>
 );

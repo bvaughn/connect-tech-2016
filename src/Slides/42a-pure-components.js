@@ -13,7 +13,7 @@ export default () => (
       </ul>
       <Step index={3}>
         <div>
-          <h3>This means...</h3>
+          <h2>This means...</h2>
           <ul>
             <Step index={4}><li>Sorting a list will not auto-update RV components</li></Step>
             <Step index={5}><li>Changing an item within a list will not auto-update RV components</li></Step>

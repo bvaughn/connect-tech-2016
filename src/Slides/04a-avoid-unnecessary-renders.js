@@ -14,12 +14,12 @@ export default () => (
           <ScuChart scu='all' />
         </div>
       </Step>
-      <Step><h3>This is important because:</h3></Step>
+      <Step><h2>This is important because:</h2></Step>
       <ul>
         <Step><li>Slow for big applications</li></Step>
         <Step><li>Virtual DOM is faster than DOM, but still not free</li></Step>
       </ul>
-      <Step><h3>So how do we handle this?</h3></Step>
+      <Step><h2>So how do we handle this?</h2></Step>
     </Slide>
   </Stepper>
 );

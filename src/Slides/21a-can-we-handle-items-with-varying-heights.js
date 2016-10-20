@@ -20,7 +20,7 @@ export default () => (
         <Step><li>Size must be measured by the browser (eg chat messages)</li></Step>
       </ul>
       <Step index={5} exactMatch>
-        <img src={dropDownImage} role='presentation' />
+        <img src={dropDownImage} role='presentation' width={250} />
       </Step>
       <Step index={6} exactMatch>
         <img src={chatImage} role='presentation' />

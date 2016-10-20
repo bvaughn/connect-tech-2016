@@ -2,7 +2,7 @@ import React from 'react';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
-import image from '../../public/thoughtful-meme.jpg';
+import image from '../../public/computer-guy.png';
 
 export default () => (
   <Stepper numSteps={6}>
@@ -10,7 +10,7 @@ export default () => (
       <h1>Why are we here?</h1>
       <Step index={0} exactMatch>
         <img
-          height={200}
+          height={144}
           role='presentation'
           src={image}
           width='auto'

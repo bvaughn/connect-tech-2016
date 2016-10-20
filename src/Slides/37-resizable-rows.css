@@ -12,7 +12,7 @@
   cursor: row-resize;
 }
 .DragHandle:hover {
-  background-color: #f7f7f7;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .DragHandleActive,
