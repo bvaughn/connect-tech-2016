@@ -14,7 +14,7 @@ export default () => (
             <strong className='QuestionLabel'>Problem</strong>: Measuring wastes cycles, especially if it requires rendering.
           </p>
         )}
-        {index == 1 && (
+        {index === 1 && (
           <p>
             <strong className='AnswerLabel'>Solution</strong>: Don't measure sizes until content is actually displayed.
           </p>

@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import times from 'lodash.times';
 import React from 'react';
+import CrossHatchRect from '../Components/CrossHatchRect';
 import LabeledRect from '../Components/LabeledRect';
 import SvgWrapper from '../Components/SvgWrapper';
 import Slide from '../Components/Slide';
@@ -56,9 +57,7 @@ function Image ({ index }) {
   const scrollbarClassName = classnames('HowWorksHidden', {
     HowWorksVisible: index > 3
   })
-  const notRenderedDimmerClassName = classnames('HowWorksNotRenderedDimmer', {
-    HowWorksNotRenderedDimmerVisible: index > 3
-  })
+  const dimmerVisible = index > 3
 
   return (
     <SvgWrapper
@@ -99,8 +98,8 @@ function Image ({ index }) {
         </g>
 
         <g>
-          <rect x={25} y={0} width={100} height={80} className={notRenderedDimmerClassName} />
-          <rect x={25} y={170} width={100} height={134} className={notRenderedDimmerClassName} />
+          <CrossHatchRect x={25} y={0} width={100} height={80} visible={dimmerVisible} />
+          <CrossHatchRect x={25} y={170} width={100} height={134} visible={dimmerVisible} />
         </g>
 
         <g className={outerGroupClassName}>

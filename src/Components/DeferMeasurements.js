@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import CrossHatchRect from '../Components/CrossHatchRect';
 import LabeledRect from '../Components/LabeledRect';
 import SvgWrapper from '../Components/SvgWrapper';
 
@@ -15,8 +16,6 @@ const BOXES = [
 ]
 
 export default function DeferMeasurements () {
-  const notRenderedDimmerClassName = 'HowWorksNotRenderedDimmer HowWorksNotRenderedDimmerVisible'
-
   return (
     <SvgWrapper
       height={275}
@@ -47,8 +46,8 @@ export default function DeferMeasurements () {
         </g>
 
         <g>
-          <rect x={25} y={0} width={100} height={80} className={notRenderedDimmerClassName} />
-          <rect x={25} y={170} width={100} height={134} className={notRenderedDimmerClassName} />
+          <CrossHatchRect x={25} y={0} width={100} height={80} fill='url(#diagonalHatch)' visible />
+          <CrossHatchRect x={25} y={170} width={100} height={134} fill='url(#diagonalHatch)' visible />
         </g>
 
         <g className='HowWorksVisible HowWorksOuterRectShifted'>
