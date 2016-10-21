@@ -32,12 +32,16 @@ const xL2c = 175;
 const xL2d = 275;
 
 export default function Chart ({ scu }) {
+  const maybeMarker = scu === 'all'
+    ? 'url(#arrow)'
+    : undefined
+  const maybeClassName = scu === 'all'
+    ? 'scuAnimatedLine'
+    : 'scuFrozenLine'
   const maybeScu = scu === 'all'
     ? true
     : false
-  const maybeClassName = scu === 'some'
-    ? 'scuDottedLine'
-    : 'scuLine'
+
   return (
     <SvgWrapper
       height={175}
@@ -45,12 +49,18 @@ export default function Chart ({ scu }) {
       viewBoxHeight={175}
       viewBoxWidth={300}
     >
-      <line x1={xRoot} y1={y0} x2={xL1a} y2={y1} className='scuLine' />
-      <line x1={xRoot} y1={y0} x2={xL1b} y2={y1} className='scuLine' />
-      <line x1={xL1a} y1={y1} x2={xL2a} y2={y3} className={maybeClassName} />
-      <line x1={xL1a} y1={y1} x2={xL2b} y2={y3} className={maybeClassName} />
-      <line x1={xL1b} y1={y1} x2={xL2c} y2={y3} className='scuLine' />
-      <line x1={xL1b} y1={y1} x2={xL2d} y2={y3} className='scuLine' />
+      <defs>
+        <marker id='arrow' markerWidth='6' markerHeight='6' refX='25' refY='3' orient='auto' markerUnits='strokeWidth'>
+          <path d='M0,0 L0,6 L6,3 z' className='scuArrow' />
+        </marker>
+      </defs>
+
+      <line x1={xRoot} y1={y0} x2={xL1a} y2={y1} markerEnd='url(#arrow)' className='scuAnimatedLine' />
+      <line x1={xRoot} y1={y0} x2={xL1b} y2={y1} markerEnd='url(#arrow)' className='scuAnimatedLine' />
+      <line x1={xL1a}  y1={y1} x2={xL2a} y2={y3} markerEnd={maybeMarker} className={maybeClassName} />
+      <line x1={xL1a}  y1={y1} x2={xL2b} y2={y3} markerEnd={maybeMarker} className={maybeClassName} />
+      <line x1={xL1b}  y1={y1} x2={xL2c} y2={y3} markerEnd='url(#arrow)' className='scuAnimatedLine' />
+      <line x1={xL1b}  y1={y1} x2={xL2d} y2={y3} markerEnd='url(#arrow)' className='scuAnimatedLine' />
 
       <Circle cx={xRoot} cy={y0} label='div' scu={true} />
       <Circle cx={xL1a}  cy={y1} label='ul'  scu={maybeScu} />

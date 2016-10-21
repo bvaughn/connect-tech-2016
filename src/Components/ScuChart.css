@@ -6,13 +6,13 @@
   fill: #a6e22e;
 }
 
-.scuLine,
-.scuDottedLine {
+.scuAnimatedLine,
+.scuFrozenLine {
   stroke-width: 1px;
-}
-.scuDottedLine {
-  stroke: #222;
   stroke-dasharray: 2, 4;
+  stroke: #222;
+}
+.scuAnimatedLine {
   animation: dash 1s linear;
   animation-iteration-count: infinite;
 }
@@ -26,8 +26,6 @@
   }
 }
 
-.scuLine {
-  stroke: #aaa;
-}
-.scuDottedLine {
+.scuArrow {
+  fill: #222;
 }
