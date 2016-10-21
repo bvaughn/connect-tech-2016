@@ -14,7 +14,7 @@ export default () => (
           <li>
             Choose <code>props</code> carefully (eg <code>userName</code> not <code>user</code>)
 
-            <Step><ul><li>This also helps with testing!</li></ul></Step>
+            <Step index={3}><ul><li>This also helps with testing!</li></ul></Step>
           </li>
         </Step>
       </ul>
