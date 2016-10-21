@@ -11,6 +11,7 @@ function Circle ({ label = 'div', scu = false, ...rest }) {
   return (
     <LabeledCircle
       className={className}
+      textClassName='scuText'
       r={20}
       {...rest}
     >

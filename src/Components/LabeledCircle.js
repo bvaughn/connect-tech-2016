@@ -1,6 +1,7 @@
+import classnames from 'classnames';
 import React from 'react';
 
-export default function LabeledCircle ({ children, className, cx, cy, r }) {
+export default function LabeledCircle ({ children, className, cx, cy, r, textClassName }) {
   return (
     <g>
       <circle
@@ -14,7 +15,7 @@ export default function LabeledCircle ({ children, className, cx, cy, r }) {
         y={cy}
         textAnchor='middle'
         alignmentBaseline='central'
-        className='SvgLabel'
+        className={classnames('SvgLabel', textClassName)}
       >
         {children}
       </text>

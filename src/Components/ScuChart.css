@@ -29,3 +29,8 @@
 .scuArrow {
   fill: #222;
 }
+
+.scuText {
+  font-family: monospace;
+  font-size: 12px;
+}
