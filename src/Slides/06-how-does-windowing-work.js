@@ -24,7 +24,9 @@ export default () => (
             Big DOM element for scrolling (eg 600px tall)
           </li>
           <li className={classnames({ HowWorksHidden: index < 4 })}>
-            Absolutely positioned rendered items
+            Absolutely positioned rendered items {index >= 5 && (
+              <span> (change based on scroll offset)</span>
+            )}
           </li>
         </ul>
         <Image index={index} />
