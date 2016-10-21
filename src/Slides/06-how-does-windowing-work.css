@@ -87,3 +87,52 @@
 .HowWorksScrollThumb {
   fill: rgba(0,0,0,.5);
 }
+
+.HowWorksScrollingLoop {
+  animation: scrollingLoop 2.5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scrollingLoop {
+  0%   { transform: translateY(-30px); }
+  50%  { transform: translateY(10px); }
+  100% { transform: translateY(-30px); }
+}
+
+.HowWorksScrollingThumbLoop {
+  animation: scrollingThumbLoop 2.5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scrollingThumbLoop {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(15px); }
+  100% { transform: translateY(0); }
+}
+
+.HowWorksTopConditionalScrollingFill {
+  animation: topConditionalScrollingFill 2.5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes topConditionalScrollingFill {
+  0%   { fill: #a6e22e; }
+  14%   { fill: #a6e22e; }
+  15%  { fill: #aaa; }
+  84%  { fill: #aaa; }
+  85%  { fill: #a6e22e; }
+}
+
+.HowWorksBottomConditionalScrollingFill {
+  animation: bottomConditionalScrollingFill 2.5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bottomConditionalScrollingFill {
+  0%   { fill: #aaa; }
+  14%   { fill: #aaa; }
+  15%   { fill: #a6e22e; }
+  84%   { fill: #a6e22e; }
+  85%  { fill: #aaa; }
+}
+

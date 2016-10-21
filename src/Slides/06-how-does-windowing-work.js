@@ -9,7 +9,7 @@ import Stepper from '../Components/Stepper';
 import './06-how-does-windowing-work.css';
 
 export default () => (
-  <Stepper numSteps={5}>
+  <Stepper numSteps={6}>
     {(index) => (
       <Slide>
         <h1>How does windowing work?</h1>
@@ -46,7 +46,8 @@ function Image ({ index }) {
   })
   const outerGroupClassName = classnames('HowWorksHidden', {
     HowWorksVisible: index > 0,
-    HowWorksOuterRectShifted: index > 2
+    HowWorksOuterRectShifted: index > 2,
+    HowWorksScrollingLoop: index >= 5
   })
   const rowGroupClassName = classnames('HowWorksRowGroup', 'HowWorksHidden', {
     HowWorksVisible: index > 3
@@ -57,7 +58,10 @@ function Image ({ index }) {
   const scrollbarClassName = classnames('HowWorksHidden', {
     HowWorksVisible: index > 3
   })
-  const dimmerVisible = index > 3
+  const thumbClassName = classnames('HowWorksScrollThumb', {
+    HowWorksScrollingThumbLoop: index >= 5
+  })
+  const dimmerVisible = index > 3 && index < 5
 
   return (
     <SvgWrapper
@@ -68,8 +72,8 @@ function Image ({ index }) {
     >
       <g className={groupClassName}>
         <g className={innerGroupClassName}>
-          {times(10).map((index) => (
-            <line key={index} x1={25} y1={2 + 30 * index} x2={125} y2={2 + 30 * index} className={innerLinesClassName} />
+          {times(10).map((i) => (
+            <line key={i} x1={25} y1={2 + 30 * i} x2={125} y2={2 + 30 * i} className={innerLinesClassName} />
           ))}
           <rect x={25}  y={2}  width={100} height={300}
             className={classnames('HowWorksInnerRect', {
@@ -77,19 +81,21 @@ function Image ({ index }) {
             })} />
         </g>
         <g className={rowGroupClassName}>
-          {times(10).map((index) => (
+          {times(10).map((i) => (
             <LabeledRect
-              key={index}
+              key={i}
               x={25}
-              y={2 + index * 30}
+              y={2 + i * 30}
               width={100}
               height={30}
               className={classnames({
-                HowWorksRowNotRendered: index < 2 || index > 5,
-                HowWorksRowRendered: index >= 2 && index <= 5
+                HowWorksTopConditionalScrollingFill: i === 2 && index >= 5,
+                HowWorksBottomConditionalScrollingFill: i === 6 && index >= 5,
+                HowWorksRowNotRendered: i < 2 || i > 5,
+                HowWorksRowRendered: i >= 2 && i <= 5
               })}
             >
-              {index >= 2 && index <= 5
+              {i >= 2 && i <= 5
                 ? 'Rendered'
                 : 'Not Rendered'
               }
@@ -112,7 +118,7 @@ function Image ({ index }) {
 
           <g className={scrollbarClassName}>
             <rect x={190} y={72} width={10} height={86} className='HowWorksScrollTrack' />
-            <rect x={192} y={100} width={5} rx={3} ry={3} height={15} className='HowWorksScrollThumb' />
+            <rect x={192} y={100} width={5} rx={3} ry={3} height={15} className={thumbClassName} />
           </g>
 
           <LabeledRect x={100} y={70} width={100} height={90} className='HowWorksOuterRect' mono>
