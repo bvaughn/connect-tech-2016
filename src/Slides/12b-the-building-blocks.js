@@ -7,15 +7,13 @@ import Step from '../Components/Step';
 import './12-the-building-blocks.css';
 
 export default () => (
-  <Stepper numSteps={3}>
+  <Stepper numSteps={2}>
     <Slide>
       <h1>
         The building blocks
       </h1>
 
-      <p>
-        I'm going to blow your mind now: <Step><span>Windowing isn't just vertical!</span></Step>
-      </p>
+      <p>Windowing isn't just vertical!</p>
 
       <Step>
         <div>

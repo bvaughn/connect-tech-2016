@@ -1,17 +1,9 @@
-const source = `function WithUser ({ children }) {
-  return children({ user })
-}
-
-function WithLocalization ({ children }) {
-  return children({ localization })
-}
-
-function LocalizedUserBadge () {
+const source = `function LocalizedUserBadge () {
   return (
     <WithLocalization>
-      {({ localization }) => (
+      {(localization) => (
         <WithUser>
-          {({ user }) => (
+          {(user) => (
             <h1>
               {localization.get('user_greeting', { name: user.name })}
             </h1>

@@ -6,7 +6,7 @@ import image from '../../public/occlusion-culling.jpg';
 import './05-only-display-visible-data.css';
 
 export default () => (
-  <Stepper numSteps={5}>
+  <Stepper numSteps={6}>
     <Slide>
       <h1>Only display visible data</h1>
 
@@ -17,6 +17,8 @@ export default () => (
         <Step><li>Which objects are in the direction being viewed</li></Step>
         <Step><li>Which ones aren't obscurred by other items (eg walls)</li></Step>
       </ul>
+
+      <Step exactMatch><p>Think: Super Mario bros</p></Step>
 
       <Step>
         <img

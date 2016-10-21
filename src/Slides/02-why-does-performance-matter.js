@@ -25,7 +25,7 @@ export default () => (
         </Step>
         <Step index={3}><li>Smooth scrolling is an important factor in mobile UX</li></Step>
         <Step index={4}><li>Battery life (eg mobile, laptops)</li></Step>
-        <Step index={5}><li>Abandronment rate</li></Step>
+        <Step index={5}><li>Abandonment rate</li></Step>
       </ul>
     </Slide>
   </Stepper>

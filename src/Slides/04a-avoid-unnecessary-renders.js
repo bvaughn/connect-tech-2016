@@ -10,7 +10,7 @@ export default () => (
       <h1>Avoid unnecessary renders</h1>
       <Step>
         <div>
-          <p>React (re-)renders the entire tree when state changes.</p>
+          <p>React recursively renders elements when state changes*.</p>
           <ScuChart scu='all' />
         </div>
       </Step>
