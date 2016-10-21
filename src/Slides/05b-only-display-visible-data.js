@@ -3,7 +3,7 @@ import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
 import image from '../../public/occlusion-culling.jpg';
-import './05-windowing.css';
+import './05-only-display-visible-data.css';
 
 export default () => (
   <Stepper numSteps={5}>

@@ -52,7 +52,9 @@ export default class DefaultSlide extends Component {
                   />
                 </div>
               )}
-              {list[index].name}
+              <span className='ImageListRowText'>
+                {list[index].name}
+              </span>
             </div>
           )}
           width={240}

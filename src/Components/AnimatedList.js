@@ -61,7 +61,7 @@ export default function AnimatedListList ({
 
           let label;
           if (isOverscanRow) {
-            label = 'overscan';
+            label = 'rendered (overscan)';
           } else if (isInvisibleRow) {
             label = 'not rendered';
           } else {

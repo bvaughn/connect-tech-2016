@@ -1,13 +1,13 @@
 .Image {
   width: 60px;
   height: 60px;
-  margin-right: 0.5rem;
 }
 
 .ImageContainer {
   position: relative;
   width: 60px;
   height: 60px;
+  margin-right: 0.5rem;
 }
 
 .ImageTinter {
@@ -26,4 +26,8 @@
   background-color: #aaa;
   border-radius: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.ImageListRowText {
+  font-size: 1rem;
 }

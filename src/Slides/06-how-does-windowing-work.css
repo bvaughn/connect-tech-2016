@@ -94,5 +94,5 @@
 }
 .HowWorksNotRenderedDimmerVisible {
   opacity: 0.5;
-  transition: all 10s ease;
+  transition: all 5s ease;
 }
