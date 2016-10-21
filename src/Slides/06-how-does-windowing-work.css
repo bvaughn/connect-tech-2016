@@ -22,11 +22,12 @@
 
 .HowWorksHidden {
   opacity: 0;
+  transition: all 1s ease;
 }
 
 .HowWorksVisible {
-  transition: all 1s ease;
   opacity: 1;
+  transition: all 1s ease;
 }
 
 .HowWorksInnerLineAnimated {

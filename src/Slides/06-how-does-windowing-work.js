@@ -94,6 +94,7 @@ function Image ({ index }) {
                 HowWorksRowNotRendered: i < 2 || i > 5,
                 HowWorksRowRendered: i >= 2 && i <= 5
               })}
+              textClassName={index >= 5 ? 'HowWorksHidden' : 'HowWorksVisible'}
             >
               {i >= 2 && i <= 5
                 ? 'Rendered'
