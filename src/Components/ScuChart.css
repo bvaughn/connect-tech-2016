@@ -13,7 +13,7 @@
   stroke: #222;
 }
 .scuAnimatedLine {
-  animation: dash 1s linear;
+  animation: dash 500ms linear;
   animation-iteration-count: infinite;
 }
 

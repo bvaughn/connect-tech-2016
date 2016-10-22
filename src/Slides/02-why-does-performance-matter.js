@@ -17,15 +17,11 @@ export default () => (
         />
       </Step>
       <ul>
-        <Step index={1}>
-          <li>
-            Performance impacts framerate
-            <Step index={2}><ul><li>Most people have older hardware</li></ul></Step>
-          </li>
-        </Step>
-        <Step index={3}><li>Smooth scrolling is an important factor in mobile UX</li></Step>
-        <Step index={4}><li>Battery life (eg mobile, laptops)</li></Step>
-        <Step index={5}><li>Abandonment rate</li></Step>
+        <Step><li>Most people have older hardware</li></Step>
+        <Step><li>Performance impacts framerate</li></Step>
+        <Step><li>Smooth scrolling is an important factor in mobile UX</li></Step>
+        <Step><li>Battery life (eg mobile, laptops)</li></Step>
+        <Step><li>Abandonment rate</li></Step>
       </ul>
     </Slide>
   </Stepper>
