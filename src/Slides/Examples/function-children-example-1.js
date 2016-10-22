@@ -1,14 +1,17 @@
 const source = `// Pseudo-code
 class WithUser extends Component {
   componentDidMount () {
-    fetch('your/api/service')
-      .then((user) => this.setState({ user }))
+    // Fetch user data from Api, localStorage, whatever
+    // Then call setState({ user })
   }
 
   render () {
-    if (this.state.user) {
-      return this.props.children(this.state.user)
-    }
+    const { user } = this.state
+    const { children } = this.props
+
+    return user
+      ? children(user)
+      : null
   }
 }`
 

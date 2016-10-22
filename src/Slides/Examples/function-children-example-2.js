@@ -1,14 +1,17 @@
 const source = `// Pseudo-code
 class WithLocalization extends Component {
   componentDidMount () {
-    fetch('your/api/service')
-      .then((localization) => this.setState({ localization }))
+    // Fetch user data from Api, localStorage, whatever
+    // Then call setState({ localization })
   }
 
   render () {
-    if (this.state.localization) {
-      return this.props.children(this.state.localization)
-    }
+    const { localization } = this.state
+    const { children } = this.props
+
+    return localization
+      ? children(localization)
+      : null
   }
 }`
 
