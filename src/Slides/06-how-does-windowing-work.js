@@ -15,7 +15,7 @@ export default () => (
         <h1>How does windowing work?</h1>
         <ul>
           <li className={classnames({ HowWorksHidden: index < 1 })}>
-            Normal DOM element for presenting data (eg <code>&lt;ul&gt;</code>, 180px tall)
+            DOM element for presenting data (eg <code>&lt;ul&gt;</code>, 180px tall)
           </li>
           <li className={classnames({ HowWorksHidden: index < 2 })}>
             Set of items (eg 10 items, each 60px tall)
@@ -46,13 +46,13 @@ function Image ({ index }) {
     HowWorksHidden: index > 3,
     HowWorksInnerLineAnimated: index > 2
   })
-  const outerGroupClassName = classnames('HowWorksHidden', {
+  const outerGroupClassName = classnames('HowWorksOuterGroup', 'HowWorksHidden', {
     HowWorksVisible: index > 0,
-    HowWorksOuterRectShifted: index > 2,
-    HowWorksScrollingLoop: index >= 5
+    HowWorksOuterRectShifted: index > 2
   })
   const rowGroupClassName = classnames('HowWorksRowGroup', 'HowWorksHidden', {
-    HowWorksVisible: index > 3
+    HowWorksVisible: index > 3,
+    HowWorksScrollingLoop: index >= 5
   })
   const viewportLineClassName = classnames('HowWorksViewportLine', 'HowWorksHidden', {
     HowWorksVisible: index > 2

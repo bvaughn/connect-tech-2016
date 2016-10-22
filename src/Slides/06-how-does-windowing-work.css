@@ -7,6 +7,11 @@
   transform: skewX(15deg);
 }
 
+.HowWorksOuterGroup {
+  transition: transform 1s ease;
+  transform: translate(-75px, -68px);
+}
+
 .HowWorksOuterRect {
   rx: 8px;
   ry: 8px;
@@ -17,7 +22,7 @@
 }
 
 .HowWorksOuterRectShifted {
-  transform: translateY(-30px);
+  transform: translate(0, -30px);
 }
 
 .HowWorksHidden {
@@ -79,6 +84,7 @@
   stroke-width: 1px;
   stroke-dasharray: 2, 4;
   stroke: #222;
+  transition-delay: 1s;
 }
 
 .HowWorksScrollTrack {
@@ -95,9 +101,9 @@
 }
 
 @keyframes scrollingLoop {
-  0%   { transform: translateY(-30px); }
-  50%  { transform: translateY(10px); }
-  100% { transform: translateY(-30px); }
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-40px); }
+  100% { transform: translateY(0px); }
 }
 
 .HowWorksScrollingThumbLoop {
