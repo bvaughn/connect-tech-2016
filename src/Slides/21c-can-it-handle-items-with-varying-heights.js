@@ -8,7 +8,7 @@ import sourceCellMeasurer from './Examples/dynamic-cell-measurer.js';
 export default () => (
   <Stepper numSteps={4}>
     <Slide>
-      <h1>Can we handle items with varying heights?</h1>
+      <h1>Can it handle items with varying heights?</h1>
       <h2>If size must be measured by the browser ...</h2>
       <Step><p><strong className='AnswerLabel'>Solution</strong>: Use a HOC (<code>CellMeasurer</code>)</p></Step>
       <Step exactMatch>

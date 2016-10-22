@@ -3,14 +3,12 @@ import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
 import image from '../../public/cache-all-the-things.png';
-import './23-do-we-have-to-measure-an-item-more-than-once.css';
+import './23-does-it-have-to-measure-an-item-more-than-once.css';
 
 export default () => (
   <Stepper numSteps={8}>
     <Slide>
-      <h1 className='CacheAllTheThingsHeader'>
-        Do we have to measure an item more than once?
-      </h1>
+      <h1>Does it have to measure everything up front?</h1>
 
       <Step>
         <p>

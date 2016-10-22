@@ -6,7 +6,7 @@ import Stepper from '../Components/Stepper';
 export default () => (
   <Stepper numSteps={5}>
     <Slide>
-      <h1>Can we scroll to a row with props?</h1>
+      <h1>Can it scroll to a row with props?</h1>
       <Step><h2>Why would we want to?</h2></Step>
       <ul>
         <Step>
