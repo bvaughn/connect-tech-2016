@@ -10,12 +10,12 @@ export default () => (
       <p>Very powerful pattern!</p>
       <Step index={1}>
         <ul>
-          <li>Enables arbitrary composition</li>
+          <li>Allows you to mix-and-match components</li>
           <Step index={2}>
-            <li>Which enables more modular code (aka more maintainable code)</li>
+            <li>Which enables more modular (maintainable) code</li>
           </Step>
           <Step index={3}>
-            <li>Provides an alternative to <code>context</code> (React docs: "use sparingly")</li>
+            <li>An alternative to <code>context</code> (React docs: "use sparingly")</li>
           </Step>
         </ul>
       </Step>

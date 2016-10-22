@@ -2,13 +2,13 @@ import React from 'react';
 import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
-import './25-avoid-scroll-jank.css';
+import './25-what-about-scroll-lag.css';
 
 export default () => (
   <Stepper numSteps={5}>
     <Slide>
-      <h1>Can we avoid scroll lag?</h1>
-      <h2>Why does windowing cause this?</h2>
+      <h1>What about scroll lag?</h1>
+      <p>Why does windowing cause this?</p>
       <ul>
         <Step>
           <li>Browsers manage scrolling in a separate thread</li>
@@ -20,7 +20,7 @@ export default () => (
           <li>Sometimes JS doesn't respond fast enough (eg 16ms frame budget)</li>
         </Step>
       </ul>
-      <Step><h2>So what can we do about it?</h2></Step>
+      <Step><p>So what can we do about it?</p></Step>
     </Slide>
   </Stepper>
 );

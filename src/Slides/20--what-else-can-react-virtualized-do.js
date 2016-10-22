@@ -3,6 +3,6 @@ import Centered from '../Components/Centered'
 
 export default () => (
   <Centered>
-    <h1>How else does react-virtualized optimize?</h1>
+    <h1>What else can react-virtualized do?</h1>
   </Centered>
 );

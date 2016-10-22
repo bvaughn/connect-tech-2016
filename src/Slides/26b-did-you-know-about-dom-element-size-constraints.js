@@ -4,14 +4,14 @@ import React from 'react';
 import Slide from '../Components/Slide'
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
-import './26-can-we-beat-dom-element-size-limits.css';
+import './26-did-you-know-about-DOM-element-size-constraints.css';
 
 export default () => (
   <Stepper numSteps={6}>
     {(index) => (
       <Slide>
         <h1>
-          Can we beat DOM element height constraints?
+          Did you know about DOM element size constraints?
         </h1>
         <h2>So how can we beat this?</h2>
         <Step><p><strong className='AnswerLabel'>Solution</strong>: Compress things.</p></Step>

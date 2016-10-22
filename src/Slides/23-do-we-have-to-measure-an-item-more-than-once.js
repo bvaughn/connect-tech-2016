@@ -3,18 +3,18 @@ import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
 import image from '../../public/cache-all-the-things.png';
-import './23-can-we-avoid-measuring-more-than-once.css';
+import './23-do-we-have-to-measure-an-item-more-than-once.css';
 
 export default () => (
   <Stepper numSteps={8}>
     <Slide>
       <h1 className='CacheAllTheThingsHeader'>
-        Can we avoid measuring more than once?
+        Do we have to measure an item more than once?
       </h1>
 
       <Step>
         <p>
-          <strong className='AnswerLabel'>Answer</strong>: Once a row is measured, cache the measurements
+          <strong className='AnswerLabel'>Answer</strong>: No! Cache all measurements!
         </p>
       </Step>
 

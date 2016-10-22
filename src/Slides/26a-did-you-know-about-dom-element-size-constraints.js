@@ -8,12 +8,12 @@ export default () => (
   <Stepper numSteps={6}>
     <Slide>
       <h1>
-        Can we beat DOM element height constraints?
+        Did you know about DOM element size constraints?
       </h1>
       <Step>
         <p>
           <strong className='QuestionLabel'>Problem</strong>:
-          DOM elements have height constraints (eg Chrome 33.5M px, IE 1.5M px)
+          (eg Chrome 33.5M px, IE 1.5M px)
         </p>
       </Step>
       <ul>

@@ -8,7 +8,7 @@ import source from './Examples/is-scrolling-cell-renderer.js';
 export default () => (
   <Stepper numSteps={2}>
     <Slide>
-      <h1>Can we further optimize complex rows?</h1>
+      <h1>What about elements that are really complex?</h1>
       <p><strong className='AnswerLabel'>Solution</strong>: Render less while scrolling.</p>
       <Step>
         <CodeMirror source={source} />

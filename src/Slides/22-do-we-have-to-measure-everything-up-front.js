@@ -8,7 +8,7 @@ export default () => (
   <Stepper numSteps={5}>
     {(index) => (
       <Slide>
-        <h1>Can we defer measurements?</h1>
+        <h1>Do we have to measure everything up front?</h1>
         {index < 2 && (
           <p>
             <strong className='QuestionLabel'>Problem</strong>: Measuring wastes cycles, especially if it requires rendering.

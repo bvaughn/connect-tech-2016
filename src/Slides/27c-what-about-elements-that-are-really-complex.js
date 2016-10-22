@@ -5,7 +5,7 @@ import Note from '../Components/Note';
 import Slide from '../Components/Slide';
 import image from '../../public/profile-picture.jpg';
 import '../shared-list-styles.css';
-import './27-can-we-further-optimize-complex-rows.css';
+import './27-what-about-elements-that-are-really-complex.css';
 
 export default class DefaultSlide extends Component {
   static contextTypes = {
@@ -17,7 +17,7 @@ export default class DefaultSlide extends Component {
 
     return (
       <Slide>
-        <h1>Can we further optimize complex rows?</h1>
+        <h1>What about elements that are really complex?</h1>
 
         <List
           className='List'

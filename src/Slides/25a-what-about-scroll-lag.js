@@ -4,13 +4,13 @@ import Slide from '../Components/Slide';
 import Step from '../Components/Step';
 import Stepper from '../Components/Stepper';
 import movie from '../../public/overscan-example.mp4';
-import './25-avoid-scroll-jank.css';
+import './25-what-about-scroll-lag.css';
 
 export default () => (
   <Stepper numSteps={4}>
     <Slide>
-      <h1>Can we avoid scroll lag?</h1>
-      <Step><h2>What the heck do I mean?</h2></Step>
+      <h1>What about scroll lag?</h1>
+      <Step><p>(What the heck is "scroll lag"?)</p></Step>
       <Step>
         <video
           autoPlay
