@@ -14,8 +14,8 @@ export default () => (
           <li>
             I've worked some cool places:
             <ul>
-              <li>Facebook</li>
-              <li>Google</li>
+              <li><i className='fa fa-facebook-square FacebookIcon' /> Facebook</li>
+              <li><i className='fa fa-google GoogleIcon' /> Google</li>
               <li>Rosetta Stone</li>
               <li>Treasure Data</li>
             </ul>

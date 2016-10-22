@@ -7,7 +7,7 @@ export default () => (
   <Stepper numSteps={6}>
     <Slide>
       <h1>Why are we here?</h1>
-      <Step><h2>We're here to talk about performance.</h2></Step>
+      <Step><p>We're here to talk about performance.</p></Step>
       <ul>
         <Step><li>Huge topic</li></Step>
         <Step><li>Can't possibly cover it all</li></Step>
