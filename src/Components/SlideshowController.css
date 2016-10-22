@@ -1,0 +1,21 @@
+.SlideshowController {
+  height: 100%;
+}
+
+.SlideshowControllerButtons {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: none;
+}
+
+.SlideshowControllerButton {
+  background: rgba(124, 124, 124, 0.25);
+  margin-left: 0.5rem;
+}
+
+@media (pointer:coarse) {
+  .SlideshowControllerButtons {
+    display: block;
+  }
+}

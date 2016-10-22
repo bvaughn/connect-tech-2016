@@ -1,4 +1,5 @@
-import { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import './SlideshowController.css';
 
 export default class SlideshowController extends Component {
   static childContextTypes = {
@@ -31,6 +32,7 @@ export default class SlideshowController extends Component {
 
     this._onHashChange = this._onHashChange.bind(this);
     this._onKeyDown = this._onKeyDown.bind(this);
+    this._processButtonClick = this._processButtonClick.bind(this);
     this._registerKeyDownHandler = this._registerKeyDownHandler.bind(this);
     this._uregisterKeyDownHandler = this._uregisterKeyDownHandler.bind(this);
   }
@@ -63,7 +65,26 @@ export default class SlideshowController extends Component {
   render() {
     const { children } = this.props;
 
-    return children;
+    return (
+      <div className='SlideshowController'>
+        {children}
+
+        <div className='SlideshowControllerButtons'>
+          <button
+            className='SlideshowControllerButton'
+            onClick={() => this._processButtonClick(-1)}
+          >
+            &lt;&lt;
+          </button>
+          <button
+            className='SlideshowControllerButton'
+            onClick={() => this._processButtonClick(1)}
+          >
+            &gt;&gt;
+          </button>
+        </div>
+      </div>
+    );
   }
 
   _processCurrentLocation () {
@@ -76,6 +97,17 @@ export default class SlideshowController extends Component {
       previousSlideIndex: slideIndex || 0,
       slideIndex: newSlideIndex
     });
+  }
+
+  _processButtonClick (direction) {
+    const event = {
+      key: direction < 0 ? 'Left' : 'Right',
+      keyCode: direction < 0 ? 37 : 39,
+      preventDefault: () => {},
+      target: {}
+    };
+
+    this._onKeyDown(event);
   }
 
   _registerKeyDownHandler (handler) {
