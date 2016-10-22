@@ -72,15 +72,21 @@ export default class SlideshowController extends Component {
         <div className='SlideshowControllerButtons'>
           <button
             className='SlideshowControllerButton'
-            onClick={() => this._processButtonClick(-1)}
+            onClick={() => this._processButtonClick({ key: 'Left', keyCode: 37 })}
           >
-            &lt;&lt;
+            <i className='fa fa-angle-double-left SlideshowControllerButtonIcon' />
           </button>
           <button
             className='SlideshowControllerButton'
-            onClick={() => this._processButtonClick(1)}
+            onClick={() => this._processButtonClick({ key: 'Right', keyCode: 39 })}
           >
-            &gt;&gt;
+            <i className='fa fa-angle-double-right SlideshowControllerButtonIcon' />
+          </button>
+          <button
+            className='SlideshowControllerButton'
+            onClick={() => this._processButtonClick({ key: 't', keyCode: 84 })}
+          >
+            <i className='fa fa-ellipsis-v SlideshowControllerButtonIcon' />
           </button>
         </div>
       </div>
@@ -99,10 +105,10 @@ export default class SlideshowController extends Component {
     });
   }
 
-  _processButtonClick (direction) {
+  _processButtonClick ({ key, keyCode }) {
     const event = {
-      key: direction < 0 ? 'Left' : 'Right',
-      keyCode: direction < 0 ? 37 : 39,
+      key,
+      keyCode,
       preventDefault: () => {},
       target: {}
     };
