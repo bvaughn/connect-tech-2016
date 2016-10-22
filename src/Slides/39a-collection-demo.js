@@ -38,7 +38,7 @@ export default class MySlide extends Component {
             <AutoSizer disableHeight>
               {({ width }) => (
                 <Collection
-                  cellCount={list.length}
+                  cellCount={Math.max(5000, list.length)}
                   cellRenderer={this._cellRenderer}
                   cellSizeAndPositionGetter={this._cellSizeAndPositionGetter}
                   className='Collection'
