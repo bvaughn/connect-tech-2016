@@ -1,6 +1,5 @@
-import classnames from 'classnames';
 import React, { Component, PropTypes } from 'react';
-import { List } from 'react-virtualized';
+import { ListRow, ListRowActive, RowName, RowNumber, RowStack, RowSummary, VirtualList } from './StyledListElements';
 import '../shared-list-styles.css';
 
 export default class ExampleList extends Component {
@@ -9,44 +8,44 @@ export default class ExampleList extends Component {
   };
 
   static propTypes = {
-    className: PropTypes.string,
     scrollToAlignment: PropTypes.string,
     scrollToIndex: PropTypes.number
   };
 
   render () {
     const { list } = this.context;
-    const { className, scrollToAlignment, scrollToIndex } = this.props;
+    const { scrollToAlignment, scrollToIndex } = this.props;
 
     return (
-      <List
-        className={classnames('List', className)}
+      <VirtualList
         height={240}
         overscanRowCount={2}
         rowCount={list.length}
         rowHeight={40}
-        rowRenderer={({ index, key, style }) => (
-          <div
-            className={classnames('ListRow', {
-              ListRowActived: index === scrollToIndex
-            })}
-            key={index}
-            style={style}
-          >
-            <div
-              className='RowNumber'
-              style={{
-                backgroundColor: list[index].color
-              }}
+        rowRenderer={({ index, key, style }) => {
+          const RowComponent = index === scrollToIndex
+            ? ListRowActive
+            : ListRow
+
+          return (
+            <RowComponent
+              key={index}
+              style={style}
             >
-              {list[index].name.substr(0, 1)}
-            </div>
-            <div className='RowStack'>
-              <div className='RowName'>{list[index].name}</div>
-              <div className='RowRowNumber'>This is row {index}</div>
-            </div>
-          </div>
-        )}
+              <RowNumber
+                style={{
+                  backgroundColor: list[index].color
+                }}
+              >
+                {list[index].name.substr(0, 1)}
+              </RowNumber>
+              <RowStack>
+                <RowName>{list[index].name}</RowName>
+                <RowSummary>This is row {index}</RowSummary>
+              </RowStack>
+            </RowComponent>
+          )
+        }}
         scrollToAlignment={scrollToAlignment}
         scrollToIndex={scrollToIndex}
         width={240}

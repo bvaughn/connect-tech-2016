@@ -1,14 +1,3 @@
-.App {
-  height: 100%;
-}
-
-.QuestionLabel {
-}
-
-.AnswerLabel {
-  color: #f92672;
-}
-
-.Spacer {
-  height: 0.5rem;
+.App, #root {
+  height: 100%;  
 }
