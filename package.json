@@ -31,8 +31,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "git checkout -B gh-pages && git add -f build && git commit -am 'Rebuild website' && git filter-branch -f --prune-empty --subdirectory-filter build && git push -f origin gh-pages && git checkout -",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "postbuild": "git checkout -B gh-pages && git add -f build && git commit -am 'Rebuild website' && git filter-branch -f --prune-empty --subdirectory-filter build && git push -f origin gh-pages && git checkout -"
+    "eject": "react-scripts eject"
   }
 }
