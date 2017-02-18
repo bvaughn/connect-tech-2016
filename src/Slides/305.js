@@ -53,27 +53,21 @@ const slide = () => (
       </div>
     </Step>
 
-    <Step index={9} maxIndex={12}>
+    <Step index={9} maxIndex={11}>
       <div>
         <Step index={9} exact>
           <div>
-            <p><strong className='AnswerLabel'>Solution</strong>: Use "overscanning"</p> 
-            <AnimatedList direction={0} />
+            <p><strong className='AnswerLabel'>Solution</strong>: Shift rows in the direction being scrolled</p>
+            <AnimatedList direction={1} />
           </div>
         </Step>
         <Step index={10} exact>
           <div>
-            <p>Shift in the direction being scrolled (scrolling down)</p>
-            <AnimatedList direction={1} />
-          </div>
-        </Step>
-        <Step index={11} exact>
-          <div>
-            <p>Shift in the direction being scrolled (scrolling up)</p>
+            <p>I call this "overscanning" (like with TVs)</p> 
             <AnimatedList direction={-1} />
           </div>
         </Step>
-        <Step index={12} exact>
+        <Step index={11} exact>
           <div>
             <ExampleList />
 
